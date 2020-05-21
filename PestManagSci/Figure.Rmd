@@ -1,0 +1,39 @@
+---
+title: "Analysis"
+author: "Maxwel Coura Oliveira"
+date: "1/2/2020"
+output: pdf_document
+---
+
+```{r include=FALSE}
+library(tidyverse)
+```
+
+```{r include=FALSE}
+data <- read_csv("molecular.csv")
+glimpse(data)
+```
+
+```{r}
+new <- data %>% 
+  group_by(sample) %>% 
+  summarise(mean= mean(epsps), min=min(epsps), max=max(epsps))
+
+
+data <- merge(data, new, by="sample")
+```
+
+```{r}
+data$ppo2 <- factor(data$ppo2, levels = c("R128 het", "X"), labels = c("R128 het", expression(Delta)))
+```
+
+
+```{r}
+ggplot(data, aes(x=reorder(sample, mean), y=mean, color=ppo2, shape=ppo2)) + coord_flip() +
+  geom_jitter(aes(y=epsps), alpha=0.6, width=0.2) + 
+  geom_point(color="#282728", pch=16, size=2) + scale_color_manual(name="PPO resistance", values=c("#646569", "red", "red"), labels = c("none/unknown", "R128 het", expression(Delta~G210))) + scale_shape_manual(name="PPO resistance", values=c(15,25,17), labels = c("none/unknown", "R128 het", expression(Delta~G210))) + scale_y_continuous(breaks=c(0, 10, 20, 30, 40, 50, 60)) + 
+  theme_bw()  + geom_linerange(aes(ymin = min, ymax = max), color="#282728") +
+  theme(legend.position = "bottom", panel.grid = element_blank()) + labs(x="", y="EPSPS gene amplification") +
+  ggsave("Supp Fig.pdf", height=9, width=5, dpi=800)
+```
+
