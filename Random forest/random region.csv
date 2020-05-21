@@ -1,0 +1,219 @@
+resistant,species,crop,tillage,irrigation,distribution,region
+no,Palmer,soybean,yes,yes,edges,Central
+no,Palmer,corn,yes,yes,edges,Central
+no,Palmer,corn,yes,yes,edges,Central
+no,Palmer,soybean,yes,yes,edges,Central
+yes,Palmer,soybean,yes,yes,field,Central
+no,Palmer,corn,no,yes,field,Southwest
+no,Palmer,corn,no,yes,edges,Southwest
+no,Palmer,corn,no,yes,field,Southwest
+no,Palmer,,,,,Southwest
+no,Palmer,corn,no,no,edges,Southwest
+no,Palmer,corn,yes,yes,edges,Southwest
+no,Palmer,corn,,no,,Northwest
+no,Palmer,corn,yes,yes,field,East Central
+no,Palmer,alfalfa,yes,no,field,Central
+no,Palmer,corn,yes,no,field,Central
+no,Palmer,corn,yes,no,field,Central
+no,Palmer,corn,yes,no,field,Central
+no,Palmer,corn,yes,yes,field,Central
+no,Palmer,soybean,yes,yes,field,Central
+no,Palmer,corn,no,yes,edges,Central
+no,Palmer,corn,yes,yes,edges,Central
+no,Palmer,corn,no,yes,edges,Central
+no,Palmer,soybean,yes,yes,edges,Central
+no,Palmer,corn,,,,Northwest
+no,Palmer,corn,yes,no,field,Southwest
+no,Palmer,corn,yes,yes,field,Southwest
+no,Palmer,corn,yes,no,field,Southwest
+no,Palmer,soybean,yes,yes,field,Southeast
+no,Palmer,soybean,yes,yes,field,Southeast
+no,Palmer,soybean,no,yes,edges,Southeast
+yes,Palmer,wheat,no,no,field,South Central
+no,Palmer,corn,no,no,edges,Southwest
+no,Palmer,soybean,yes,no,field,Southwest
+no,Palmer,corn,yes,no,edges,Southwest
+no,Palmer,corn,no,no,field,Southwest
+no,Palmer,sorghum,yes,yes,edges,Southwest
+no,Palmer,corn,no,yes,edges,Southwest
+no,Palmer,corn,no,no,field,South Central
+no,Palmer,sorghum,no,no,field,South Central
+yes,Palmer,corn,no,no,field,South Central
+no,Palmer,corn,yes,yes,field,Northwest
+no,Palmer,sorghum,no,no,edges,South Central
+no,Palmer,corn,yes,no,edges,South Central
+no,Palmer,corn,yes,yes,field,Central
+no,Palmer,soybean,yes,no,field,Central
+no,Palmer,corn,no,yes,edges,Central
+no,Palmer,soybean,yes,yes,field,Central
+no,Palmer,soybean,yes,no,edges,Central
+yes,Palmer,soybean,yes,no,field,Central
+no,Palmer,corn,no,no,field,East Central
+no,Palmer,corn,no,no,field,South Central
+no,Palmer,corn,,no,edges,South Central
+no,Palmer,sorghum,yes,no,field,Southwest
+no,Palmer,corn,no,no,field,Southwest
+no,Palmer,corn,no,no,edges,Southwest
+no,Palmer,corn,no,no,field,Southwest
+no,Palmer,soybean,yes,no,field,Central
+no,Palmer,corn,yes,yes,edges,South Central
+no,Palmer,corn,yes,yes,edges,South Central
+no,Palmer,,,,edges,South Central
+no,Palmer,corn,yes,yes,field,Southwest
+no,Palmer,corn,no,yes,field,Southwest
+no,Palmer,soybean,yes,yes,edges,Southwest
+no,Palmer,corn,no,yes,edges,Southwest
+no,Palmer,corn,no,yes,field,Southwest
+no,Palmer,corn,yes,no,edges,Southwest
+no,Palmer,corn,yes,yes,field,Southwest
+no,Palmer,corn,yes,yes,edges,Southwest
+no,Palmer,corn,no,yes,edges,Southwest
+no,Palmer,,,,field,Southwest
+no,Palmer,sorghum,yes,no,field,Southwest
+no,Palmer,corn,yes,no,field,North Central
+no,Palmer,corn,yes,yes,edges,East Central
+no,Palmer,corn,no,yes,field,East Central
+no,Palmer,soybean,yes,yes,,Northwest
+no,Palmer,corn,yes,no,field,East Central
+no,Palmer,soybean,no,no,edges,Southeast
+no,Palmer,corn,no,yes,edges,Southwest
+no,Palmer,wheat,no,no,field,Southwest
+no,Palmer,corn,no,yes,field,Southwest
+no,Palmer,corn,no,no,field,Southwest
+no,Palmer,soybean,no,yes,edges,Southwest
+no,Palmer,soybean,yes,yes,field,South Central
+no,Palmer,soybean,yes,yes,edges,South Central
+no,Palmer,soybean,yes,yes,edges,South Central
+no,Palmer,corn,no,no,edges,Southwest
+no,Palmer,corn,no,yes,field,Southwest
+no,Palmer,corn,no,no,edges,Southwest
+no,Palmer,corn,no,no,field,Southwest
+yes,Palmer,soybean,no,no,edges,Southeast
+no,Palmer,wheat,no,no,field,Southeast
+no,Palmer,soybean,no,yes,edges,Southeast
+yes,Palmer,alfalfa,no,no,field,Southeast
+no,Palmer,corn,yes,no,field,Central
+no,Palmer,corn,yes,yes,field,South Central
+no,Redroot,corn,no,no,field,North Central
+no,Redroot,corn,no,no,field,Northeast
+no,Redroot,wheat,yes,no,field,Northwest
+no,Redroot,corn,yes,yes,field,Central
+no,Redroot,corn,no,no,edges,Northeast
+no,Redroot,corn,yes,no,field,Northwest
+no,Redroot,corn,yes,no,field,Northeast
+no,Redroot,corn,yes,yes,field,North Central
+no,Redroot,corn,yes,yes,field,Central
+no,Redroot,corn,yes,no,field,Central
+no,Redroot,corn,no,no,edges,Southwest
+no,Redroot,,,,,Northeast
+no,Redroot,,,,,Northeast
+no,Redroot,corn,no,yes,,Northwest
+no,Redroot,sorghum,yes,no,field,Northwest
+no,Redroot,corn,yes,no,edges,East Central
+no,Redroot,soybean,yes,no,field,Southeast
+no,Redroot,corn,yes,no,field,Central
+no,Redroot,soybean,no,yes,field,Central
+no,Redroot,corn,yes,no,edges,Central
+no,Redroot,soybean,yes,no,field,Northeast
+no,Redroot,soybean,yes,yes,field,Central
+no,Redroot,soybean,yes,no,field,Central
+no,Waterhemp,corn,no,no,field,Northeast
+no,Waterhemp,soybean,no,no,field,Southeast
+no,Waterhemp,corn,no,,edges,Southeast
+no,Waterhemp,soybean,no,no,edges,Southeast
+no,Waterhemp,corn,yes,no,field,Northeast
+no,Waterhemp,soybean,no,no,field,East Central
+no,Waterhemp,corn,yes,no,field,East Central
+no,Waterhemp,soybean,no,no,field,Southeast
+no,Waterhemp,soybean,yes,no,field,East Central
+no,Waterhemp,soybean,no,no,field,Southeast
+no,Waterhemp,soybean,no,no,edges,Southeast
+no,Waterhemp,soybean,no,yes,edges,Southeast
+no,Waterhemp,soybean,yes,yes,,East Central
+no,Waterhemp,soybean,yes,yes,field,Southeast
+no,Waterhemp,soybean,yes,no,field,East Central
+no,Waterhemp,corn,no,yes,edges,Southeast
+yes,Waterhemp,soybean,no,no,edges,East Central
+no,Waterhemp,soybean,no,no,field,Southeast
+no,Waterhemp,corn,yes,no,field,Northeast
+yes,Waterhemp,soybean,yes,no,edges,Southeast
+yes,Waterhemp,soybean,no,no,field,Northeast
+yes,Waterhemp,soybean,yes,no,field,Northeast
+yes,Waterhemp,soybean,yes,no,edges,East Central
+yes,Waterhemp,soybean,yes,yes,field,Northeast
+yes,Waterhemp,soybean,,,edges,Southeast
+yes,Waterhemp,corn,yes,no,field,Northeast
+yes,Waterhemp,soybean,yes,yes,field,Southeast
+yes,Waterhemp,soybean,,,field,Southeast
+yes,Waterhemp,soybean,no,no,field,East Central
+yes,Waterhemp,soybean,yes,no,field,Southeast
+yes,Waterhemp,soybean,yes,no,edges,East Central
+yes,Waterhemp,soybean,,no,edges,East Central
+yes,Waterhemp,corn,yes,yes,edges,Northeast
+yes,Waterhemp,soybean,no,no,edges,East Central
+yes,Waterhemp,corn,yes,no,field,Northeast
+yes,Waterhemp,soybean,no,no,field,Northeast
+yes,Waterhemp,corn,no,no,edges,East Central
+yes,Waterhemp,soybean,no,yes,field,Northeast
+yes,Waterhemp,soybean,no,no,field,East Central
+yes,Waterhemp,soybean,yes,no,field,Southeast
+yes,Waterhemp,soybean,no,no,field,East Central
+yes,Waterhemp,soybean,yes,no,field,East Central
+yes,Waterhemp,soybean,no,no,field,Southeast
+yes,Waterhemp,soybean,no,no,field,Southeast
+yes,Waterhemp,corn,yes,no,field,East Central
+yes,Waterhemp,soybean,no,no,edges,Southeast
+yes,Waterhemp,soybean,no,no,edges,East Central
+yes,Waterhemp,soybean,yes,no,field,East Central
+yes,Waterhemp,soybean,no,no,field,Southeast
+yes,Waterhemp,soybean,no,no,edges,Southeast
+yes,Waterhemp,soybean,no,no,field,Southeast
+yes,Waterhemp,soybean,no,no,field,East Central
+yes,Waterhemp,soybean,no,no,field,East Central
+yes,Waterhemp,soybean,no,no,field,Southeast
+yes,Waterhemp,soybean,no,no,field,Southeast
+yes,Waterhemp,corn,no,no,field,Southeast
+yes,Waterhemp,soybean,no,no,field,East Central
+yes,Waterhemp,soybean,no,no,field,Southeast
+yes,Waterhemp,soybean,no,no,field,Southeast
+yes,Waterhemp,soybean,no,no,field,Northeast
+yes,Waterhemp,soybean,no,no,edges,East Central
+yes,Waterhemp,soybean,yes,no,field,Southeast
+yes,Waterhemp,soybean,no,no,field,Southeast
+yes,Waterhemp,soybean,no,no,field,East Central
+yes,Waterhemp,soybean,no,no,field,East Central
+yes,Waterhemp,soybean,yes,no,field,Northeast
+yes,Waterhemp,corn,,no,field,Northeast
+yes,Waterhemp,soybean,yes,,field,East Central
+yes,Waterhemp,corn,yes,no,field,East Central
+yes,Waterhemp,soybean,no,no,field,Southeast
+yes,Waterhemp,soybean,yes,no,field,East Central
+yes,Waterhemp,soybean,no,no,field,East Central
+yes,Waterhemp,soybean,no,no,field,East Central
+yes,Waterhemp,soybean,no,no,edges,Southeast
+yes,Waterhemp,soybean,no,no,field,East Central
+yes,Waterhemp,soybean,yes,yes,field,East Central
+yes,Waterhemp,soybean,no,no,field,East Central
+yes,Waterhemp,soybean,yes,no,field,East Central
+yes,Waterhemp,corn,no,no,field,Northeast
+yes,Waterhemp,soybean,yes,no,field,North Central
+yes,Waterhemp,soybean,no,no,field,Southeast
+yes,Waterhemp,soybean,no,no,field,East Central
+yes,Waterhemp,soybean,yes,yes,field,Southeast
+yes,Waterhemp,soybean,no,no,field,Southeast
+yes,Waterhemp,soybean,,no,field,East Central
+yes,Waterhemp,soybean,yes,no,field,South Central
+yes,Waterhemp,soybean,no,yes,field,East Central
+yes,Waterhemp,corn,yes,no,field,East Central
+yes,Waterhemp,soybean,no,no,field,Southeast
+yes,Waterhemp,soybean,no,no,field,Southeast
+yes,Waterhemp,soybean,no,no,field,East Central
+yes,Waterhemp,soybean,no,no,edges,East Central
+yes,Waterhemp,soybean,no,no,edges,East Central
+yes,Waterhemp,soybean,yes,no,field,East Central
+yes,Waterhemp,soybean,yes,yes,field,Southeast
+yes,Waterhemp,soybean,no,no,field,Southeast
+yes,Waterhemp,soybean,no,no,edges,Southeast
+yes,Waterhemp,soybean,yes,no,edges,Southeast
+yes,Waterhemp,soybean,no,no,field,Southeast
+yes,Waterhemp,soybean,no,no,field,East Central

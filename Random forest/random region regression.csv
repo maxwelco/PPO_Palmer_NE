@@ -1,0 +1,219 @@
+ratio label,species,crop,tillage,irrigation,distribution,region
+4.8,Waterhemp,soybean,yes,no,field,South Central
+0.9,Waterhemp,soybean,yes,yes,field,Northeast
+0,Redroot,corn,no,no,field,North Central
+0,Palmer,soybean,yes,yes,edges,Central
+0,Palmer,corn,yes,yes,edges,Central
+0,Palmer,corn,yes,yes,edges,Central
+0.1,Palmer,soybean,yes,yes,edges,Central
+2.8,Palmer,soybean,yes,yes,field,Central
+0.8,Waterhemp,soybean,yes,no,field,Northeast
+0.9,Waterhemp,corn,yes,no,field,Northeast
+2.5,Waterhemp,corn,,no,field,Northeast
+3.6,Waterhemp,corn,no,no,field,Northeast
+0,Redroot,corn,no,no,field,Northeast
+0.4,Waterhemp,soybean,no,no,field,East Central
+0.5,Waterhemp,soybean,yes,no,field,East Central
+2.6,Waterhemp,soybean,yes,,field,East Central
+1,Waterhemp,soybean,yes,no,edges,East Central
+1.5,Waterhemp,soybean,no,no,edges,East Central
+2.1,Waterhemp,soybean,no,no,edges,East Central
+3.6,Waterhemp,soybean,yes,no,field,East Central
+8,Waterhemp,soybean,no,no,edges,East Central
+8,Waterhemp,soybean,no,no,edges,East Central
+8,Waterhemp,soybean,yes,no,field,East Central
+1.1,Waterhemp,corn,yes,yes,edges,Northeast
+0,Palmer,corn,no,yes,field,Southwest
+0,Palmer,corn,no,yes,edges,Southwest
+0,Palmer,corn,no,yes,field,Southwest
+0,Palmer,,,,,Southwest
+0,Palmer,corn,no,no,edges,Southwest
+0,Palmer,corn,yes,yes,edges,Southwest
+0,Palmer,corn,,no,,Northwest
+0,Redroot,wheat,yes,no,field,Northwest
+5.1,Waterhemp,corn,yes,no,field,East Central
+0,Palmer,corn,yes,yes,field,East Central
+0.4,Waterhemp,corn,yes,no,field,Northeast
+0.8,Waterhemp,soybean,no,no,field,Northeast
+1.1,Waterhemp,soybean,no,no,field,Northeast
+1.2,Waterhemp,soybean,no,yes,field,Northeast
+2.1,Waterhemp,soybean,no,no,field,Northeast
+0,Palmer,alfalfa,yes,no,field,Central
+0,Palmer,corn,yes,no,field,Central
+0,Palmer,corn,yes,no,field,Central
+0,Palmer,corn,yes,no,field,Central
+0,Palmer,corn,yes,yes,field,Central
+0,Palmer,soybean,yes,yes,field,Central
+0,Redroot,corn,yes,yes,field,Central
+2.5,Waterhemp,soybean,yes,no,field,Northeast
+0,Redroot,corn,no,no,edges,Northeast
+0,Palmer,corn,no,yes,edges,Central
+0,Palmer,corn,yes,yes,edges,Central
+0,Palmer,corn,no,yes,edges,Central
+0,Palmer,soybean,yes,yes,edges,Central
+0,Palmer,corn,,,,Northwest
+0,Redroot,corn,yes,no,field,Northwest
+0.2,Waterhemp,corn,no,no,field,Northeast
+0,Redroot,corn,yes,no,field,Northeast
+1.3,Waterhemp,soybean,yes,no,field,East Central
+1.5,Waterhemp,corn,yes,no,field,East Central
+2.7,Waterhemp,corn,yes,no,field,East Central
+3.2,Waterhemp,soybean,no,no,field,East Central
+7.7,Waterhemp,soybean,no,no,field,East Central
+1.8,Waterhemp,soybean,no,no,field,East Central
+0,Palmer,corn,yes,no,field,Southwest
+0,Palmer,corn,yes,yes,field,Southwest
+0,Palmer,corn,yes,no,field,Southwest
+0.5,Waterhemp,soybean,yes,yes,field,Southeast
+0.9,Waterhemp,soybean,,,edges,Southeast
+0.9,Waterhemp,soybean,yes,yes,field,Southeast
+1.2,Waterhemp,soybean,yes,no,field,Southeast
+4.5,Waterhemp,soybean,yes,yes,field,Southeast
+8,Waterhemp,soybean,yes,yes,field,Southeast
+0,Palmer,soybean,yes,yes,field,Southeast
+0,Palmer,soybean,yes,yes,field,Southeast
+0.2,Palmer,soybean,no,yes,edges,Southeast
+3,Palmer,wheat,no,no,field,South Central
+0,Palmer,corn,no,no,edges,Southwest
+0,Palmer,soybean,yes,no,field,Southwest
+0,Palmer,corn,yes,no,edges,Southwest
+0,Palmer,corn,no,no,field,Southwest
+0,Palmer,sorghum,yes,yes,edges,Southwest
+0.1,Palmer,corn,no,yes,edges,Southwest
+0,Palmer,corn,no,no,field,South Central
+0,Palmer,sorghum,no,no,field,South Central
+2,Palmer,corn,no,no,field,South Central
+0.5,Waterhemp,soybean,no,no,field,Southeast
+1.9,Waterhemp,corn,no,no,field,Southeast
+0,Palmer,corn,yes,yes,field,Northwest
+0,Redroot,corn,yes,yes,field,North Central
+0,Palmer,sorghum,no,no,edges,South Central
+0,Palmer,corn,yes,no,edges,South Central
+0,Palmer,corn,yes,yes,field,Central
+0,Palmer,soybean,yes,no,field,Central
+0,Redroot,corn,yes,yes,field,Central
+0,Redroot,corn,yes,no,field,Central
+0,Palmer,corn,no,yes,edges,Central
+0,Palmer,soybean,yes,yes,field,Central
+0.3,Palmer,soybean,yes,no,edges,Central
+5.4,Palmer,soybean,yes,no,field,Central
+0.5,Waterhemp,soybean,yes,no,field,East Central
+0.5,Waterhemp,soybean,yes,yes,,East Central
+0,Palmer,corn,no,no,field,East Central
+0,Palmer,corn,no,no,field,South Central
+0,Palmer,corn,,no,edges,South Central
+0,Palmer,sorghum,yes,no,field,Southwest
+0,Redroot,corn,no,no,edges,Southwest
+0,Palmer,corn,no,no,field,Southwest
+0,Palmer,corn,no,no,edges,Southwest
+0,Palmer,corn,no,no,field,Southwest
+0,Palmer,soybean,yes,no,field,Central
+0.4,Waterhemp,soybean,no,no,edges,Southeast
+0.4,Waterhemp,soybean,no,no,field,Southeast
+0.5,Waterhemp,soybean,no,no,edges,Southeast
+1.9,Waterhemp,soybean,no,no,field,Southeast
+3.3,Waterhemp,soybean,no,no,edges,Southeast
+2.8,Waterhemp,soybean,no,no,field,Southeast
+6.7,Waterhemp,soybean,no,no,field,Southeast
+8,Waterhemp,soybean,no,no,field,Southeast
+8,Waterhemp,soybean,no,no,edges,Southeast
+0,Palmer,corn,yes,yes,edges,South Central
+0,Palmer,corn,yes,yes,edges,South Central
+0.1,Palmer,,,,edges,South Central
+0,Palmer,corn,yes,yes,field,Southwest
+0,Palmer,corn,no,yes,field,Southwest
+0,Palmer,soybean,yes,yes,edges,Southwest
+0,Palmer,corn,no,yes,edges,Southwest
+0,Redroot,,,,,Northeast
+0,Redroot,,,,,Northeast
+1.2,Waterhemp,corn,no,no,edges,East Central
+1.9,Waterhemp,soybean,no,no,field,East Central
+2.4,Waterhemp,soybean,no,no,field,East Central
+3.3,Waterhemp,soybean,no,no,field,East Central
+3.3,Waterhemp,soybean,no,no,field,East Central
+0,Palmer,corn,no,yes,field,Southwest
+0,Palmer,corn,yes,no,edges,Southwest
+0,Palmer,corn,yes,yes,field,Southwest
+0,Palmer,corn,yes,yes,edges,Southwest
+0,Palmer,corn,no,yes,edges,Southwest
+0,Palmer,,,,field,Southwest
+0.2,Palmer,sorghum,yes,no,field,Southwest
+0,Palmer,corn,yes,no,field,North Central
+0,Palmer,corn,yes,yes,edges,East Central
+0,Palmer,corn,no,yes,field,East Central
+0,Palmer,soybean,yes,yes,,Northwest
+0,Redroot,corn,no,yes,,Northwest
+0,Redroot,sorghum,yes,no,field,Northwest
+0,Palmer,corn,yes,no,field,East Central
+0,Redroot,corn,yes,no,edges,East Central
+3.8,Waterhemp,soybean,no,no,field,Southeast
+0,Redroot,soybean,yes,no,field,Southeast
+1.7,Waterhemp,soybean,no,no,edges,Southeast
+1.8,Waterhemp,soybean,no,no,field,Southeast
+2.3,Waterhemp,soybean,yes,no,field,Southeast
+8,Waterhemp,soybean,yes,no,edges,Southeast
+8,Waterhemp,soybean,no,no,field,Southeast
+0.7,Waterhemp,soybean,yes,no,edges,Southeast
+1.8,Waterhemp,soybean,no,no,field,Southeast
+2.3,Waterhemp,soybean,no,no,field,Southeast
+4.6,Waterhemp,soybean,no,no,field,Southeast
+6.1,Waterhemp,soybean,no,no,field,Southeast
+0.1,Palmer,soybean,no,no,edges,Southeast
+0,Palmer,corn,no,yes,edges,Southwest
+0,Palmer,wheat,no,no,field,Southwest
+0,Palmer,corn,no,yes,field,Southwest
+0,Palmer,corn,no,no,field,Southwest
+0.1,Palmer,soybean,no,yes,edges,Southwest
+0,Palmer,soybean,yes,yes,field,South Central
+0,Palmer,soybean,yes,yes,edges,South Central
+0,Palmer,soybean,yes,yes,edges,South Central
+1.1,Waterhemp,corn,yes,no,field,Northeast
+0.4,Waterhemp,corn,yes,no,field,East Central
+4.9,Waterhemp,soybean,no,yes,field,East Central
+0,Palmer,corn,no,no,edges,Southwest
+0,Palmer,corn,no,yes,field,Southwest
+0.1,Palmer,corn,no,no,edges,Southwest
+0.1,Palmer,corn,no,no,field,Southwest
+0.6,Waterhemp,soybean,no,no,field,Southeast
+1,Waterhemp,soybean,yes,no,field,Southeast
+1.5,Waterhemp,soybean,no,no,edges,Southeast
+1.7,Waterhemp,soybean,no,no,field,Southeast
+1.7,Waterhemp,soybean,no,no,field,Southeast
+2,Waterhemp,soybean,no,no,field,Southeast
+3.8,Palmer,soybean,no,no,edges,Southeast
+0.7,Waterhemp,soybean,no,no,field,Southeast
+1.4,Waterhemp,soybean,no,no,field,Southeast
+1.4,Waterhemp,soybean,no,no,field,Southeast
+0,Palmer,wheat,no,no,field,Southeast
+1.1,Waterhemp,soybean,no,no,edges,East Central
+1.5,Waterhemp,soybean,yes,no,field,East Central
+2.4,Waterhemp,soybean,no,no,field,East Central
+4,Waterhemp,soybean,no,no,field,East Central
+8,Waterhemp,soybean,no,no,field,East Central
+0.9,Waterhemp,soybean,yes,no,edges,East Central
+1.1,Waterhemp,soybean,,no,edges,East Central
+1.2,Waterhemp,soybean,no,no,field,East Central
+3.3,Waterhemp,soybean,yes,yes,field,East Central
+0,Redroot,corn,yes,no,field,Central
+0,Redroot,soybean,no,yes,field,Central
+0,Redroot,corn,yes,no,edges,Central
+0,Redroot,soybean,yes,no,field,Northeast
+0.2,Waterhemp,corn,no,,edges,Southeast
+0.5,Waterhemp,soybean,no,yes,edges,Southeast
+0.6,Waterhemp,corn,no,yes,edges,Southeast
+1,Waterhemp,soybean,,,field,Southeast
+0,Palmer,soybean,no,yes,edges,Southeast
+1.1,Palmer,alfalfa,no,no,field,Southeast
+0.7,Waterhemp,corn,yes,no,field,Northeast
+0,Palmer,corn,yes,no,field,Central
+0,Redroot,soybean,yes,yes,field,Central
+0,Redroot,soybean,yes,no,field,Central
+0.6,Waterhemp,soybean,no,no,edges,East Central
+1.2,Waterhemp,soybean,no,no,field,East Central
+1.8,Waterhemp,soybean,no,no,field,East Central
+3,Waterhemp,soybean,yes,no,field,East Central
+3,Waterhemp,soybean,no,no,field,East Central
+4.6,Waterhemp,soybean,,no,field,East Central
+0,Palmer,corn,yes,yes,field,South Central
+3.7,Waterhemp,soybean,yes,no,field,North Central
+1,Waterhemp,soybean,no,no,field,East Central

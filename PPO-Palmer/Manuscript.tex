@@ -1,0 +1,1279 @@
+% Template for PLoS
+% Version 3.5 March 2018
+%
+% % % % % % % % % % % % % % % % % % % % % %
+%
+% -- IMPORTANT NOTE
+%
+% This template contains comments intended
+% to minimize problems and delays during our production
+% process. Please follow the template instructions
+% whenever possible.
+%
+% % % % % % % % % % % % % % % % % % % % % % %
+%
+% Once your paper is accepted for publication,
+% PLEASE REMOVE ALL TRACKED CHANGES in this file
+% and leave only the final text of your manuscript.
+% PLOS recommends the use of latexdiff to track changes during review, as this will help to maintain a clean tex file.
+% Visit https://www.ctan.org/pkg/latexdiff?lang=en for info or contact us at latex@plos.org.
+%
+%
+% There are no restrictions on package use within the LaTeX files except that
+% no packages listed in the template may be deleted.
+%
+% Please do not include colors or graphics in the text.
+%
+% The manuscript LaTeX source should be contained within a single file (do not use \input, \externaldocument, or similar commands).
+%
+% % % % % % % % % % % % % % % % % % % % % % %
+%
+% -- FIGURES AND TABLES
+%
+% Please include tables/figure captions directly after the paragraph where they are first cited in the text.
+%
+% DO NOT INCLUDE GRAPHICS IN YOUR MANUSCRIPT
+% - Figures should be uploaded separately from your manuscript file.
+% - Figures generated using LaTeX should be extracted and removed from the PDF before submission.
+% - Figures containing multiple panels/subfigures must be combined into one image file before submission.
+% For figure citations, please use "Fig" instead of "Figure".
+% See http://journals.plos.org/plosone/s/figures for PLOS figure guidelines.
+%
+% Tables should be cell-based and may not contain:
+% - spacing/line breaks within cells to alter layout or alignment
+% - do not nest tabular environments (no tabular environments within tabular environments)
+% - no graphics or colored text (cell background color/shading OK)
+% See http://journals.plos.org/plosone/s/tables for table guidelines.
+%
+% For tables that exceed the width of the text column, use the adjustwidth environment as illustrated in the example table in text below.
+%
+% % % % % % % % % % % % % % % % % % % % % % % %
+%
+% -- EQUATIONS, MATH SYMBOLS, SUBSCRIPTS, AND SUPERSCRIPTS
+%
+% IMPORTANT
+% Below are a few tips to help format your equations and other special characters according to our specifications. For more tips to help reduce the possibility of formatting errors during conversion, please see our LaTeX guidelines at http://journals.plos.org/plosone/s/latex
+%
+% For inline equations, please be sure to include all portions of an equation in the math environment.
+%
+% Do not include text that is not math in the math environment.
+%
+% Please add line breaks to long display equations when possible in order to fit size of the column.
+%
+% For inline equations, please do not include punctuation (commas, etc) within the math environment unless this is part of the equation.
+%
+% When adding superscript or subscripts outside of brackets/braces, please group using {}.
+%
+% Do not use \cal for caligraphic font.  Instead, use \mathcal{}
+%
+% % % % % % % % % % % % % % % % % % % % % % % %
+%
+% Please contact latex@plos.org with any questions.
+%
+% % % % % % % % % % % % % % % % % % % % % % % %
+
+\documentclass[10pt,letterpaper]{article}
+\usepackage[top=0.85in,left=2.75in,footskip=0.75in]{geometry}
+
+% amsmath and amssymb packages, useful for mathematical formulas and symbols
+\usepackage{amsmath,amssymb}
+
+% Use adjustwidth environment to exceed column width (see example table in text)
+\usepackage{changepage}
+
+% Use Unicode characters when possible
+\usepackage[utf8x]{inputenc}
+
+% textcomp package and marvosym package for additional characters
+\usepackage{textcomp,marvosym}
+
+% cite package, to clean up citations in the main text. Do not remove.
+% \usepackage{cite}
+
+% Use nameref to cite supporting information files (see Supporting Information section for more info)
+\usepackage{nameref,hyperref}
+
+% line numbers
+\usepackage[right]{lineno}
+
+% ligatures disabled
+\usepackage{microtype}
+\DisableLigatures[f]{encoding = *, family = * }
+
+% color can be used to apply background shading to table cells only
+\usepackage[table]{xcolor}
+
+% array package and thick rules for tables
+\usepackage{array}
+
+% create "+" rule type for thick vertical lines
+\newcolumntype{+}{!{\vrule width 2pt}}
+
+% create \thickcline for thick horizontal lines of variable length
+\newlength\savedwidth
+\newcommand\thickcline[1]{%
+  \noalign{\global\savedwidth\arrayrulewidth\global\arrayrulewidth 2pt}%
+  \cline{#1}%
+  \noalign{\vskip\arrayrulewidth}%
+  \noalign{\global\arrayrulewidth\savedwidth}%
+}
+
+% \thickhline command for thick horizontal lines that span the table
+\newcommand\thickhline{\noalign{\global\savedwidth\arrayrulewidth\global\arrayrulewidth 2pt}%
+\hline
+\noalign{\global\arrayrulewidth\savedwidth}}
+
+
+% Remove comment for double spacing
+%\usepackage{setspace}
+%\doublespacing
+
+% Text layout
+\raggedright
+\setlength{\parindent}{0.5cm}
+\textwidth 5.25in
+\textheight 8.75in
+
+% Bold the 'Figure #' in the caption and separate it from the title/caption with a period
+% Captions will be left justified
+\usepackage[aboveskip=1pt,labelfont=bf,labelsep=period,justification=raggedright,singlelinecheck=off]{caption}
+\renewcommand{\figurename}{Fig}
+
+% Use the PLoS provided BiBTeX style
+% \bibliographystyle{plos2015}
+
+% Remove brackets from numbering in List of References
+\makeatletter
+\renewcommand{\@biblabel}[1]{\quad#1.}
+\makeatother
+
+
+
+% Header and Footer with logo
+\usepackage{lastpage,fancyhdr,graphicx}
+\usepackage{epstopdf}
+%\pagestyle{myheadings}
+\pagestyle{fancy}
+\fancyhf{}
+%\setlength{\headheight}{27.023pt}
+%\lhead{\includegraphics[width=2.0in]{PLOS-submission.eps}}
+\rfoot{\thepage/\pageref{LastPage}}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrule}{\hrule height 2pt \vspace{2mm}}
+\fancyheadoffset[L]{2.25in}
+\fancyfootoffset[L]{2.25in}
+\lfoot{\today}
+
+%% Include all macros below
+
+\newcommand{\lorem}{{\bf LOREM}}
+\newcommand{\ipsum}{{\bf IPSUM}}
+
+
+
+
+
+\usepackage{forarray}
+\usepackage{xstring}
+\newcommand{\getIndex}[2]{
+  \ForEach{,}{\IfEq{#1}{\thislevelitem}{\number\thislevelcount\ExitForEach}{}}{#2}
+}
+
+\setcounter{secnumdepth}{0}
+
+\newcommand{\getAff}[1]{
+  \getIndex{#1}{University of Wisconsin-Madison,University of Illinois Urbana-Champaign}
+}
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+\begin{document}
+\vspace*{0.2in}
+
+% Title must be 250 characters or less.
+\begin{flushleft}
+{\Large
+\textbf\newline{Validation and Distribution of EPSPS- and PPO-Resistance in
+\emph{Amaranthus palmeri} from Southwestern Nebraska.} % Please use "sentence case" for title and headings (capitalize only the first word in a title (or heading), the first word in a subtitle (or subheading), and any proper nouns).
+}
+\newline
+% Insert author names, affiliations and corresponding author email (do not include titles, positions, or degrees).
+\\
+Maxwel C Oliveira\textsuperscript{\getAff{University of Wisconsin-Madison}},
+Darci A Giacomini\textsuperscript{\getAff{University of Illinois Urbana-Champaign}},
+Nikola Arsenijevic\textsuperscript{\getAff{University of Wisconsin-Madison}},
+Patrick J Tranel\textsuperscript{\getAff{University of Illinois Urbana-Champaign}},
+Rodrigo Werle\textsuperscript{\getAff{University of Wisconsin-Madison}}\textsuperscript{*}\\
+\bigskip
+\textbf{\getAff{University of Wisconsin-Madison}}Department of Agronomy, 1575 Linden Drive, Madison, Wisconsin, USA 53706\\
+\textbf{\getAff{University of Illinois Urbana-Champaign}}Department of Crop Sciences, Urbana, Illinois, USA\\
+\bigskip
+* Corresponding author: rwerle@wisc.com\\
+\end{flushleft}
+% Please keep the abstract below 300 words
+\section*{Abstract}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget
+porta erat. Morbi consectetur est vel gravida pretium. Suspendisse ut
+dui eu ante cursus gravida non sed sem. Nullam sapien tellus, commodo id
+velit id, eleifend volutpat quam. Phasellus mauris velit, dapibus
+finibus elementum vel, pulvinar non tellus. Nunc pellentesque pretium
+diam, quis maximus dolor faucibus id. Nunc convallis sodales ante, ut
+ullamcorper est egestas vitae. Nam sit amet enim ultrices, ultrices elit
+pulvinar, volutpat risus.
+
+% Please keep the Author Summary between 150 and 200 words
+% Use first person. PLOS ONE authors please skip this step.
+% Author Summary not valid for PLOS ONE submissions.
+
+\linenumbers
+
+% Use "Eq" instead of "Equation" for equation citations.
+\emph{Text based on plos sample manuscript, see
+\url{http://journals.plos.org/ploscompbiol/s/latex}}
+
+\hypertarget{introduction}{%
+\section{Introduction}\label{introduction}}
+
+\emph{Amaranthus palmeri} S. Watson (Palmer amaranth) is an indigeneous
+plant species from Southtern North America {[}1{]}. Despite being an
+edible plant used to feed animals and native Americans {[}2{]}, \emph{A.
+palmeri} has long being documented as a serious weed problem in the
+United States (US) cropping systems {[}3{]}. \emph{A. palmeri} produces
+thousands seeds and grows up to 2 m tall with many lateral branches
+{[}4{]}, which made a very competitive species with crops {[}5,6{]}. In
+the 1970s, \emph{A. palmeri} was considered the most sucessful weed of
+all dioecious \emph{Amaranthus} species as it become widespread in
+cotton fields of Southern United States, especially when picking was
+mechanized {[}7{]}. Current, \emph{A. palmeri} is the most economically
+damage weed species infesting corn, cotton and soybean fields of the
+Southern US {[}8,9{]}.
+
+The economical importance of \emph{A. palmeri} is related to herbicide
+resistance. \emph{A. palmeri} showed easily capacity to evolve
+resistance to herbicides. Factors related to intrinsic biology
+contributed for fast herbicide resistance evolution in \emph{A. palmeri}
+{[}9{]}. For instance, as an obligate outcrosser species, \emph{A.
+palmeri} warrant cross polination, increasing the chances of
+hybridization and exhange of herbicide resistance alleles amongst
+\emph{Amaranthus} species {[}10,11{]}. In addition, human-driven
+selection strongly contributed for the rise of \emph{A. palmeri} as a
+problematic weed. In the US cropping systems, no-till is a standard
+practice amongst growers, and \emph{A. palmeri} thived in no-till due to
+its small seed size, contributing for the rapid increase of \emph{A.
+palmeri} individuals in field crops. Also, herbicide resistance in
+\emph{A. palmeri} drastically increased when weed management strategy
+shift from multiple herbicide sites of action (SOA) to reliance on
+single post emergence herbicide (e.g., glyphosate) {[}12{]}. Thus far,
+\emph{A. palmeri} evolved resistance to eight herbicide SOA {[}13{]},
+which is a concern as weed management in conventional US cropping
+systems is herbicide dependent.
+
+The history of herbicide resistance evolution in \emph{A. palmeri} is a
+result of intense selection pressure with herbicides. In the 1990s, it
+was first documented resistance to mitosis- {[}14{]}, ALS- {[}15{]}, and
+PSII-inhibitor herbicides {[}13{]}. With the introduction of glyphosate
+resistant (GR) crops, post emergence of glyphosate was the most used
+tool for weed management in soybean, cotton and corn, resulting in
+evolution of GR-\emph{A. palmeri} {[}16{]}, especially in cotton fields
+of Southern US. \emph{A. palmeri} resistance to glyphosate spreaded
+across the Southern and Great Plains US through independent herbicide
+selection {[}{\textbf{???}}{]} and/or seed dispersal {[}17,18{]}. The
+spread of GR-\emph{A. palmeri} leaded to rethink the use of glyphosate
+and to diversify weed management strategies (e.g., other herbicide SOA).
+The use of 4-hydroxyphenylpyruvate dioxygenase (HPPD)-,
+protoporphyrinogen oxidase (PPO)- and long chain fatty acids (LCFA)-
+inhibitor herbicides increased in a attempt to manage GR-\emph{A.
+palmeri}. However, \emph{A. palmeri} biotypes also evolved resistance to
+HPPD-, PPO- and LCFA-inhibitor herbicides {[}13{]}. New technologies
+such as auxin-resistant crops may jeopardize with newest report of
+2,4-D-resistant \emph{A. palmeri} {[}13{]}. Moreover, it is on increase
+the number of \emph{A. palmeri} biotypes with multiple herbicide
+resistance {[}19,20{]}. Therefore, \emph{A. palmeri} herbicide
+resistance evolution is shrinking the chemical control options for weed
+management in corn, soybean and cotton of US cropping systems.
+
+In the US Midwest, corn and soybean growers strongly rely on EPSPS-
+(e.g., glyphosate) and PPO- (e.g., fomesafen) inhibitor herbicides for
+weed management. The recent migration of \emph{A. palmeri} into the US
+Midwest poses a serious threat to the sustainabily of crop production in
+that geography. \emph{A. palmeri} is overlapping territory (parts of US
+Midwest) with another problematic dioecious \emph{Amaranthus} species,
+waterhemp (\emph{Amaranthus tuberculatus}). Thus, prevention and/or
+rapid diagnosis of herbicide resistance in \emph{A. palmeri} has become
+a priority for agricultural stakeholders. The advances in high
+throughput genome sequencing methods are expediting the detection of
+herbicide resistance in \emph{A. palmeri} and other weed species. For
+instance, glyphosate resistance mechanisms in \emph{A. palmeri} is well
+studied. Most of \emph{A. palmeri} biotypes have evolved resistance to
+glyphosate due to EPSPS gene amplification {[}21,22{]}. Also, a
+\emph{PPO2} glycine 210 (\(\triangle\)G210) deletion accounts for most
+of PPO resistance in \emph{A. palmeri} {[}23,24{]}. Nonetheless, novel
+herbicide resistance mechanisms in \emph{A. palmeri} are still uncovered
+{[}21{]}. This is the case of recently documented two new mutation in
+the \emph{PPX2} enzyme in the R98 site of \emph{A. palmeri} {[}25{]}. In
+addition, no \emph{A. palmeri} biotypes with non-target site resistance
+mechanisms was confirmed for PPO and EPSPS-inhibitor herbicides.
+Therefore, using molecular assays might provide faster detection of
+known herbicide weed resistance mechanisms in \emph{A. palmeri}, but it
+fails to address herbicide resistance resulting from novel mechanisms.
+
+In the fall of 2017, growers of southwestern Nebraska reported failure
+to control \emph{A. palmeri} with EPSPS and PPO inhibitor herbicides
+(Werle R, personal communication), albeit, GR was found in only 6\% of
+\emph{A. palmeri} biotypes in southwestern Nebraska in 2014 {[}26{]}.
+Documenting herbicide weed resistance with a single method may be
+difficult due to underestimated herbicide resistance mechanisms.
+Therefore, the objective of this study was (1) to confirm EPSPS- and
+PPO-resistance screening 51 \emph{A. palmeri} biotypes from southwestern
+Nebraska and validate using greenhouse and molecular assay methods, and
+(2) to evaluate agronomic practices that may contribute for EPSPS- and
+PPO-resistance in \emph{A. palmeri} biotypes. We hypothesized the
+detection of resistant or susceptible \emph{A. palmeri} biotypes are
+alike using greenhouse and molecular assays.
+
+\hypertarget{material-and-methods}{%
+\section{Material and Methods}\label{material-and-methods}}
+
+\hypertarget{plant-material-and-growing-conditions}{%
+\subsection{Plant Material and Growing
+Conditions}\label{plant-material-and-growing-conditions}}
+
+The study was performed with 51 randomly selected \emph{A. palmeri}
+biotypes infesting cropping system areas across southwestern Nebraska.
+In August 2017, green leaf tissues were harvest in five actively growing
+plants from each of the 51 \emph{A. palmeri} biotypes, labeled and
+stored at -80 C to be used in molecular assays. Within the 51 \emph{A.
+palmeri} biotypes, 19 randomly selected biotypes seedheads of 10 plants
+were harvest in September 2017, cleaned and stored at 5 C until the
+onset of the greenhouse experiments ( ). Seeds were planted in 900
+cm\textsuperscript{-3} plastic trays containing potting-mix
+(Pro-Mix\textsuperscript \textregistered, Quakertown, PA, USA). Emerged
+seedlings (1 cm) were transplanted into 164 cm\textsuperscript{-3}
+cone-tainers. \emph{A. palmeri} plants were supplied with adequate water
+and kept under greenhouse conditions at XX/XX C day/night temperature
+with XX\% relative humidity. Artificial lighting was provided using
+metal halide lamps (600 Xmol m\textsuperscript{-2}
+s\textsuperscript{-1}) to ensure 15 h photoperiod.
+
+\begin{table}[!ht]  \small
+\begin{adjustwidth}{-2.5in}{0in} % Comment out/remove adjustwidth environment if table fits in text column.
+\centering
+\caption{
+{\bf Demographic list of \textit{Amaranthus palmeri} biotypes with respective Nebraska County location and agronomic practices}}
+\begin{tabular}{|l+c|c|c|c|c|c|c|c|}
+\hline
+{\bf Biotype}  & {\bf County} & {\bf Current crop} & {\bf Previsous crop} & {\bf Tillage} & {\bf Irrigation} & {\bf Weed distribution} & {\bf Weed density}\\ \thickhline
+Cha 1 & Chase & sorghum  & corn & tilled & rainfed & spread & Low\\ \hline
+Cha 2 & Chase   & corn & wheat  & strip-till & center pivot &   spread & high\\ \hline
+Cha 3   & Chase & corn &    fallow/cornstalks   & no-till   & centerpivot   & spread &  high\\ \hline
+Cha 4   & Chase & soybeans &    fallow/cornstalks   & no-till   & centerpivot   & spread &  low\\ \hline
+Cha 5   & Chase & corn &    corn    & strip-till    & rainfed & spread &    low\\ \hline
+Dun 1   & Dundy & wheatstubble &    other & tilled &    rainfed &   spread &    intermediate\\ \hline
+Dun 2   & Dundy & corn &    sorghum &   no-till &   rainfed &   spread &    intermediate\\ \hline
+Dun 3   & Dundy &   other   &    & tilled & centerpivot &   spread &    intermediate\\ \hline
+Dun 4   & Dundy & corn &    corn &  no-till &   centerpivot &   edges & high\\ \hline
+Dun 5   & Dundy &   soybeans &  corn &  tilled &    centerpivot &   spread &    low\\ \hline
+Fro 1   & Frontier &    corn &  sorghum & no-till   & rainfed & edges & high\\ \hline
+Fro 2   & Frontier &    soybeans &  corn &  tilled &    rainfed &   edges   & low\\ \hline
+Fro 3   & Frontier &    soybeans &  wheatstubble &  tilled &    centerpivot & spread &  high\\ \hline
+Fro 4   & Frontier &    sorghum  & fallow/cornstalks &  tilled &    rainfed  & edges &  intermediate\\ \hline
+Fro 5   & Frontier &    soybeans &  corn &  tilled &    centerpivot & edges & high\\ \hline
+Hay 1   & Hayes & sorghum & fallow/cornstalks    & tilled & centerpivot  & spread & intermediate\\ \hline
+Hay 2   & Hayes & corn &    wheatstubble &  no-till &   rainfed  & spread & intermediate\\ \hline
+Hay 3   & Hayes & sorghum    & wheatstubble & tilled &  centerpivot &   spread &    high\\ \hline
+Hay 4   & Hayes & corn &    wheatstubble &  no-till &   rainfed  & edges &  intermediate\\ \hline
+Hay 5   & Hayes & sorghum & wheatstubble &  no-till &   rainfed &   spread &    high\\ \hline
+Hit 1   & Hitchcock & corn &    fallow/cornstalks & tilled &    centerpivot &   edges & low\\ \hline
+Hit 2   & Hitchcock & soybeans &    corn &  no-till &   rainfed &   spread &    low\\ \hline
+Hit 3   & Hitchcock & corn &    corn &  no-till & rainfed   & edges & high\\ \hline
+Hit 4 & Hitchcock   & sorghum & wheatstubble &  no-till &   rainfed &   edges & high\\ \hline
+Hit 5   & Hitchcock & soybeans &    corn    & no-till & centerpivot &   edges   & high\\ \hline
+Kei 1   & Keith & other &   fallow/cornstalks & tilled &    centerpivot &   spread &    high\\ \hline
+Kei 2   & Keith & corn &    fallow/cornstalks & no-till &   centerpivot  & spread & intermediate\\ \hline
+Kei 3   & Keith & soybeans &    &   tilled &    furrow &    spread &    high\\ \hline
+Kei 4   & Keith & soybeans &      & no-till &   centerpivot  & spread & low\\ \hline
+Kei 5   & Keith & other &   corn &  tilled  & centerpivot   & spread &  low\\ \hline
+Kei 6   & Keith & soybeans &    &   no-till &   centerpivot &   spread &    high\\ \hline
+Lin 1   & Lincoln & corn &  other & no-till & centerpivot & spread &    high\\ \hline
+Lin 2   & Lincoln     & soybeans &  corn &  tilled &    centerpivot &   spread  & low\\ \hline
+Lin 3   & Lincoln   & soybeans &    &   tilled &    centerpivot &   spread &    low\\ \hline
+Lin 4   & Lincoln   & corn &    &   tilled &    furrow &    spread &    high\\ \hline
+Lin 5   & Lincoln   & corn &    wheatstubble     & no-till &    rainfed &   spread &    high\\ \hline
+Log 1   & Logan  & soybeans &   fallow/cornstalks & tilled &    centerpivot &   edges & intermediate\\ \hline
+Log 2   & Logan  & other &  fallow/cornstalks    & no-till &    rainfed  & spread & intermediate\\ \hline
+Log 3   & Logan &   soybeans &  corn &  tilled &    centerpivot &   edges & high\\ \hline
+Log 4   & Logan &   soybeans &  corn &  tilled &    rainfed  & spread & low\\ \hline
+Per 1   & Perkins & other & sorghum &   no-till &   rainfed & spread &  low\\ \hline
+Per 2   & Perkins & soybeans &  corn &  strip-till &    centerpivot &   spread &    intermediate\\ \hline
+Per 3   & Perkins & fallow/cornstalks & corn &  tilled &    rainfed &   spread &    high\\ \hline
+Per 4   & Perkins & soybeans &  corn &  no-till &   centerpivot &   spread &    high\\ \hline
+Per 5   & Perkins & other    & fallow/cornstalks &  no-till &   centerpivot &   spread &    intermediate\\ \hline
+Per 6   & Perkins   & other & fallow/cornstalks &   no-till  & centerpivot &    spread &    high\\ \hline
+Red 1   & Red Willow &  soybeans &  corn &  no-till & centerpivot & edges & high\\ \hline
+Red 2   & Red Willow &  corn &  corn &  tilled &    centerpivot &   edges & high \\ \hline
+Red 3   & Red Willow &  wheatstubble &  wheat    & no-till &    rainfed &   spread &    intermediate\\ \hline
+Red 4   & Red Willow &  corn &  corn &  no-till &   rainfed & spread &  low\\ \hline
+Red 5   & Red Willow &  fallow/cornstalks & corn    & no-till & rainfed &   spread &    high\\ \hline
+\end{tabular}
+\begin{flushleft}
+\end{flushleft}
+\label{table1}
+\end{adjustwidth}
+\end{table}
+
+\hypertarget{herbicide-resistance-mechanism-molecular-assays}{%
+\section{Herbicide resistance mechanism (Molecular)
+assays}\label{herbicide-resistance-mechanism-molecular-assays}}
+
+Genomic DNA extraction of leaf tissue samples from 51 \emph{A. palmeri}
+biotypes (five plants per biotype) were performed using a modified CTAB
+method {[}27{]}. DNA quality and quantity were checked on a Nanodrop
+1000 (Thermo Fisher Scientific, Inc., Waltham, MA, USA) and any samples
+with low DNA yields or high protein:DNA ratios were discarded and
+re-extracted. Previously described TaqMan qPCR assays were used to check
+for the presence of known PPO-inhibitor resistance mutations on the
+\emph{PPX2} enzyme, including the glycine 210 deletion {[}28{]} and the
+R128G/M mutations {[}29{]}. Samples were also tested for increased
+numbers of EPSPS genomic copies using a previously described SYBR qPCR
+approach {[}30{]} in which EPSPS copy numbers were estimated based on
+comparison with a single-copy reference gene (CPS, carbamoylphosphate
+synthetase).
+
+\hypertarget{whole-plant-greenhouse-assay}{%
+\section{Whole-plant (Greenhouse)
+Assay}\label{whole-plant-greenhouse-assay}}
+
+The research was conducted under greenhouse conditions in 2018 and 2019
+at the University of Wisconsin-Madison to evaluate the sensitivity of 19
+\emph{A. palmeri} biotypes from southwestern Nebraska to EPSPS- and
+PPO-inhibitor herbicides.
+
+The experiments were in a complete randomized design and the
+experimental unit was a cone-tainer with a single \emph{A. palmeri}
+seedling. The study was arranged in a factorial design with 19 \emph{A.
+palmeri} biotypes and three herbicides with 20 replications and repeated
+twice. The randomly selected 19 \emph{A. palmeri} biotypes were Cha 3,
+Dun 3, Dun 4, Dun 5, Hay 1, Hay 3, Hay 4, Kei 2, Kei 3, Kei 5, Kei 6,
+Log 1, Log 2, Log 4, Per 2, Per 4, Red 2, Red 4, Red 5 (Table 1). The
+herbicides were glyphosate (Round up
+PowerMax\textsuperscript \textregistered, Bayer Crop Science, Saint
+Louis, MO, USA) applied at 870 g ae ha\textsuperscript{-1} plus 2040 g
+ha\textsuperscript{-1} ammonium sulfate (XXX); fomesafen
+(Flextar\textsuperscript \textregistered, Syngenta Crop Protection,
+Greensboro, NC, USA) applied at 206 g ai ha\textsuperscript{-1} plus 0.5
+L ha\textsuperscript{-1} of non ionic surfactant
+(Induce\textsuperscript \textregistered, Helena Agri-Enterprises,
+Collierville, TN, USA); and lactofen
+(Cobra\textsuperscript \textregistered, Valent USA LLC Agricultural
+Products, Walnut Creek, CA, USA) applied at 280 g ai
+ha\textsuperscript{-1} plus 0.5 L ha\textsuperscript{-1} of non ionic
+surfactant.
+
+Herbicide treatment were applied to 8-10 cm tall \emph{A. palmeri}
+seedlings with a single-tip chamber sprayer (DeVries Manufacturing
+Corp., Hollandale, MN, USA). The sprayer had an 8001 E nozzle (XXXXXXXX)
+calibrated to deliver 140 L ha\textsuperscript{-1} spray volume at XXX
+kPa at speed of 2.3 km h\textsuperscript{-1}. \emph{A. palmeri} biotypes
+were visually assessed at 21 days after treatment (DAT) as dead or
+alive. Plants were considered alive when proeminent green tissue was
+observed in growing plants but dead plants were complete necrotic.
+
+\hypertarget{statistical-analysis}{%
+\subsection{Statistical Analysis}\label{statistical-analysis}}
+
+\hypertarget{molecular-and-greenhouse-validation-of-epsps-and-ppo-resistance-in-a.-palmeri}{%
+\subsubsection{\texorpdfstring{Molecular and greenhouse validation of
+EPSPS and PPO resistance in \emph{A.
+palmeri}}{Molecular and greenhouse validation of EPSPS and PPO resistance in A. palmeri}}\label{molecular-and-greenhouse-validation-of-epsps-and-ppo-resistance-in-a.-palmeri}}
+
+The number of EPSPS- or PPO-resistant \emph{A. palmeri} individuals in
+the molecular assays was converted into \% of resistant compared to the
+total number of \emph{A. palmeri} of each biotype screened for herbicide
+resistance:
+
+Equation 1: \[M=\frac{S}{T} * 100 \]
+
+where \emph{M} is the \% EPSPS- or PPO-resistant \emph{A. palmeri}
+individuals, \emph{S} is the total number of \emph{A. palmeri}
+individuals positive for herbicide resistance and \emph{T} is the total
+number of \emph{A. palmeri} individuals screened for herbicide
+resistance in molecular assays. Fomesafen and lactofen are PPO-inhibitor
+herbicides; thus, \emph{M} is similar for both. \emph{A. palmeri}
+individuals with \textgreater{} 2 EPSPS copy number were considered
+EPSPS-resistant.
+
+The number of alive \emph{A. palmeri} individuals in the greenhouse
+assay were converted into \% of alive seedlings compared to the total
+number of \emph{A. palmeri} individuals of each biotype treated with
+herbicide (glyphosate, fomesafen or lactofen):
+
+Equation 2: \[G=\frac{X}{T} * 100 \]
+
+Where \emph{G} is the \% alive \emph{A. palmeri} individuals after
+herbicide treatment in greenhouse assay, \emph{X} is the total number of
+alive \emph{A. palmeri} individuals 21 DAT and \emph{T} is the total
+number of \emph{A. palmeri} individuals trated with herbicide. Data of
+two runs are combined due to the EPSPS- and PPO-resistance segregating
+nature \emph{A. palmeri} biotypes used in this study.
+
+The correlation between \emph{R} and \emph{G} for each herbicide
+(glyphosate, fomesafen and lactofen) and between the two PPO inhibitor
+herbicides, fomesafen and lactofen, were performed with Pearson's
+analysis using \emph{cor.test} function of R statistical software. The
+correlation value varies from -1 and 1, where 1 is the total positive
+correlation and -1 the total negative correlation and 0 no linear
+correlation. The Pearson's analysis test the hypothesis of correlation
+between two variables is not equal to 0. If \emph{P}-value
+\textgreater{} 0.05, there is no correlation or no significant
+relationship between two variables (correlation equals 0). For meeting
+the correlation criteria (e.g., two variables), it was used only
+\emph{A. palmeri} biotypes treated with herbicide in the greenhouse
+assay.
+
+\hypertarget{random-forest}{%
+\subsubsection{Random Forest}\label{random-forest}}
+
+Random Forest is a powerful ensembling machine learning algorithm which
+combine multiple generated decision trees. The Random Forest procedured
+is described in deep by Breiman {[}31{]} and Biau {[}32{]}. Also, Random
+Forest has been used to described the incidence of crop disease {[}33{]}
+and glyphosate resistance in \emph{Amaranthus} spp. {[}26{]}. In short,
+
+The random forest analysis consist in two parameters, including
+\emph{ntree}, which is the number of regression trees and \emph{mtry},
+number of different predictors tested ar each node.
+
+The random forest analysis was performed with \emph{randomForest}
+package of R statistical software to describe the influence of EPSPS
+gene amplification, location (county), agronomic practices (e.g.,
+tillage, irrigation, current and previous cropping-system), and weed
+demographics (e.g., density and distribution) on EPSPS-resistrance in
+\emph{A. palmeri} in southwestern Nebraska (Table 1). The
+EPSPS-resistance was classified as Yes (\textgreater{} 3 EPSPS copy
+number) and No.~\emph{A. palmeri} biotypes with at least one individual
+with \textgreater{} 3 EPSPS copy number was considered resistant (Table
+2). The \emph{ntree} parameter was set to 500, whereas \emph{mtry} was
+set to 2.
+
+\hypertarget{results}{%
+\section{Results}\label{results}}
+
+\hypertarget{molecular-and-greenhouse-validation-of-epsps-and-ppo-resistance-in-a.-palmeri-1}{%
+\subsection{\texorpdfstring{Molecular and greenhouse validation of EPSPS
+and PPO resistance in \emph{A.
+palmeri}}{Molecular and greenhouse validation of EPSPS and PPO resistance in A. palmeri}}\label{molecular-and-greenhouse-validation-of-epsps-and-ppo-resistance-in-a.-palmeri-1}}
+
+Correlation (0.83; \emph{P}-value=0.00) between molecular (\emph{M}) and
+greenhouse (\emph{G}) assays was found when \emph{A. palmeri} biotypes
+were tested for EPSPS resistance (Figure 1 and Table 3). Seven \emph{A.
+palmeri} biotypes tested negative glyphosate resistance (\emph{M}=0\%)
+in the molecular assay but three biotypes showed low (18\%, Hay 1),
+moderate (35\%, Hay 4) and high (75\%, Red 5) survival after glyphosate
+treatment (Figure 1). The other four biotypes (Dun 3, Hay 3, Log 2 and
+Kei 3) that tested negative (\emph{M}=0\%) for EPSPS resistance in the
+molecular assay showed less than 15\% glyphosate survival (\emph{G}).
+
+Fomesafen and lactofen provided less than 40\% survival of \emph{A.
+palmeri} biotypes in the greenhouse assays (Figure 2). The correlation
+between \emph{M} and \emph{G} for PPO resistance in \emph{A. palmeri}
+biotypes were controversial (Table 3). While a high \emph{M} and
+\emph{G} correlation (0.52; \emph{P}-value=0.02) was observed for
+fomesafen (Figure 2A), no \emph{M} and \emph{G} correlation (-0.05;
+\emph{P}-value=0.84) was found for lactofen (Figure 2B). \emph{A.
+palmeri} biotype Dun 5, Kei 2, Kei 5 and Log 4 are segregating for PPO
+resistance in molecular assay (\emph{M}) but individuals in these
+biotypes were sensitive to lactofen treatment (\emph{G}=0\%, Figure 2B).
+However, these biotypes were less sensitive to fomesafen. For example,
+nearly 30\% of individuals pertaiting to Log 4 biotype survived
+fomesafen treatment (Figure 2A). In contrast, \emph{A. palmeri} biotypes
+Cha 3, Kei 6, Per 2 and Red 5 tested negative for molecular
+PPO-resistance (M=0\%) but over 15\% of biotypes survived both fomesafen
+or lactofen treatment. Also, \emph{A. palmeri} biotypes Kei 3, Per 4 and
+Dun 4 showed 38, 25 and 18\% survival after fomesafen treatment but less
+than 15\% for lactofen. Correlation between fomesafen and lactofen
+greenhouse assay (\emph{G}) did not occurred (0.23; \emph{P}-value=0.34;
+Table 3).
+
+According to the molecular assay, nearly 70\% of \emph{A. palmeri}
+biotypes from southwestern Nebraska is resistant to PPO-inhibiting
+herbicides. In the 34 PPO-resistant \emph{A. palmeri} biotypes, 32
+contain the \(\triangle\)G210 deletion in the \emph{PPX2} gene, and the
+R128M/G endows PPO resistance in two \emph{A. palmeri} biotypes. Nearly
+14\% of \emph{A. palmeri} biotypes have all individuals resistant, 53\%
+are segregating for resistance and 33\% are susceptible to
+PPO-inhibiting herbicides. In addition, based on EPSPS gene
+amplification, our study showed that 10\% of \emph{A. palmeri} biotypes
+have all individuals resistant to glyphosate, 53\% segragating for
+resistance and 37\% susceptible to glyphosate (Table 2). Multiple
+resistance (EPSPS- and PPO-inhibiting herbicide) is presented in 41\% of
+\emph{A. palmeri} biotypes of southwestern Nebraska (Table 2). While 6,
+11 and 13 \emph{A. palmeri} biotypes are susceptible, EPSPS-, and
+PPO-inhibiting herbicide resistance only, respectively (Figure 3).
+
+\begin{table}[!ht]  \small
+\begin{adjustwidth}{-2.5in}{0in} % Comment out/remove adjustwidth environment if table fits in text column.
+\centering
+\caption{
+{\bf List of *A. palmeri* biotypes with EPSPS gene amplification and PPO resistance in molecular assays.}}
+\begin{tabular}{|l+c|c|c|p{1.8cm}|c|p{1.8cm}|c|}
+\thickhline
+\multicolumn{1}{|c|}{\bf Biotype} & \multicolumn{4}{c}{\bf EPSPS gene amplification}  & \multicolumn{2}{|c|}{\bf PPO resistance}  & \multicolumn{1}{c|}{\bf \# Plants}\\ 
+\cline{2-5}\cline{6-7}
+{\bf }  & {\bf Average} & {\bf Max} &  {\bf Min} & {\bf \% EPSPS resistant plants} & {\bf Mutation} & {\bf \% PPO resistant plants} & {\bf }\\ \thickhline
+Cha 1 & 7 & 23 & 1 & 25 &  & 0 & 4\\ \hline
+Cha 2 & 1 & 3 & 1   & 20 &  & 0 & 5\\ \hline
+Cha 3   & 9 & 15 & 1 & 80   &  & 0 & 5\\ \hline
+Cha 4   & 10 & 26 & 1   & 40 & R128 het & 20 & 5\\ \hline
+Cha 5   & 1 & 1 & 1 & 0 & $\triangle$G210 & 33 & 3\\ \hline
+Dun 1   & 5 & 18 & 1    & 60 & $\triangle$G210 & 20 & 5\\ \hline
+Dun 2   & 1 & 1 & 1 & 0 & $\triangle$G210 & 33 & 3\\ \hline
+Dun 3   & 1 & 1 & 1 & 0 & $\triangle$G210 & 67 & 3\\ \hline
+Dun 4   & 6 & 10 & 4 & 100 &  & 0 & 5\\ \hline
+Dun 5   & 24 & 51 & 4 & 100 &   $\triangle$G210 & 20 & 5\\ \hline
+Fro 1   & 6 &   10 & 3 & 100 & $\triangle$G210 & 33 & 3\\ \hline
+Fro 2   & 3 & 6 & 1 & 33 & $\triangle$G210 & 100 & 3\\ \hline
+Fro 3   & 5 & 11 & 1 & 33 & $\triangle$G210 & 67 & 3 \\ \hline
+Fro 4   & 1 & 1 & 1 & 0 &   $\triangle$G210 & 100 & 3\\ \hline
+Fro 5   & 1 & 2 & 1 & 0 &    & 0 & 5\\ \hline
+Hay 1   & 1 & 1 & 1 & 0 & $\triangle$G210 & 100 & 3\\ \hline
+Hay 2   & 2 & 3 & 1 & 33 & $\triangle$G210  & 33 & 3\\ \hline
+Hay 3   & 2 & 2 & 1 & 0 & $\triangle$G210 & 100 & 3\\ \hline
+Hay 4   & 1 & 1 & 1 & 0 &   $\triangle$G210 & 67 & 3\\ \hline
+Hay 5   & 1 & 1 & 1 & 0 &  & 0 & 5\\ \hline
+Hit 1   & 5 & 20 & 1 & 20 &  & 0 & 5\\ \hline
+Hit 2   & 21    & 57 & 3 & 67 &  & 0 & 3\\ \hline
+Hit 3   & 3 & 6 & 1 & 33 & $\triangle$G210 & 33 & 3\\ \hline
+Hit 4 & 2   & 3 & 1 & 25 &  & 0 & 4\\ \hline
+Hit 5   & 1 & 1 & 1 & 0 & $\triangle$G210 & 33 & 3\\ \hline
+Kei 1   & 13    & 38 & 1 & 33 & $\triangle$G210 & 33 & 3\\ \hline
+Kei 2   & 12    & 19 & 7 & 100 & $\triangle$G210 & 33 & 3\\ \hline
+Kei 3   & 1 & 1 & 1 & 0 &  & 0 & 5\\ \hline
+Kei 4   & 8 & 18 & 1 & 60 &  & 0 &  5\\ \hline
+Kei 5   & 5 & 8 & 1 & 67 & $\triangle$G210 & 67 & 3\\ \hline
+Kei 6   & 17    & 40 & 2 & 80 &  & 0 & 5\\ \hline
+Lin 1   & 1 & 2 & 1 & 0 & $\triangle$G210 & 100 & 3\\ \hline
+Lin 2   & 5 & 6 & 3 & 100 & $\triangle$G210 & 67 & 3\\ \hline
+Lin 3   & 4 & 6 & 1 & 67 & $\triangle$G210 & 100 & 3\\ \hline
+Lin 4   & 3 & 6 & 1 & 33 & $\triangle$G210 & 100 & 3\\ \hline
+Lin 5   & 1 & 1 & 1 & 0 &  & 0 & 5\\ \hline
+Log 1   & 34    & 57 & 1 & 67 & $\triangle$G210 & 33 &  3\\ \hline
+Log 2 & 1   & 1 & 1 & 0 &  & 0 & 3\\ \hline
+Log 3   & 4 & 7 & 1 & 67 & $\triangle$G210 & 33 & 3\\ \hline
+Log 4   & 3 & 6 & 1 & 67 & $\triangle$G210 & 67 & 3\\ \hline
+Per 1   & 1 & 1 & 1 & 0 & $\triangle$G210 & 33 & 3\\ \hline
+Per 2   & 32    & 59 & 1 & 80 &  & 0 & 5\\ \hline
+Per 3   & 1 & 1 & 1 & 0 & $\triangle$G210 & 33 & 3\\ \hline
+Per 4   & 10    & 22 & 1 & 67 &  & 0 &  3\\ \hline
+Per 5   & 1 & 2 & 1 & 0 & $\triangle$G210 & 33 &  3\\ \hline
+Per 6   & 1 & 2 & 1 & 0 & $\triangle$G210 & 33 &  3\\ \hline
+Red 1   & 2 & 3 & 1 & 33 & $\triangle$G210 & 33 &  3\\ \hline
+Red 2   & 2 & 3 & 1 & 33 & $\triangle$G210 & 67 &  3\\ \hline
+Red 3   & 2 & 6 & 1 & 20 & R128 het & 20 &  5\\ \hline
+Red 4   & 2 & 5 & 1 & 33 & $\triangle$G210 & 67 &  3\\ \hline
+Red 5   & 1 & 2 & 1 & 0 &  & 0 &  5\\ \hline
+\end{tabular}
+\begin{flushleft}
+\end{flushleft}
+\label{table1}
+\end{adjustwidth}
+\end{table}
+
+\hypertarget{random-forest-1}{%
+\subsection{Random Forest}\label{random-forest-1}}
+
+The OBB rate of the random forest is 13.33\%, meaning that
+\textgreater{} 86\% of OOB samples were correctly classified by the
+model. The random forest analysis ranked (high to low) EPSPS gene
+amplification, county, current crop, previous crop, \emph{A. palmeri}
+density, tillafe, irrigation, \emph{A. palmeri} distribution and
+PPO-resistance the factors influencing the presence of EPSPS-resistance
+in \emph{A. palmeri} of southwestern Nebraska (Figure X). EPSPS gene
+amplification confers EPSPS-resistance in \emph{A. palmeri}, which was
+expected to influence EPSPS-resistance. County was the second most
+important factor for the presence of EPSPS-resistant \emph{A. palmeri}.
+The presence of EPSPS resistance in \emph{A. palmeri} was found in at
+least one biotype of all surveyed counties from southwestern Nebraska
+(Table 2). The lowest number of EPSPS-resistant biotypes was found at
+Hayes (Hay) and Perkins (Per) County with 1 (out 5) and 2 (out 6),
+respectively. Also, current and previous crop stronly influenced the
+presence of EPSPS-resistance in \emph{A. palmeri} biotypes. Five
+\emph{A. palmeri} biotypes (Dun 4, Dun 5, Fro 1, Kei 2, Lin 2) have
+100\% of resistant individuals was found in crop rotation based on corn
+and soybeans except to a corn-sorghum rotation (Figure 4A). In contrast,
+EPSPS gene amplification did not occured in 19 \emph{A. palmeri}
+biotypes, which only two biotypes found in corn and soybean rotation
+(Fro 5 and Hit 5; Table 2). The majority of EPSPS susceptible \emph{A.
+palmeri} biotypes were found in rotations of corn, soybean, sorghum,
+wheat, fallow and other crops (e.g., alfalfa, dry beans and field peas;
+Figure 4A). However, nearly nearly 70\% of EPSPS susceptible \emph{A.
+palmeri} biotypes are resistant to PPO-inhibiting herbicides (Table 2).
+Similar trend of crop diversity is observed for PPO-resistance in
+\emph{A. palmeri} but no presence of corn-soybean rotation was found in
+locations with all PPO-resistant individuals (Figure 4B). Random forest
+was performed to EPSPS-resistance only due to the robustness of EPSPS
+gene amplification to detect resistance in \emph{A. palmeri}, which is
+different from our results with PPO-resistance.
+
+\hypertarget{discussion}{%
+\section{Discussion}\label{discussion}}
+
+The high correlation between \emph{M} and \emph{G} demonstrate that most
+of GR \emph{A. palmeri} biotypes of southwestern Nebraska is due to
+EPSPS gene amplification. However, we do not fully accept our hypothesis
+of GR validation in \emph{M} and \emph{G} assays as a \emph{A. palmeri}
+biotype (Red 5) showed no EPSPS gene amplification but survived (75\%)
+glyphosate application (870 g ae ha\textsuperscript{-1}). \emph{A.
+palmeri} was the first identified weed to evolve glyphosate resistance
+via EPSPS gene amplification {[}34{]}, fallowed by \emph{Kochia
+scoparia}, \emph{Amaranthus tuberculatus}, \emph{Lolium perenne ssp.
+multiflorum}, \emph{Bromus diandrus}, \emph{Eleusine indica},
+\emph{Chloris truncata} and \emph{Amaranthus hybridus} {[}35,36{]}. The
+EPSPS gene amplification mechanism is widely spread in \emph{A. palmeri}
+{[}21,35{]}, albeid other EPSPS resistance mechanism has arisen,
+incluging \emph{Pro106} mutation and reduced glyphosate
+absorption/translocation {[}35,37{]}. It remains unknown whether the
+\emph{A. palmeri} biotypes (e.g., Red 5) have low level resistance to
+glyphosate (slight above 1-fold rate) or a different (non-EPSPS gene
+amplification) resistance mechanisms, which warrant further
+investigations. A study with \emph{K. scoparia} showed a positive
+correlation between the level of glyphosate resistance and number of
+EPSPS copy number {[}38{]}; therefore, supporting the hypothesis of
+novel or non-EPSPS gene amplification mechanisms in a \emph{A. palmeri}
+biotype from southwestern Nebraska.
+
+The EPSPS gene amplification is an important evolutionary mechanism
+enabling weeds and other pests{[}39,40{]} to evolve resistance to
+pesticides. Research on EPSPS gene amplification molecular basis in weed
+species is underway but much is need to unveil this complex adaptative
+trait. The genetics of EPSPS gene aplification in weed species showed to
+fallow Mendelian (\emph{K. scoparia}){[}41{]} and non-Mendelian
+(\emph{A. palmeri}{[}42{]} and \emph{B. diandrus}{[}43{]}) inheritance
+pattern. Over 100 EPSPS copies has been documented in \emph{A. palmeri}
+but maximum of 10 in \emph{K. scoparia} {[}44,45{]}. The EPSPS gene copy
+variation in \emph{A.palmeri} is likely a result of the extrachromosomal
+ciricular DNA transmitted to the next generation by tethering to mitotic
+and meiotic chemosomes (eccDNA) {[}46{]}. While in \emph{K. scoparia}
+EPSPS copies are arranged in tandem duplication in a single locus
+{[}36{]}. Segregation for EPSPS copy number in \emph{A. palmeri}
+families (F1 and F2) is transgressive, with individuals varying EPSPS
+amplification levels even with clonal plants {[}42{]}. Transgressive
+inheritance segregation for EPSPS in \emph{A. palmeri} might explain the
+variable EPSPS copy number in individuals within biotypes screened from
+southwestern Nebraska (Table 2). The genetics of EPSPS gene
+amplification coupled with dioecious nature in \emph{A. palmeri} are
+valuable traits that increase the genetic complexity and adaptation of
+EPSPS-resistance \emph{A. palmeri} in cropping systems.
+
+According to the \emph{M} assay, most of \emph{A. palmeri} biotypes from
+southwestern Nebraska also resist to PPO-inhibiting herbicides. The
+mechanism of resistance is due to \(\triangle\)G210 deletion in the
+\emph{PPX2} gene or R128M/G mutation (Table 2). Evidence showed that
+mutated PPO enzyme caused reduced affinity to several PPO-inhibiting
+herbicides in \emph{A. palmeri} {[}19{]}. However, the application of
+fomesafen (206 g ai ha\textsuperscript{-1}) and lactofen (280 g ai
+ha\textsuperscript{-1}) provided high mortality in \emph{A. palmeri}
+biotypes from southwestern Nebraska, including \emph{A. palmeri}
+biotypes with 100\% individuals with \(\triangle\)G210 deletion. High
+\emph{A. palmeri} mortality suggests that biotypes are segregating for
+PPO resistance at a low level. Still, there is correlation between
+\emph{M} and \emph{G} for fomesafen but not lactofen, suggesting that
+lactofen provided higher control in \emph{A. palmeri} than fomesafen.
+The validation for PPO resistance presented here is limited by the
+segregation nature in \emph{A. palmeri}. Therefore, our hypothesis is
+rejected. Authors believe that individuals sampling number for \emph{M}
+was low for the objective of validation or herbicide rate was high
+resulting in high plant mortality. Moreover, greenhouse conditions was
+ideal and plant had no stress during application of PPO herbicides,
+which might be different from plants under field conditions of
+southwestern Nebraska.
+
+Biotypes of \emph{A. palmeri} have been reported resistant to
+HPPD-{[}47{]}, PSII-{[}47{]} and EPSPS-inhibiting herbicides {[}48{]} in
+Nebraska. In 2014, a survey with \emph{Amaranthus} spp. in southwestern
+Nebraska showed a widespread in EPSPS-resistant \emph{A. tuberculatus}
+(81\%) but not in \emph{A. palmeri} (6\%) {[}26{]}. Our suvey showed an
+significant high number of EPSPS-resistant/segregating \emph{A. palmeri}
+biotypes in southwestern Nebraska (\textgreater{}60\%). The rapid
+evolution of EPSPS-resistant \emph{A. palmeri} in southwestern Nebraska
+raised questions whether biotypes were introduced via seed/gene flow or
+occured independently. Although we did not test the previous hyphoteses,
+the random forest provided a light of evidence on EPSPS resistance
+evolution in \emph{A. palmeri}. The random forest analysis suggests that
+EPSPS gene amplification, county, current and previous crop are the top
+factors influencing GR \emph{A. palmeri} in southwestern Nebraska. The
+EPSPS gene amplification factor was included to test the robustness of
+random forest analysis, as it is the main mechanism of glyphosate
+resistance in \emph{A. palmeri}. The County influence on
+EPSPS-resistance in \emph{A. palmeri} highlighed that practices for
+delaying EPSPS-resistance evolution encopass the landscape level. It is
+likely that growers with common goals may implement best weed management
+tactics to delay EPSPS resistance evolution and prevent seed/gene flow
+of herbicide resistant weeds. Nontheless, it is striking that
+PPO-resistance is common in Counties with low/no EPSPS-resistance. For
+instance, most EPSPS-suceptible \emph{A. palmeri} was found in Hayes
+County in areas of sorghum or corn in rotation with wheat (Table 1),
+which are crops less glyphosate dependent. Notwithstanding the weed
+management at the landscape level is encouraged, our result suggests
+that growers were not implementing good management practices but using
+less EPSPS herbicide.
+
+The high presence of \emph{A. palmeri} with all individuals resistant to
+EPSPS in less diverse cropping systems (e.g., corn-soybean rotation)
+suggests the influence of repeated glyphosate application on \emph{A.
+palmeri} evolution to EPSPS-resistance. The \emph{A. palmeri} biotypes
+(segregating or susceptible) is reduced in rotation with diversified
+crops (Figure 4A). Most likely due to rotations with glyphosate
+sensitive crops (no/less glyphosate use). Crop diversity exerts a
+different selection pressure on weed communities, such as canopy closure
+timing, seeding and harvest date, which aid on reducing the dominance of
+single weed species {[}49{]}. Nonetheless, it is likely that Nebraska
+growers still rely in other herbicide site of action for weed
+management, as most of EPSPS-susceptible \emph{A. palmeri} biotypes are
+resistant to PPO-inhibiting herbicides (e.g., fomesafen). Similarly to
+EPSPS-resistance, the PPO-resistant \emph{A. palmeri} was also found in
+less diverse crop rotation (Figure 4B). Despite not having the herbicide
+application records for the surveyed area, it is possible that
+overreliance on single or a few herbicide SOA in areas with low crop
+diversity. In addition. it has been shown that herbicide mixture
+(multiple SOA) is more effective for delaying herbicide weed resistance
+than herbicide rotation (single SOA) {[}50,51{]}. Thus, crop diversity
+without herbicide mixture is not enough to reduce the risks of herbicide
+resistance evolution in weed species.
+
+An emerging concern is stacking genes for multiple herbicide resistance
+in a single biotype of \emph{Amaranthus} species. It is reported five
+and six-way herbicide resistance in a \emph{A. tuberculatus} biotype
+from Illinois {[}52{]} and Missouri {[}53{]}, respectively. The 19
+\emph{A. palmeri} biotypes used in the whole plant bioassay also tested
+positive (\textgreater{}80\% of individuals) to ALS inhibiting herbicide
+(imazethapyr {[}70 g ai ha\textsuperscript{-1}{]}; data not shown).
+Moreover, near half of \emph{A. palmeri} biotypes posses multiple
+herbicide resistance (EPSPS and PPO; Figure 3). Thus, it is likely two
+and three-way resistance in most \emph{A. palmeri} biotypes from
+southwestern Nebraska. The random forest analysis suggested no/low
+influence of PPO- on EPSPS-resistance, which is likely that EPSPS gene
+amplification and PPO-resistance (\(\triangle\)G210 or R128M/G) are not
+linked. Cosegregation of distinct SOA resistance mechanism is unlikely
+but not impossible as it is shown that ALS- and PPO-resistance
+(\emph{PPX2}) are genetically linked in a \emph{A. tuberculatus}
+biotype. The evidence of no cosegragation between PPO- on EPSPS gene
+amplification is strong with the recent discover of the role of eccDNA
+on EPSPS gene copy number, which is randomly inherited to \emph{A.
+palmeri} progenies. Nonetheless, genetic elucidation of multiple
+resistance mechanisms are needed to understand the rapid adaptative
+nature of \emph{A. palmeri}.
+
+Herbicide resistance evolution has always been a concern for weed
+management since the introduction of synthetic herbicides {[}54{]}. The
+integrated weed management practices, including crop and herbicide
+diversity are recommended for delaying herbicide weed resistance
+{[}55{]}. However, throughout the decades, crop diversity was
+drastically reduced in Nebraska and beyond {[}56{]}. Also, the
+introduction of glyphosate-resistant crops (e.g., corn and soybean)
+reduced the herbicide diversity for for weed control {[}54{]}. For
+example, corn-soybean, the main crop rotation in the US Midwest is based
+on glyphosate weed management {[}57{]}. With the success of
+glyphosate-resistant crops, new technologies for chemical weed
+management has been based on new herbicide-resistant crops rather than
+new herbicide SOA {[}58{]}. Herbicides once use in corn or soybean only,
+it is now being spraying on both crops due to herbicide-tolerant crops.
+For example, 2,4-D, dicamba, isoxaflutole once used only in corn, it is
+now use for weed management in 2,4-D-resistant, dicamba-resistant and
+isoxaflutole-resistant soybeans. Therefore, the herbicide selection
+pressure on weed communities tend to increase with the current weed
+management approach.
+
+Herein we demonstrated the widespread EPSPS- and PPO-resistant \emph{A.
+palmeri} in southwestern Nebraska. The EPSPS gene amplification is
+presented in most \emph{A. palmeri} biotypes from Nebraska, which allow
+the use of molecular assays for faster detection of EPSPS-resistance.
+Novel or non-EPSPS resistance mechanism is likely to have in few
+\emph{A. palmeri} biotypes. The PPO-resitance is also present but at low
+level in most of \emph{A. palmeri} biotypes with \(\triangle\)G210
+deletion in the \emph{PPX2} gene or R128M/G mutation. High mortality in
+\emph{A. palmeri} individuals treated with fomesafen and lactofen
+warrant the use of both molecular and whole-plant bioassay for testing
+PPO-resistance. The EPSPS- or PPO-resistant \emph{A. palmeri} biotypes
+was found in areas of low crop diversity, suggesting resistance
+evolution due to high selection pressure of EPSPS- and PPO-inhibiting
+herbicides. Great progress has been done for understanding the \emph{A.
+palmeri} molecular basis and much research are underway but the
+continuous spread of herbicide resistance in \emph{A. palmeri} biotypes
+to new geographies is evident. Thus, there is a need to change the
+current methods for crop and weed management and bring non-hebicide weed
+management innovations (e.g., robotics) to cropping-systems.
+
+\begin{table}[!ht]
+\begin{adjustwidth}{-2.5in}{0in} % Comment out/remove adjustwidth environment if table fits in text column.
+\centering
+\caption{
+{\bf Demographic list of \textit{Amaranthus palmeri} biotypes with respective Nebraska County location and agronomic practices}}
+\begin{tabular}{|l+c|c|c|c|c|c|}
+\hline
+{\bf Herbicide}  & {\bf Correlation variables} & {\bf Estimate} & {\bf CI lower} & {\bf CI higher} & {\bf t} & {\bf \textit{P}-value} \\ \thickhline
+Glyphosate & \textit{M} and \textit{G} & 0.83 & 0.60  & 0.93 & 6.15 & 0.00\\ \hline
+Fomesafen &  \textit{M} and \textit{G}    & 0.52    & 0.09 & 0.79   & 2.53 & 0.02\\ \hline
+Lactofen    &  \textit{M} and \textit{G}    & -0.05 & -0.49 &   0.41    & -0.20 & 0.84\\ \hline
+PPO inhibitors  & \textit{G}-Fomesafen and \textit{G}-Lactofen   & 0.23 & -0.25 &   0.62 & 0.98 & 0.34\\ \hline
+\end{tabular}
+\begin{flushleft}
+\end{flushleft}
+\label{table1}
+\end{adjustwidth}
+\end{table}
+
+\hypertarget{references}{%
+\section*{References}\label{references}}
+\addcontentsline{toc}{section}{References}
+
+\hypertarget{refs}{}
+\leavevmode\hypertarget{ref-sauer_recent_1957}{}%
+1. Sauer J. Recent Migration and Evolution of the Dioecious Amaranths.
+Evolution. 1957;11: 11--31.
+doi:\href{https://doi.org/10.2307/2405808}{10.2307/2405808}
+
+\leavevmode\hypertarget{ref-smith_fodder_1900}{}%
+2. Smith J. Fodder and forage plants. Exclusive of the grasses.
+Washington; 1900.
+
+\leavevmode\hypertarget{ref-hamilton_weeds_1958}{}%
+3. Hamilton K, Arle H. Weeds od crops in Southern Arizona. Tucson, AZ:
+College of Agriculture, University of Arizona; 1958.
+
+\leavevmode\hypertarget{ref-sauer_revision_1955}{}%
+4. Sauer J. Revision of the dioecious Amaranths. Madroño. 1955;13:
+5--46. Available: \url{https://www.jstor.org/stable/41422838}
+
+\leavevmode\hypertarget{ref-morgan_competitive_2001}{}%
+5. Morgan GD, Baumann PA, Chandler JM. Competitive Impact of Palmer
+Amaranth (Amaranthus palmeri) on Cotton (Gossypium hirsutum) Development
+and Yield. Weed Technology. 2001;15: 408--412.
+doi:\href{https://doi.org/10.1614/0890-037X(2001)015\%5B0408:CIOPAA\%5D2.0.CO;2}{10.1614/0890-037X(2001)015{[}0408:CIOPAA{]}2.0.CO;2}
+
+\leavevmode\hypertarget{ref-massinga_water_2003}{}%
+6. Massinga RA, Currie RS, Trooien TP. Water use and light interception
+under Palmer amaranth (Amaranthus palmeri) and corn competition. Weed
+Science. 2003;51: 523--531.
+doi:\href{https://doi.org/10.1614/0043-1745(2003)051\%5B0523:WUALIU\%5D2.0.CO;2}{10.1614/0043-1745(2003)051{[}0523:WUALIU{]}2.0.CO;2}
+
+\leavevmode\hypertarget{ref-sauer_dioecious_1972}{}%
+7. Sauer JD. THE DIOECIOUS AMARANTHS: A NEW SPECIES NAME AND MAJOR RANGE
+EXTENSIONS. Madroño. 1972;21: 426--434. Available:
+\url{https://www.jstor.org/stable/41423815}
+
+\leavevmode\hypertarget{ref-price_glyphosate-resistant_2011}{}%
+8. Price AJ, Balkcom KS, Culpepper SA, Kelton JA, Nichols RL, Schomberg
+H. Glyphosate-resistant Palmer amaranth: A threat to conservation
+tillage. Journal of Soil and Water Conservation. 2011;66: 265--275.
+doi:\href{https://doi.org/10.2489/jswc.66.4.265}{10.2489/jswc.66.4.265}
+
+\leavevmode\hypertarget{ref-ward_palmer_2013}{}%
+9. Ward SM, Webster TM, Steckel LE. Palmer Amaranth (Amaranthus
+palmeri): A Review. Weed Technology. 2013;27: 12--27.
+doi:\href{https://doi.org/10.1614/WT-D-12-00113.1}{10.1614/WT-D-12-00113.1}
+
+\leavevmode\hypertarget{ref-oliveira_interspecific_2018}{}%
+10. Oliveira MC, Gaines TA, Patterson EL, Jhala AJ, Irmak S, Amundsen K,
+et al. Interspecific and intraspecific transference of metabolism-based
+mesotrione resistance in dioecious weedy \emph{Amaranthus}. The Plant
+Journal. 2018;96: 1051--1063.
+doi:\href{https://doi.org/10.1111/tpj.14089}{10.1111/tpj.14089}
+
+\leavevmode\hypertarget{ref-gaines_interspecific_2012}{}%
+11. Gaines TA, Ward SM, Bukun B, Preston C, Leach JE, Westra P.
+Interspecific hybridization transfers a previously unknown glyphosate
+resistance mechanism in Amaranthus species. Evolutionary Applications.
+2012;5: 29--38.
+doi:\href{https://doi.org/10.1111/j.1752-4571.2011.00204.x}{10.1111/j.1752-4571.2011.00204.x}
+
+\leavevmode\hypertarget{ref-powles_evolved_2008}{}%
+12. Powles SB. Evolved glyphosate-resistant weeds around the world:
+Lessons to be learnt. Pest Management Science. 2008;64: 360--365.
+doi:\href{https://doi.org/10.1002/ps.1525}{10.1002/ps.1525}
+
+\leavevmode\hypertarget{ref-heap_list_2019-1}{}%
+13. Heap I. List of Herbicide Resistant Weeds by Weed Species. 2019.
+Available: \url{http://www.weedscience.org/Summary/Species.aspx}
+
+\leavevmode\hypertarget{ref-gossett_resistance_1992}{}%
+14. Gossett BJ, Murdock EC, Toler JE. Resistance of Palmer Amaranth
+(Amaranthus palmeri) to the Dinitroaniline Herbicides. Weed Technology.
+1992;6: 587--591. Available: \url{https://www.jstor.org/stable/3987215}
+
+\leavevmode\hypertarget{ref-horak_biotypes_1995}{}%
+15. Horak MJ, Peterson DE. Biotypes of Palmer Amaranth (Amaranthus
+palmeri) and Common Waterhemp (Amaranthus rudis) are Resistant to
+Imazethapyr and Thifensulfuron. Weed Technology. 1995;9: 192--195.
+doi:\href{https://doi.org/10.1017/S0890037X00023174}{10.1017/S0890037X00023174}
+
+\leavevmode\hypertarget{ref-culpepper_glyphosate-resistant_2006}{}%
+16. Culpepper AS, Grey TL, Vencill WK, Kichler JM, Webster TM, Brown SM,
+et al. Glyphosate-resistant Palmer amaranth (Amaranthus palmeri)
+confirmed in Georgia. Weed Science. 2006;54: 620--626.
+doi:\href{https://doi.org/10.1614/WS-06-001R.1}{10.1614/WS-06-001R.1}
+
+\leavevmode\hypertarget{ref-farmer_evaluating_2017}{}%
+17. Farmer JA, Webb EB, Pierce RA, Bradley KW. Evaluating the potential
+for weed seed dispersal based on waterfowl consumption and seed
+viability. Pest Management Science. 2017;73: 2592--2603.
+doi:\href{https://doi.org/10.1002/ps.4710}{10.1002/ps.4710}
+
+\leavevmode\hypertarget{ref-norsworthy_-field_2014}{}%
+18. Norsworthy JK, Griffith G, Griffin T, Bagavathiannan M, Gbur EE.
+In-Field Movement of Glyphosate-Resistant Palmer Amaranth (Amaranthus
+palmeri) and Its Impact on Cotton Lint Yield: Evidence Supporting a
+Zero-Threshold Strategy. Weed Science. 2014;62: 237--249.
+doi:\href{https://doi.org/10.1614/WS-D-13-00145.1}{10.1614/WS-D-13-00145.1}
+
+\leavevmode\hypertarget{ref-schwartz-lazaro_resistance_2017}{}%
+19. Schwartz-Lazaro LM, Norsworthy JK, Scott RC, Barber LT. Resistance
+of two Arkansas Palmer amaranth populations to multiple herbicide sites
+of action. Crop Protection. 2017;96: 158--163.
+doi:\href{https://doi.org/10.1016/j.cropro.2017.02.022}{10.1016/j.cropro.2017.02.022}
+
+\leavevmode\hypertarget{ref-kumar_confirmation_2019}{}%
+20. Kumar V, Liu R, Boyer G, Stahlman PW. Confirmation of 2,4-D
+resistance and identification of multiple resistance in a Kansas Palmer
+amaranth (Amaranthus palmeri) population. Pest Management Science.
+2019;0. doi:\href{https://doi.org/10.1002/ps.5400}{10.1002/ps.5400}
+
+\leavevmode\hypertarget{ref-gaines_molecular_2019}{}%
+21. Gaines TA, Patterson EL, Neve P. Molecular mechanisms of adaptive
+evolution revealed by global selection for glyphosate resistance. New
+Phytologist. 2019;0.
+doi:\href{https://doi.org/10.1111/nph.15858}{10.1111/nph.15858}
+
+\leavevmode\hypertarget{ref-gaines_mechanism_2011}{}%
+22. Gaines TA, Shaner DL, Ward SM, Leach JE, Preston C, Westra P.
+Mechanism of Resistance of Evolved Glyphosate-Resistant Palmer Amaranth
+(Amaranthus palmeri). J Agric Food Chem. 2011;59: 5886--5889.
+doi:\href{https://doi.org/10.1021/jf104719k}{10.1021/jf104719k}
+
+\leavevmode\hypertarget{ref-salas_resistance_2016}{}%
+23. Salas RA, Burgos NR, Tranel PJ, Singh S, Glasgow L, Scott RC, et al.
+Resistance to PPO-inhibiting herbicide in Palmer amaranth from Arkansas.
+Pest Management Science. 2016;72: 864--869.
+doi:\href{https://doi.org/10.1002/ps.4241}{10.1002/ps.4241}
+
+\leavevmode\hypertarget{ref-salas-perez_frequency_2017}{}%
+24. Salas-Perez RA, Burgos NR, Rangani G, Singh S, Refatti JP, Piveta L,
+et al. Frequency of Gly-210 Deletion Mutation among Protoporphyrinogen
+Oxidase Inhibitor--Resistant Palmer Amaranth (Amaranthus palmeri)
+Populations. Weed Science. 2017;65: 718--731.
+doi:\href{https://doi.org/10.1017/wsc.2017.41}{10.1017/wsc.2017.41}
+
+\leavevmode\hypertarget{ref-giacomini_two_2017-1}{}%
+25. Giacomini DA, Umphres AM, Nie H, Mueller TC, Steckel LE, Young BG,
+et al. Two new PPX2 mutations associated with resistance to
+PPO-inhibiting herbicides in Amaranthus palmeri. Pest Management
+Science. 2017;73: 1559--1563.
+doi:\href{https://doi.org/10.1002/ps.4581}{10.1002/ps.4581}
+
+\leavevmode\hypertarget{ref-vieira_distribution_2018}{}%
+26. Vieira BC, Samuelson SL, Alves GS, Gaines TA, Werle R, Kruger GR.
+Distribution of glyphosate-resistant Amaranthus spp. In Nebraska. Pest
+Management Science. 2018;74: 2316--2324.
+doi:\href{https://doi.org/10.1002/ps.4781}{10.1002/ps.4781}
+
+\leavevmode\hypertarget{ref-doyle_rapid_1987}{}%
+27. Doyle JJ, Doyle JL. A rapid DNA isolation procedure for small
+quantities of fresh leaf tissue. Phytochemical Bull. 1987;19: 11--15.
+Available: \url{https://worldveg.tind.io/record/33886}
+
+\leavevmode\hypertarget{ref-wuerffel_distribution_2015}{}%
+28. Wuerffel RJ, Young JM, Lee RM, Tranel PJ, Lightfoot DA, Young BG.
+Distribution of the \textbackslash{}triangleG210 Protoporphyrinogen
+Oxidase Mutation in Illinois Waterhemp (Amaranthus tuberculatus) and an
+Improved Molecular Method for Detection. Weed Science. 2015;63:
+839--845.
+doi:\href{https://doi.org/10.1614/WS-D-15-00037.1}{10.1614/WS-D-15-00037.1}
+
+\leavevmode\hypertarget{ref-varanasi_statewide_2018}{}%
+29. Varanasi VK, Brabham C, Norsworthy JK, Nie H, Young BG, Houston M,
+et al. A Statewide Survey of PPO-Inhibitor Resistance and the Prevalent
+Target-Site Mechanisms in Palmer amaranth (Amaranthus palmeri)
+Accessions from Arkansas. Weed Science. 2018;66: 149--158.
+doi:\href{https://doi.org/10.1017/wsc.2017.68}{10.1017/wsc.2017.68}
+
+\leavevmode\hypertarget{ref-chatham_multistate_2015}{}%
+30. Chatham LA, Bradley KW, Kruger GR, Martin JR, Owen MDK, Peterson DE,
+et al. A Multistate Study of the Association Between Glyphosate
+Resistance and EPSPS Gene Amplification in Waterhemp (Amaranthus
+tuberculatus). Weed Science. 2015;63: 569--577.
+doi:\href{https://doi.org/10.1614/WS-D-14-00149.1}{10.1614/WS-D-14-00149.1}
+
+\leavevmode\hypertarget{ref-breiman_random_2001}{}%
+31. Breiman L. Random Forests. Machine Learning. 2001;45: 5--32.
+doi:\href{https://doi.org/10.1023/A:1010933404324}{10.1023/A:1010933404324}
+
+\leavevmode\hypertarget{ref-biau_random_2016}{}%
+32. Biau G, Scornet E. A random forest guided tour. TEST. 2016;25:
+197--227.
+doi:\href{https://doi.org/10.1007/s11749-016-0481-7}{10.1007/s11749-016-0481-7}
+
+\leavevmode\hypertarget{ref-langemeier_factors_2016}{}%
+33. Langemeier CB, Robertson AE, Wang D, Jackson-Ziems TA, Kruger GR.
+Factors Affecting the Development and Severity of Goss's Bacterial Wilt
+and Leaf Blight of Corn, Caused by Clavibacter michiganensis subsp.
+Nebraskensis. Plant Disease. 2016;101: 54--61.
+doi:\href{https://doi.org/10.1094/PDIS-01-15-0038-RE}{10.1094/PDIS-01-15-0038-RE}
+
+\leavevmode\hypertarget{ref-gaines_gene_2010}{}%
+34. Gaines TA, Zhang W, Wang D, Bukun B, Chisholm ST, Shaner DL, et al.
+Gene amplification confers glyphosate resistance in Amaranthus palmeri.
+Proceedings of the National Academy of Sciences. 2010;107: 1029--1034.
+doi:\href{https://doi.org/10.1073/pnas.0906649107}{10.1073/pnas.0906649107}
+
+\leavevmode\hypertarget{ref-sammons_glyphosate_2014}{}%
+35. Sammons RD, Gaines TA. Glyphosate resistance: State of knowledge.
+Pest Management Science. 2014;70: 1367--1377.
+doi:\href{https://doi.org/10.1002/ps.3743}{10.1002/ps.3743}
+
+\leavevmode\hypertarget{ref-patterson_glyphosate_2018}{}%
+36. Patterson EL, Pettinga DJ, Ravet K, Neve P, Gaines TA. Glyphosate
+Resistance and EPSPS Gene Duplication: Convergent Evolution in Multiple
+Plant Species. J Hered. 2018;109: 117--125.
+doi:\href{https://doi.org/10.1093/jhered/esx087}{10.1093/jhered/esx087}
+
+\leavevmode\hypertarget{ref-dominguez-valenzuela_first_2017}{}%
+37. Dominguez-Valenzuela JA, Gherekhloo J, Fernández-Moreno PT,
+Cruz-Hipolito HE, Alcántara-de la Cruz R, Sánchez-González E, et al.
+First confirmation and characterization of target and non-target site
+resistance to glyphosate in Palmer amaranth (Amaranthus palmeri) from
+Mexico. Plant Physiology and Biochemistry. 2017;115: 212--218.
+doi:\href{https://doi.org/10.1016/j.plaphy.2017.03.022}{10.1016/j.plaphy.2017.03.022}
+
+\leavevmode\hypertarget{ref-gaines_epsps_2016}{}%
+38. Gaines TA, Barker AL, Patterson EL, Westra P, Westra EP, Wilson RG,
+et al. EPSPS Gene Copy Number and Whole-Plant Glyphosate Resistance
+Level in Kochia scoparia. Gijzen M, editor. PLoS ONE. 2016;11: e0168295.
+doi:\href{https://doi.org/10.1371/journal.pone.0168295}{10.1371/journal.pone.0168295}
+
+\leavevmode\hypertarget{ref-remnant_gene_2013}{}%
+39. Remnant EJ, Good RT, Schmidt JM, Lumb C, Robin C, Daborn PJ, et al.
+Gene duplication in the major insecticide target site, Rdl, in
+Drosophila melanogaster. PNAS. 2013;110: 14705--14710.
+doi:\href{https://doi.org/10.1073/pnas.1311341110}{10.1073/pnas.1311341110}
+
+\leavevmode\hypertarget{ref-bass_gene_2011}{}%
+40. Bass C, Field LM. Gene amplification and insecticide resistance.
+Pest Management Science. 2011;67: 886--890.
+doi:\href{https://doi.org/10.1002/ps.2189}{10.1002/ps.2189}
+
+\leavevmode\hypertarget{ref-jugulam_tandem_2014}{}%
+41. Jugulam M, Niehues K, Godar AS, Koo D-H, Danilova T, Friebe B, et
+al. Tandem Amplification of a Chromosomal Segment Harboring
+5-Enolpyruvylshikimate-3-Phosphate Synthase Locus Confers Glyphosate
+Resistance in Kochia scoparia. Plant Physiology. 2014;166: 1200--1207.
+doi:\href{https://doi.org/10.1104/pp.114.242826}{10.1104/pp.114.242826}
+
+\leavevmode\hypertarget{ref-giacomini_variable_2019}{}%
+42. Giacomini DA, Westra P, Ward SM. Variable Inheritance of Amplified
+EPSPS Gene Copies in Glyphosate-Resistant Palmer Amaranth (Amaranthus
+palmeri). Weed Science. 2019;67: 176--182.
+doi:\href{https://doi.org/10.1017/wsc.2018.65}{10.1017/wsc.2018.65}
+
+\leavevmode\hypertarget{ref-malone_epsps_2016}{}%
+43. Malone JM, Morran S, Shirley N, Boutsalis P, Preston C. EPSPS gene
+amplification in glyphosate-resistant Bromus diandrus. Pest Management
+Science. 2016;72: 81--88.
+doi:\href{https://doi.org/10.1002/ps.4019}{10.1002/ps.4019}
+
+\leavevmode\hypertarget{ref-wiersma_gene_2015}{}%
+44. Wiersma AT, Gaines TA, Preston C, Hamilton JP, Giacomini D, Robin
+Buell C, et al. Gene amplification of
+5-enol-pyruvylshikimate-3-phosphate synthase in glyphosate-resistant
+Kochia scoparia. Planta. 2015;241: 463--474.
+doi:\href{https://doi.org/10.1007/s00425-014-2197-9}{10.1007/s00425-014-2197-9}
+
+\leavevmode\hypertarget{ref-kumar_molecular_2015}{}%
+45. Kumar V, Jha P, Giacomini D, Westra EP, Westra P. Molecular Basis of
+Evolved Resistance to Glyphosate and Acetolactate Synthase-Inhibitor
+Herbicides in Kochia ( \emph{Kochia} \emph{Scoparia} ) Accessions from
+Montana. Weed sci. 2015;63: 758--769.
+doi:\href{https://doi.org/10.1614/WS-D-15-00021.1}{10.1614/WS-D-15-00021.1}
+
+\leavevmode\hypertarget{ref-koo_extrachromosomal_2018}{}%
+46. Koo D-H, Molin WT, Saski CA, Jiang J, Putta K, Jugulam M, et al.
+Extrachromosomal circular DNA-based amplification and transmission of
+herbicide resistance in crop weed \emph{Amaranthus} \emph{Palmeri}. Proc
+Natl Acad Sci USA. 2018;115: 3332--3337.
+doi:\href{https://doi.org/10.1073/pnas.1719354115}{10.1073/pnas.1719354115}
+
+\leavevmode\hypertarget{ref-jhala_confirmation_2014}{}%
+47. Jhala AJ, Sandell LD, Rana N, Kruger GR, Knezevic SZ. Confirmation
+and Control of Triazine and 4-Hydroxyphenylpyruvate
+Dioxygenase-Inhibiting Herbicide-Resistant Palmer Amaranth (Amaranthus
+palmeri) in Nebraska. Weed Technology. 2014;28: 28--38.
+doi:\href{https://doi.org/10.1614/WT-D-13-00090.1}{10.1614/WT-D-13-00090.1}
+
+\leavevmode\hypertarget{ref-chahal_glyphosate-resistant_2017}{}%
+48. Chahal PS, Varanasi VK, Jugulam M, Jhala AJ. Glyphosate-Resistant
+Palmer Amaranth (Amaranthus palmeri) in Nebraska: Confirmation, EPSPS
+Gene Amplification, and Response to POST Corn and Soybean Herbicides.
+Weed Technology. 2017;31: 80--93.
+doi:\href{https://doi.org/10.1614/WT-D-16-00109.1}{10.1614/WT-D-16-00109.1}
+
+\leavevmode\hypertarget{ref-andrade_weed_2017}{}%
+49. Andrade JF, Satorre EH, Ermácora CM, Poggio SL. Weed communities
+respond to changes in the diversity of crop sequence composition and
+double cropping. Weed Research. 2017;57: 148--158.
+doi:\href{https://doi.org/10.1111/wre.12251}{10.1111/wre.12251}
+
+\leavevmode\hypertarget{ref-evans_managing_2016}{}%
+50. Evans JA, Tranel PJ, Hager AG, Schutte B, Wu C, Chatham LA, et al.
+Managing the evolution of herbicide resistance: Managing the evolution
+of herbicide resistance. Pest Manag Sci. 2016;72: 74--80.
+doi:\href{https://doi.org/10.1002/ps.4009}{10.1002/ps.4009}
+
+\leavevmode\hypertarget{ref-beckie_selecting_2009}{}%
+51. Beckie HJ, Reboud X. Selecting for Weed Resistance: Herbicide
+Rotation and Mixture. Weed Technology. 2009;23: 363--370.
+doi:\href{https://doi.org/10.1614/WT-09-008.1}{10.1614/WT-09-008.1}
+
+\leavevmode\hypertarget{ref-strom_characterization_2019}{}%
+52. Strom SA, Gonzini LC, Mitsdarfer C, Davis AS, Riechers DE, Hager AG.
+Characterization of multiple herbicide--resistant waterhemp (Amaranthus
+tuberculatus) populations from Illinois to VLCFA-inhibiting herbicides.
+Weed Science. 2019;67: 369--379.
+doi:\href{https://doi.org/10.1017/wsc.2019.13}{10.1017/wsc.2019.13}
+
+\leavevmode\hypertarget{ref-shergill_investigations_2018}{}%
+53. Shergill LS, Barlow BR, Bish MD, Bradley KW. Investigations of 2,4-D
+and Multiple Herbicide Resistance in a Missouri Waterhemp (Amaranthus
+tuberculatus) Population. Weed Science. 2018;66: 386--394.
+doi:\href{https://doi.org/10.1017/wsc.2017.82}{10.1017/wsc.2017.82}
+
+\leavevmode\hypertarget{ref-kniss_genetically_2018}{}%
+54. Kniss AR. Genetically Engineered Herbicide-Resistant Crops and
+Herbicide-Resistant Weed Evolution in the United States. Weed Science.
+2018;66: 260--273.
+doi:\href{https://doi.org/10.1017/wsc.2017.70}{10.1017/wsc.2017.70}
+
+\leavevmode\hypertarget{ref-norsworthy_reducing_2012}{}%
+55. Norsworthy JK, Ward SM, Shaw DR, Llewellyn RS, Nichols RL, Webster
+TM, et al. Reducing the Risks of Herbicide Resistance: Best Management
+Practices and Recommendations. Weed Science. 2012;60: 31--62.
+doi:\href{https://doi.org/10.1614/WS-D-11-00155.1}{10.1614/WS-D-11-00155.1}
+
+\leavevmode\hypertarget{ref-hiller_long-term_2009}{}%
+56. Hiller TL, Powell LA, McCoy TD, Lusk JJ. Long-Term Agricultural
+Land-Use Trends In Nebraska, 1866--2007. Great Plains Research. 2009;19:
+225--237.
+
+\leavevmode\hypertarget{ref-duke_history_2018}{}%
+57. Duke SO. The history and current status of glyphosate. Pest
+Management Science. 2018;74: 1027--1034.
+doi:\href{https://doi.org/10.1002/ps.4652}{10.1002/ps.4652}
+
+\leavevmode\hypertarget{ref-duke_why_2012-1}{}%
+58. Duke SO. Why have no new herbicide modes of action appeared in
+recent years? Pest Management Science. 2012;68: 505--512.
+doi:\href{https://doi.org/10.1002/ps.2333}{10.1002/ps.2333}
+
+\nolinenumbers
+
+
+\end{document}
+

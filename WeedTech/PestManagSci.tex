@@ -1,0 +1,1085 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+  12pt,
+  a4paper]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={Distribution and Validation of EPSPS- and PPO-Inhibitor Resistance in Amaranthus palmeri from Southwestern Nebraska.},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage[margin=1in]{geometry}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+% Allowing for landscape pages
+\usepackage{lscape}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{float}
+\usepackage{placeins}
+\newcommand{\blandscape}{\begin{landscape}}
+\newcommand{\elandscape}{\end{landscape}}
+\usepackage{lineno}
+\usepackage{setspace}
+
+% Left justification of the text: see https://www.sharelatex.com/learn/Text_alignment
+% \usepackage[document]{ragged2e} % already in the latex template
+\newcommand{\bleft}{\begin{flushleft}}
+\newcommand{\eleft}{\end{flushleft}}
+
+\title{Distribution and Validation of EPSPS- and PPO-Inhibitor Resistance in
+\emph{Amaranthus palmeri} from Southwestern Nebraska.}
+\author{true \and true \and true \and true \and true}
+\date{}
+
+\begin{document}
+\maketitle
+
+\vspace{2mm}
+
+\doublespace
+
+\large Abstract
+
+\textbf{BACKGROUNG:} Failure to control \textit{Amaranthus palmeri} with
+5-enolpyruvylshikimate-3-phosphate synthase (EPSPS)- and
+protoporphyrinogen oxidase (PPO)-inhibitor herbicides was reported
+across southwestern Nebraska in 2017. The objectives of this study were
+to (1) confirm and validate EPSPS (glyphosate)- and PPO (fomesafen and
+lactofen)-resistance in 51 \textit{A. palmeri} populations from
+southwestern Nebraska using genotypic and whole-plant phenotypic assays,
+and (2) determine which agronomic practices are influencing
+EPSPS-inhibitor resistance in \textit{A. palmeri} populations in that
+geography.\\
+\textbf{RESULTS:} Based on genotypic assay, 88\% of 51 populations
+contained at least one individual with \textit{EPSPS} gene amplification
+(\textgreater{} 2 copies), which confers glyphosate resistance; or a
+mutation in the \textit{PPX2} gene \(\triangle\)G210 or R128G/M,
+endowing PPO-inhibitor resistance in \textit{A. palmeri}. High
+correlation (0.83) between genotypic and phenotypic assays demonstrated
+that \textit{EPSPS} gene amplification is the main glyphosate resistance
+mechanism in \textit{A. palmeri} populations from southwesten Nebraska.
+In contrast, there was poor association between genotypic and phenotypic
+responses for PPO resistance, which we attribute to a combination of
+other resistance mechanisms being present, segregation of the
+populations, and using too high of herbicide doses. Thus, genotypic
+assays could expedite the process for confirmation of EPSPS- but not
+necessarily for PPO-inhibitor resistance in \textit{A. palmeri} from
+southwestern Nebraska. Moreover, \textit{EPSPS} gene amplification,
+county, current and previous crops are the main factors influencing
+glyphosate resistance within that geography. Most of EPSPS-susceptible
+\textit{A. palmeri} populations were found in a few counties in high
+crop diversity areas.\\
+\textbf{CONCLUSIONS:} Results presented here confirmed the spread of
+EPSPS- and PPO-inhibitor resistance in \textit{A. palmeri} populations
+from southwestern Nebraska and show that less diverse cropping systems
+are an important driver for EPSPS-inhibitor resistance evolution in
+\textit{A. palmeri}.
+
+\vspace{2mm}
+
+\noindent \textbf{Keywords}: Glyphosate; Fomesafen; Lactofen; Palmer
+amaranth; Weed resistance.
+
+\linenumbers
+
+\hypertarget{introduction}{%
+\section{Introduction}\label{introduction}}
+
+\emph{Amaranthus palmeri} S. Watson (Palmer amaranth) is a plant species
+indigenous to the southwestern United States (US) and northern Mexico
+(Sauer 1957). Despite being an edible plant used to feed humans and
+animals (Smith 1900), \emph{A. palmeri} has long been documented as a
+serious weed problem in US cropping systems (Hamilton and Arle 1958).
+\emph{A. palmeri} produces thousands of seeds and grows up to 2 m tall
+with many lateral branches (Sauer 1955), making it a very competitive
+species with crops (Massinga et al. 2003, Morgan et al. 2001). In the
+1970s, when cotton picking became mechanized, machinery contributed to
+the spread of \emph{A. palmeri} seeds across the southern United States
+(Sauer 1972). At that time, \emph{A. palmeri} was considered the most
+successful weed of all dioecious \emph{Amaranthus} species as it became
+widespread in cotton fields (Sauer 1972). Currently, \emph{A. palmeri}
+is the most economically damaging weed species infesting corn, cotton,
+and soybean fields in the southern US (Price et al. 2011, Ward et al.
+2013).
+
+obligate cross-pollination in A. palmeri is herbicide resistance
+movement via gene flow within and among populations within the species
+
+The economic importance of \emph{A. palmeri} is primarily related to its
+ability to evolve resistance to herbicides. Factors relating to the
+intrinsic biology of this species have contributed to its fast herbicide
+resistance evolution (Ward et al. 2013). For example, \emph{A. palmeri}
+reproduces via obligate cross pollination, increasing the chances of
+herbicide resistance alleles transfer via gene flow within and among
+populations (Gaines et al. 2012, Oliveira et al. 2018). In addition,
+human-driven selection has strongly contributed to the rise of \emph{A.
+palmeri} as a problematic weed. In the US cropping systems, no-till is a
+widely used practice amongst growers, and \emph{A. palmeri} thrives in
+no-till fields due to its small seed size, contributing to the rapid
+increase of \emph{A. palmeri} individuals in field crops. Also,
+herbicide resistance in \emph{A. palmeri} drastically increased when
+weed management strategies shifted from the use of multiple herbicide
+sites of action (SOA) in a single season to reliance on a single SOA
+post-emergence herbicide (e.g., glyphosate) (Powles 2008). Thus far,
+\emph{A. palmeri} has evolved resistance to herbicide resistance to
+multiple SOA (Heap 2019), which is a major concern as weed management in
+conventional US cropping systems is largely herbicide dependent.
+
+The history of herbicide resistance evolution in \emph{A. palmeri} is a
+result of intense selection pressure from herbicides. In the 1990s, the
+first documented cases of herbicide resistance were against microtubule-
+(Gossett et al. 1992), ALS- (Horak and Peterson 1995), and
+PSII-inhibitor herbicides (Heap 2019). With the introduction of
+glyphosate-resistant (GR) crops, post-emergence applications of
+glyphosate became widely used for weed management in soybean, cotton,
+and corn, resulting in evolution of GR \emph{A. palmeri} (Culpepper et
+al. 2006). GR \emph{A. palmeri} spread across the southern and
+midwestern US through both independent herbicide selection (Küpper et
+al. 2018) and seed dispersal (Farmer et al. 2017, Norsworthy et al.
+2014). The spread of GR \emph{A. palmeri} led to a reevaluation of the
+use of glyphosate as a sole means of weed control in this species, and a
+push to diversify weed management strategies (e.g., application of other
+herbicide SOA). The use of 4-hydroxyphenylpyruvate dioxygenase (HPPD)-,
+protoporphyrinogen oxidase (PPO)- and long chain fatty acids (LCFA)-
+inhibitor herbicides increased in an attempt to manage GR \emph{A.
+palmeri}. However, \emph{A. palmeri} populations also evolved resistance
+to HPPD-, PPO- and LCFA-inhibitor herbicides (Heap 2019). New
+technologies such as auxin-resistant crops may be jeopardized by the
+newest reports of 2,4-D-resistant \emph{A. palmeri} (Heap 2019) and the
+number of \emph{A. palmeri} populations with herbicide resistance to
+multiple herbicide resistance is also on the rise (Kumar et al. 2019,
+Schwartz-Lazaro et al. 2017). Therefore, \emph{A. palmeri} herbicide
+resistance evolution is shrinking the chemical control options for weed
+management in corn, soybean, and cotton fields within US cropping
+systems.
+
+In the US Midwest, corn and soybean growers strongly rely on EPSPS-
+(e.g., glyphosate) and PPO- (e.g., fomesafen) inhibitor herbicides for
+weed management. The recent migration of \emph{A. palmeri} into the US
+Midwest poses a serious threat to the sustainability of crop production
+in that geography (Chahal et al. 2017, Kohrt et al. 2017). \emph{A.
+palmeri} is now overlapping territory with another problematic dioecious
+\emph{Amaranthus} species, waterhemp (\emph{Amaranthus tuberculatus}).
+Thus, prevention and/or rapid diagnosis of herbicide resistance in
+\emph{A. palmeri} has become a priority for agricultural stakeholders.
+The advances in high-throughput genome sequencing methods are expediting
+the elucidation and detection of herbicide resistance mechanisms in
+\emph{A. palmeri} and other weed species. In the case of glyphosate, the
+most common resistance mechanism in \emph{A. palmeri} is \emph{EPSPS}
+gene amplification (Gaines et al. 2019, 2011), while in PPO-inhibitor
+resistance, the major resistance mechanism is a \emph{PPO2} glycine 210
+deletion (\(\triangle\)G210) (Salas et al. 2016, Salas-Perez et al.
+2017). Nonetheless, novel herbicide resistance mechanisms in \emph{A.
+palmeri} are still being uncovered (Gaines et al. 2019), as evidenced by
+the recent documentation of two mutations in the \emph{PPO2} enzyme in
+the R128 site of \emph{A. palmeri} (Giacomini et al. 2017), and G399A,
+an amino acid substitution of glycine to alanine in the catalytic domain
+of \emph{PPO2} at position 399 (Rangani et al. 2019). So far, a few
+reports of resistance mechanisms have been confirmed for \emph{A.
+palmeri} populations with non-target-site resistance to glyphosate
+(Dominguez-Valenzuela et al. 2017, Palma-Bautista et al. 2019) and one
+against PPO-inhibitor herbicides (Varanasi et al. 2018a). Therefore,
+using genotypic assays might provide faster detection of known herbicide
+weed resistance mechanisms in \emph{A. palmeri}, but it fails to address
+herbicide resistance resulting from novel mechanisms, including
+polygenic resistance mechanisms (e.g.~metabolic resistance involving
+cytochrome P450 genes) as well as previously unknown target site
+mutations.
+
+In the fall of 2017, growers in southwestern Nebraska reported failure
+to control \emph{A. palmeri} with EPSPS- and PPO-inhibitor herbicides
+(Werle R, personal communication). The objectives of this study were to
+(1) confirm EPSPS- and PPO-inhibitor resistance in 51 \emph{A. palmeri}
+populations from southwestern Nebraska via genotypic resistance assays
+and compare these results via whole-plant phenotypic assay of their
+progenies, and (2) evaluate agronomic practices that may contribute to
+EPSPS- and PPO-inhibitor resistance in \emph{A. palmeri} populations.
+
+\hypertarget{material-and-methods}{%
+\section{Material and Methods}\label{material-and-methods}}
+
+\hypertarget{plant-material-and-growing-conditions}{%
+\subsection{Plant Material and Growing
+Conditions}\label{plant-material-and-growing-conditions}}
+
+The study was performed with 51 arbitrarily selected \emph{A. palmeri}
+populations infesting cropping systems across Southwestern Nebraska.
+Each population was collected from a single field. Location, agronomic
+practices, \emph{A. palmeri} distribution and density of each population
+were collected (Table 1). In August 2017, green leaf tissues were
+harvested from five actively growing plants from each of the 51 \emph{A.
+palmeri} populations, then labeled and stored at -80 C to be used in
+genotypic assays. Within the 51 \emph{A. palmeri} populations, a second
+sampling of 19 arbitrarily selected populations was obtained by
+collecting seeds (progenies) from 30 plants each in September 2017, then
+cleaned, bulked for each population, and stored at 5 C until the onset
+of the greenhouse experiments. Seeds were planted in 900
+cm\textsuperscript{-3} plastic trays containing potting-mix
+(Pro-Mix\textsuperscript \textregistered, Quakertown, PA, USA). Emerged
+seedlings (1 cm) were transplanted into 164 cm\textsuperscript{-3}
+cone-tainers. \emph{A. palmeri} plants were supplied with adequate water
+and kept under greenhouse conditions at 28/20 C day/night temperature
+with 80\% relative humidity. Artificial lighting was provided using
+metal halide lamps (600 \(\mu\)mol m\textsuperscript{-2}
+s\textsuperscript{-1}) to ensure 15 h photoperiod.
+
+\hypertarget{genotypic-herbicide-resistance-mechanism-assays}{%
+\subsection{Genotypic Herbicide Resistance Mechanism
+Assays}\label{genotypic-herbicide-resistance-mechanism-assays}}
+
+As a standard methodology from the University of Illinois Plant Clinic
+Laboratory (Urbana,85IL 61801, United States), three to five leaf tissue
+samples were collected from 51 \emph{A. palmeri} populations from
+Southwestern Nebraska. The EPSPS copy number was estimated for each
+plant based on DNA extracted from tissue from a single leaf of \emph{A.
+palmeiri}. Genomic DNA extraction from leaf tissue87samples were
+performed using a modified CTAB method (Doyle and Doyle 1987). DNA
+quality and quantity were checked on a Nanodrop 1000 (Thermo Fisher
+Scientific, Inc., Waltham, MA, USA) and any samples with low DNA yields
+or high protein:DNA ratios were discarded and re-extracted. TaqMan qPCR
+assays were used to check for the presence of known PPO-inhibitor
+resistance mutations on the \emph{PPO2} enzyme, including the glycine
+210 deletion (Wuerffel et al. 2015) and the R128G/M mutations (Varanasi
+et al. 2018b). Samples were also tested for glyphosate resistance via
+increased numbers of \emph{EPSPS} genomic copies using a SYBR qPCR
+approach (Chatham et al. 2015) in which \emph{EPSPS} copy numbers were
+estimated based on comparison with a single-copy reference gene
+(\emph{CPS}, carbamoyl phosphate synthetase).
+
+Herein, for the objective of this study, individuals possessing
+\emph{EPSPS} copy numbers \textgreater{} 2 are considered
+EPSPS-resistant and individuals with presence of \(\triangle\)G210 or
+R128 het mutations are considered PPO-resistant. Other target-site and
+non-target site resistance mechanisms were not tested.
+
+\hypertarget{whole-plant-phenotypic-assay}{%
+\subsection{Whole-plant Phenotypic
+Assay}\label{whole-plant-phenotypic-assay}}
+
+The research was conducted under greenhouse conditions in 2018 and 2019
+at the University of Wisconsin-Madison to evaluate the sensitivity of 19
+\emph{A. palmeri} populations from Southwestern Nebraska to EPSPS- and
+PPO-inhibitor herbicides.
+
+The experiments were conducted in a complete randomized design and the
+experimental unit was a cone-tainer with a single \emph{A. palmeri}
+seedling. The study was arranged in a factorial design with \emph{A.
+palmeri} progenies from 19 populations and three herbicides with 20
+replications and conducted twice. Altogether, 2280 \emph{A. palmeri}
+seedlings were screened in the phenotypic assay. The arbitrarily
+selected 19 \emph{A. palmeri} progenies were from Cha 3, Dun 3, Dun 4,
+Dun 5, Hay 1, Hay 3, Hay 4, Kei 2, Kei 3, Kei 5, Kei 6, Log 1, Log 2,
+Log 4, Per 2, Per 4, Red 2, Red 4, and Red 5 populations (Table 1). The
+selected herbicides were glyphosate (Roundup
+PowerMAX\textsuperscript \textregistered, Bayer Crop Science, Saint
+Louis, MO, US) applied at 870 g ae ha\textsuperscript{-1} plus 2040 g
+ha\textsuperscript{-1} ammonium sulfate (DSM Chemicals North America
+Inc., Augusta, GA); fomesafen (Flexstar\textsuperscript \textregistered,
+Syngenta Crop Protection, Greensboro, NC, USA) applied at 206 g ai
+ha\textsuperscript{-1} plus 0.5 L ha\textsuperscript{-1} of non-ionic
+surfactant (Induce\textsuperscript \textregistered, Helena
+Agri-Enterprises, Collierville, TN, USA); and lactofen
+(Cobra\textsuperscript \textregistered, Valent USA LLC Agricultural
+Products, Walnut Creek, CA, USA) applied at 280 g ai
+ha\textsuperscript{-1} plus 0.5 L ha\textsuperscript{-1} of non-ionic
+surfactant.
+
+Herbicide treatments were applied to 8-10 cm tall \emph{A. palmeri}
+plants with a single-tip chamber sprayer (DeVries Manufacturing Corp.,
+Hollandale, MN, USA). The sprayer had an 8001 E nozzle (Spraying Systems
+Co., North Avenue, Wheaton, IL, US) calibrated to deliver 140 L
+ha\textsuperscript{-1} spray volume at 135 kPa at a speed of 2.3 km
+h\textsuperscript{-1}. \emph{A. palmeri} populations were visually
+assessed 21 days after treatment (DAT) as dead or alive. Plants were
+considered alive when prominent green tissue was observed in growing
+plants, while dead plants were completely necrotic.
+
+\hypertarget{statistical-analysis}{%
+\subsection{Statistical Analysis}\label{statistical-analysis}}
+
+\hypertarget{genotypic-and-phenotypic-validation-of-epsps--and-ppo-inhibitor-resistance-in-a.-palmeri}{%
+\subsubsection{\texorpdfstring{Genotypic and Phenotypic validation of
+EPSPS- and PPO-inhibitor resistance in \emph{A.
+palmeri}}{Genotypic and Phenotypic validation of EPSPS- and PPO-inhibitor resistance in A. palmeri}}\label{genotypic-and-phenotypic-validation-of-epsps--and-ppo-inhibitor-resistance-in-a.-palmeri}}
+
+The number of EPSPS- or PPO-inhibitor-resistant \emph{A. palmeri}
+individuals in the genotypic assays was converted to a percentage scale:
+
+\emph{Equation 1}: \[G=\frac{S}{T} * 100 \] \noindent where \emph{G} is
+the \% EPSPS- or PPO-inhibitor-resistant \emph{A. palmeri} individuals,
+\emph{S} is the total number of \emph{A. palmeri} individuals positive
+for herbicide resistance, and \emph{T} is the total number of \emph{A.
+palmeri} individuals (n=3 to 5) screened for herbicide resistance in
+genotypic assays. Fomesafen and lactofen are PPO-inhibitor herbicides;
+thus, \emph{G} is same for both.
+
+The number of surviving \emph{A. palmeri} individuals in the phenotypic
+assay were converted into a percentage scale:
+
+\emph{Equation 2}: \[P=\frac{X}{T} * 100 \]
+
+Where \emph{P} is the \% alive \emph{A. palmeri} individuals after
+herbicide treatment in phenotypic assay (glyphosate, fomesafen, or
+lactofen), \emph{X} is the total number of alive \emph{A. palmeri}
+individuals 21 DAT and \emph{T} is the total number of \emph{A. palmeri}
+individuals (n=40) treated with each herbicide. The P (\%) can be
+determined only for 19 populations, as only 19 populations were screened
+to herbicides. Data of two runs are combined.
+
+The correlation between \emph{G} and \emph{P} for each herbicide
+(glyphosate, fomesafen, and lactofen) and between the two PPO-inhibitor
+herbicides, fomesafen and lactofen, were performed with Pearson's
+analysis using the \emph{cor.test} function of R statistical software
+version 3.6.1 (\emph{R} 2019). The correlation value varies from -1 and
+1, where 1 is the total positive correlation, -1 the total negative
+correlation, and 0 indicate no linear correlation. Pearson's analysis
+tests the hypothesis that correlation between two variables is equal to
+0 (null hypothesis). If \emph{P}-value \textgreater{} 0.05, the
+probability is \textgreater{} 5\% that a correlation of some magnitude
+between two variables could occur by chance alone assuming null
+hypothesis is true; thus, no correaltion between variables. The \emph{G}
+and \emph{P} correlation was performed with the 19 \emph{A. palmeri}
+populations treated with herbicide in the phenotypic assay as well as
+their respective genotypic assays results.
+
+The individuals screened in genotypic and phenotypic assays are parent
+and progenies, respectively. This methodology was chosen to simulate a
+real farm scenario whereas growers could collect suspected herbicide
+resistant leaf samples and mail them to a laboratory for faster
+genotypic herbicide resistance confirmation.
+
+\hypertarget{random-forest}{%
+\subsubsection{Random Forest}\label{random-forest}}
+
+Random forest is a powerful ensemble machine learning algorithm which
+generates and combines multiple decision trees to reach a consensus. The
+random forest procedure is described in detail by Breiman (Breiman 2001)
+and Biau (Biau and Scornet 2016). In short, the random forest analysis
+is largely based on two parameters: \emph{ntree}, which is the number of
+decision trees, and \emph{mtry}, the number of different predictors
+tested in each tree. For each decision tree, a subsample of observations
+from the data are selected with replacement to train the trees
+(bootstrap aggregating). These ``in-bag'' samples include approximately
+66\% of the total data and some observations may be repeated in each new
+training data set since this sampling is done with replacement. The
+remaining 33\% of the data are designated ``Out-of-Bag'' or OOB samples
+and are used in an internal cross-validation technique to estimate the
+model performance error. To evaluate the importance of an explanatory
+variable (or predictor), the random forest measures both the decrease in
+model performance accuracy as calculated by the OOB error and the
+decrease in the Gini Index value. The Gini Index value (mean decrease in
+accuracy) is the mean of a total variable decrease of a node impurity,
+weighted by the samples proportion reaching that node in each individual
+decision tree. Therefore, variables with a large Gini Index value
+indicates higher variable importance, and are more important for data
+classification. Random Forest has been used to described the incidence
+of crop disease (Langemeier et al. 2016) and glyphosate resistance in
+\emph{Amaranthus} spp. (Vieira et al. 2018).
+
+The random forest analysis was performed with the \emph{randomForest}
+package of R statistical software to describe the influence of
+\emph{EPSPS} gene amplification (genotypic), PPO-inhibitor resistance
+(genotypic), location (county), agronomic practices (e.g., tillage,
+irrigation, current and previous cropping-system), and weed demographics
+(e.g., density and distribution) on EPSPS-inhibitor resistance in
+\emph{A. palmeri} in southwestern Nebraska (Table 1). \emph{EPSPS} gene
+copy number (genotypic) was included as an explanatory variable to test
+the robustness of random forest as it is highly correlated to glyphosate
+resistance in \emph{A. palmeri} (Gaines et al. 2019). The \emph{A.
+palmeri} populations with at least one individual with \textgreater{} 2
+\emph{EPSPS} copy number was considered resistant (Table 2); therefore,
+EPSPS-inhibitor resistance was classified as Yes (\textgreater{} 2
+\emph{EPSPS} copy number) or No.~For this analysis, the \emph{ntree}
+parameter was set to 500, whereas \emph{mtry} was set to 2. Parameters
+numbers selected are standard for the sample size of the present study.
+
+\hypertarget{results}{%
+\section{Results}\label{results}}
+
+\hypertarget{genotypic-and-phenotypic-validation-of-epsps--and-ppo-inhibitor-resistance-in-a.-palmeri-1}{%
+\subsection{\texorpdfstring{Genotypic and phenotypic validation of
+EPSPS- and PPO-inhibitor resistance in \emph{A.
+palmeri}}{Genotypic and phenotypic validation of EPSPS- and PPO-inhibitor resistance in A. palmeri}}\label{genotypic-and-phenotypic-validation-of-epsps--and-ppo-inhibitor-resistance-in-a.-palmeri-1}}
+
+The \emph{EPSPS} amplification was found in 63\% of the 51 \emph{A.
+palmeri} populations analysed (Table 2). Phenotypic analysis of a subset
+of these populations confirmed the genotypic analysis data, in that a
+positive correlation (0.83; \emph{P}-value=0.0000) was observed between
+\emph{G} and \emph{P} assays (Figure 1 and Table 3). Seven \emph{A.
+palmeri} populations tested negative (\emph{G}=0) for glyphosate
+resistance in the genotypic assay but three of these populations showed
+low (\emph{P}=18\%, Hay 1), moderate (\emph{P}=35\%, Hay 4) and high
+(\emph{P}=75\%, Red 5) survival after glyphosate treatment in the
+phenotypic assays (Figure 1). The other four populations (Dun 3, Hay 3,
+Log 2 and Kei 3) that tested negative (\emph{G}=0\%) for EPSPS-inhibitor
+resistance in the genotypic assay showed less than 15\% glyphosate
+survival (\emph{P}).
+
+Fomesafen and lactofen resulted in less than 40\% survival of \emph{A.
+palmeri} populations in the phenotypic assays (Figure 2). The
+correlation between \emph{G} and \emph{P} for PPO-inhibitor resistance
+in \emph{A. palmeri} populations was inconsistent (Table 3). While a
+high \emph{G} and \emph{P} correlation (0.52; \emph{P}-value=0.0217) was
+observed for fomesafen (Figure 2A), no \emph{G} and \emph{P} correlation
+(-0.05; \emph{P}-value=0.84) was found for lactofen (Figure 2B).
+\emph{A. palmeri} populations Dun 5, Kei 2, Kei 5, and Log 4 were
+\emph{segregating for PPO resistance (Supp Table)} in the genotyping
+assay but individuals in these populations were sensitive to lactofen
+treatment (\emph{P}=0\%, Figure 2B). However, these populations showed
+higher frequency of resistant individuals. For example, nearly 30\% of
+individuals from the Log 4 population survived fomesafen treatment
+(Figure 2A). In contrast, \emph{A. palmeri} populations Cha 3, Kei 6,
+Per 2, and Red 5 tested negative for \(\triangle\)G210 or R128 het
+mutations (\emph{G}=0\%) but over 15\% of populations survived both
+fomesafen and lactofen treatment. Also, \emph{A. palmeri} populations
+Kei 3, Per 4, and Dun 4 showed 38, 25, and 18\% survival after fomesafen
+treatment but less than 15\% for lactofen. There was no correlation
+(0.23; \emph{P}-value=0.34) between fomesafen and lactofen in the
+phenotypic assay (Table 3).
+
+According to the genotypic assay, nearly 70\% of the 51 \emph{A.
+palmeri} populations from Southwestern Nebraska were confirmed resistant
+to PPO-inhibitor herbicides. In the 34 PPO-inhibitor-resistant \emph{A.
+palmeri} populations, 32 contain the \(\triangle\)G210 deletion in the
+\emph{PPX2} gene, while the R128M/G endowed PPO-inhibitor resistance in
+two \emph{A. palmeri} populations. Nearly 14\% of \emph{A. palmeri}
+populations had all individuals resistant, 53\% were segregating for
+resistance, and 33\% had no mutation detected to PPO-inhibitor
+herbicides. In addition, based on \emph{EPSPS} gene amplification, our
+study showed that 10\% of \emph{A. palmeri} populations had all
+individuals resistant to glyphosate, 53\% were segregating for
+resistance, and 37\% were susceptible to glyphosate (Table 2). Multiple
+resistance (EPSPS- and PPO-inhibitor herbicides) was present in 41\% of
+\emph{A. palmeri} populations of southwestern Nebraska (Table 2), while
+6, 11, and 13 \emph{A. palmeri} populations were susceptible to both
+herbicides, resistant to only glyphosate-, and resistant to only
+PPO-inhibitor herbicides, respectively (Figure 3).
+
+\hypertarget{random-forest-1}{%
+\subsection{Random Forest}\label{random-forest-1}}
+
+The final OOB error rate of the random forest analysis was 13.33\%,
+meaning that \textgreater{} 86\% of OOB samples were adequately
+classified by the model. The random forest analysis ranked (high to low)
+\emph{EPSPS} gene amplification \textgreater{} county \textgreater{}
+current crop \textgreater{} previous crop \textgreater{} \emph{A.
+palmeri} density \textgreater{} tillage \textgreater{} irrigation
+\textgreater{} \emph{A. palmeri} distribution \textgreater{}
+PPO-inhibitor resistance as the factors influencing the presence of
+EPSPS-inhibitor resistance in \emph{A. palmeri} of southwestern Nebraska
+(Figure 4). The selection of \emph{EPSPS} gene amplification as the top
+predictor shows the robustness of this model, since \emph{EPSPS} gene
+amplification is known to confer resistance to glyphosate. County was
+the second most important factor for the presence of EPSPS-inhibitor
+resistant \emph{A. palmeri}. The presence of EPSPS-inhibitor resistance
+in \emph{A. palmeri} was found in at least one population of all
+surveyed counties from southwestern Nebraska (Table 2). The lowest
+number of EPSPS-inhibitor-resistant populations was found at Hayes (Hay)
+and Perkins (Per) County with 1 (out 5) and 2 (out 6), respectively.
+Also, current and previous crops strongly influenced the presence of
+EPSPS-inhibitor resistance in \emph{A. palmeri} populations. Five
+\emph{A. palmeri} populations (Dun 4, Dun 5, Fro 1, Kei 2, and Lin 2)
+had 100\% resistant individuals and these populations were all found in
+current corn or soybean crops preceded by a corn or sorghum crops
+(Figure 5A). In contrast, \emph{EPSPS} gene amplification did not occur
+in 19 \emph{A. palmeri} populations, from which only two populations
+were found in corn and soybean rotations (Fro 5 and Hit 5; Table 2). The
+majority of EPSPS-inhibitor-susceptible \emph{A. palmeri} populations
+were found in rotations of corn, soybean, sorghum, wheat, fallow, and
+other crops (e.g., alfalfa, dry beans and field peas; Figure 5A).
+
+Nearly 70\% of EPSPS-inhibitor-susceptible \emph{A. palmeri} populations
+were resistant to PPO-inhibitor herbicides (Table 2). A similar trend of
+crop diversity was observed for PPO-inhibitor resistance in \emph{A.
+palmeri}, except a crop rotation of corn-sorghum-soybean was found in
+locations with only PPO-inhibitor-resistant individuals (Figure 5B). The
+random forest analysis was performed on EPSPS-inhibitor resistance only
+due to the robustness of \emph{EPSPS} gene amplification as a positive
+control to detect resistance in \emph{A. palmeri}, which is different
+from our results with PPO-inhibitor resistance.
+
+\hypertarget{discussion}{%
+\section{Discussion}\label{discussion}}
+
+The high correlation between \emph{G} and \emph{P} for EPSPS-inhibitor
+resistance demonstrates that most GR \emph{A. palmeri} populations from
+southwestern Nebraska are resistant due to \emph{EPSPS} gene
+amplification. However, other resistance mechanisms are likely present
+since a few \emph{A. palmeri} populations showed no \emph{EPSPS} gene
+amplification despite a majority of the individuals survived glyphosate
+(870 g ae ha\textsuperscript{-1}) application in the phenotypic assay.
+\emph{A. palmeri} was the first identified weed to evolve glyphosate
+resistance via \emph{EPSPS} gene amplification (Gaines et al. 2010),
+followed by \emph{Kochia scoparia}, \emph{Amaranthus tuberculatus},
+\emph{Lolium perenne ssp. multiflorum}, \emph{Bromus diandrus},
+\emph{Eleusine indica}, \emph{Chloris truncata}, and \emph{Amaranthus
+hybridus} (Patterson et al. 2018, Sammons and Gaines 2014). The
+\emph{EPSPS} gene amplification mechanism is widespread in \emph{A.
+palmeri} (Gaines et al. 2019, Sammons and Gaines 2014), albeit other
+EPSPS-inhibitor resistance mechanisms have arisen, including
+\emph{Pro106} mutation in the \emph{EPSPS} gene and reduced glyphosate
+absorption/translocation (Dominguez-Valenzuela et al. 2017,
+Palma-Bautista et al. 2019, Sammons and Gaines 2014). It remains unknown
+whether the \emph{A. palmeri} populations (e.g., Red 5) which have low
+or no \emph{EPSPS} gene amplification harbor additional resistance
+mechanisms, warranting further investigations.
+
+Gene amplification is an important evolutionary mechanism enabling weeds
+and other pests (Bass and Field 2011, Remnant et al. 2013) to evolve
+resistance to pesticides. Research on \emph{EPSPS} gene amplification
+molecular basis in weed species is underway but more work is still
+needed to unveil this complex adaptative trait. The genetics of
+\emph{EPSPS} gene amplification in weed species follows Mendelian
+(\emph{K. scoparia}) (Jugulam et al. 2014) and non-Mendelian (\emph{A.
+palmeri} (Giacomini et al. 2019) and \emph{B. diandrus} (Malone et al.
+2016)) inheritance patterns. Over 100 \emph{EPSPS} gene copies have been
+documented in \emph{A. palmeri} but maximum of only 10 have been
+observed in \emph{K. scoparia} (Kumar et al. 2015, Wiersma et al. 2015).
+The \emph{EPSPS} gene copy variation in \emph{A. palmeri} is a result of
+the extrachromosomal circular DNA transmitted to the next generation by
+tethering to mitotic and meiotic chromosomes (eccDNA) (Koo et al. 2018),
+while in \emph{K. scoparia}, \emph{EPSPS} copies are arranged in tandem
+repeats at a single locus (Patterson et al. 2018). Segregation for
+\emph{EPSPS} copy number in \emph{A. palmeri} families (F\scriptsize 1
+\normalsize and F\scriptsize 2 \normalsize) is transgressive, with
+individuals varying in \emph{EPSPS} gene amplification levels even among
+clonal plants (Giacomini et al. 2019). Transgressive segregation for
+\emph{EPSPS} in \emph{A. palmeri} might explain the variable
+\emph{EPSPS} copy numbers between individuals within populations
+screened from southwestern Nebraska (Table 2). Gene amplification
+coupled with the dioecious nature of \emph{A. palmeri} are valuable
+traits for this weed that help increase its genetic complexity and allow
+it to adapt to current US cropping systems.
+
+According to the genotypic assay, most of \emph{A. palmeri} populations
+from southwestern Nebraska also showed resistance to PPO-inhibitor
+herbicides. The mechanism of resistance is largely due to the
+\(\triangle\)G210 deletion but also due to R128M/G mutations in the
+\emph{PPX2} gene (Table 2). It has been demonstrated that a mutated PPO
+enzyme has reduced affinity for several PPO-inhibitor herbicides in
+\emph{A. palmeri} (Schwartz-Lazaro et al. 2017). Application of
+fomesafen (206 g ai ha\textsuperscript{-1}) and lactofen (280 g ai
+ha\textsuperscript{-1}) provided high mortality in \emph{A. palmeri}
+populations from southwestern Nebraska, including \emph{A. palmeri}
+populations with 100\% individuals with \(\triangle\)G210 deletion.
+Therefore, it is possible that most of sprayed \emph{A. palmeri}
+individuals in the phenotypic assay had no mutation for PPO-inhibitor
+resistance. High \emph{A. palmeri} mortality suggests that populations
+are segregating for PPO-inhibitor resistance at a low level. Still,
+there is correlation between \emph{G} and \emph{P} for fomesafen but not
+lactofen, which was sprayed slightly above the labled rate of 218 g ai
+ha\textsuperscript{-1}. The validation for PPO-inhibitor resistance
+presented here is limited by the segregating nature of \emph{A. palmeri}
+collected from field populations, since individuals in the phenotypic
+assays were not the same as those screened in the genotypic assays. This
+could be also explained in several ways, 1) the number of individuals
+sampled for the \emph{G} assay study may have been too low for the
+objective of validation; 2) high herbicide rate resulting in high
+individual mortality; 3) greenhouse conditions were ideal and plants had
+no stress during application of PPO-inhibitor herbicides, which might be
+different from plants under field conditions of southwestern Nebraska
+(Schafer et al. 2014); and 4) it is likely that plants were smaller than
+usual because of small volume of cone-tainers, the size of a plant
+strongly impacts the level of resistance, with smaller plants showing
+less resistance than larger plants (Coburn 2017).
+
+Populations of \emph{A. palmeri} have been reported to be resistant to
+HPPD-(Jhala et al. 2014), PSII-(Jhala et al. 2014) and EPSPS-inhibitor
+herbicides (Chahal et al. 2017) in Nebraska. In 2014, a survey with
+\emph{Amaranthus} spp. in southwestern Nebraska showed widespread
+EPSPS-inhibitor resistance for \emph{A. tuberculatus} (81\%) but not for
+\emph{A. palmeri} (6\%) (Vieira et al. 2018). Our survey showed a high
+number of EPSPS-inhibitor-resistant/segregating \emph{A. palmeri}
+populations in southwestern Nebraska (\textgreater60\%). The rapid
+evolution of EPSPS-inhibitor-resistant \emph{A. palmeri} in southwestern
+Nebraska raised questions about whether populations were introduced via
+seed/gene flow or arose independently. Although we did not test the
+hypothesis, the random forest analysis did shed some light on
+EPSPS-inhibitor resistance evolution in \emph{A. palmeri}. The random
+forest analysis results suggested that \emph{EPSPS} gene amplification,
+county, and current and previous crops were the top factors influencing
+GR \emph{A. palmeri} in southwestern Nebraska. The \emph{EPSPS} gene
+amplification as the primary factor for glyphosate resistance in
+\emph{A. palmeri} showed the robustness of random forest analysis, while
+county influence on \emph{EPSPS}-inhibitor resistance in \emph{A.
+palmeri} highlighted how practices for delaying EPSPS-inhibitor
+resistance evolution should start at the landscape level. It is likely
+that growers with common goals may implement best weed management
+tactics to delay EPSPS-inhibitor resistance evolution and prevent
+seed/gene flow of herbicide resistant weeds. Nonetheless, it is striking
+that PPO-inhibitor resistance was common in counties with low/no
+EPSPS-inhibitor resistance. For instance, most
+EPSPS-inhibitor-susceptible \emph{A. palmeri} were found in Hayes County
+in areas of sorghum or corn in rotation with wheat (Table 1), which are
+less glyphosate-dependent crops. Although best weed management practices
+at the landscape level are encouraged, our results suggest that growers
+were not necessarily implementing good management practices but rather,
+using less EPSPS-inhibitor herbicide.
+
+The high presence of \emph{A. palmeri} populations with 100\% resistance
+to EPSPS-inhibitors in less diverse cropping systems (e.g., corn-soybean
+rotation) suggests the influence of repeated glyphosate application on
+\emph{A. palmeri} evolution to EPSPS-inhibitor resistance. The
+occurrence of EPSPS-inhibitor-resistant \emph{A. palmeri} populations is
+reduced in rotations with more diversified crops (Figure 5A), most
+likely due to rotations with glyphosate sensitive crops (no/less
+glyphosate use). For example, according to a survey, 2,4-D and
+metsulfuron-methyl are the most used POST herbicides in grain sorghum
+and wheat in Nebraska, respectively (Sarangi and Jhala 2018). Crop
+diversity exerts a different selection pressure on weed communities,
+including canopy closure timing, seeding, and harvest date, which aid on
+reducing the dominance of single weed species (Andrade et al. 2017).
+Nonetheless, it is likely that Nebraska growers still rely on other
+herbicide sites of action for weed management, as most
+EPSPS-inhibitor-susceptible \emph{A. palmeri} populations were resistant
+to PPO-inhibitor herbicides (e.g., fomesafen). Similar to
+EPSPS-inhibitor resistance, the PPO-inhibitor-resistant \emph{A.
+palmeri} was also found more often in less diverse crop rotations
+(Figure 5B). Despite not having long-term herbicide application records
+for the surveyed area, it has been demonstrated that overreliance on a
+single or few herbicide SOA in areas with low crop diversity contributed
+to resistance (Hicks et al. 2018). In addition, it has been shown that
+herbicide mixture (multiple SOA in one application) is more effective
+for delaying herbicide weed resistance than herbicide rotation (multiple
+applications, each with a single SOA) (Beckie and Reboud 2009, Evans et
+al. 2016). Thus, without herbicide mixture, increased crop diversity is
+not enough to reduce the risk of herbicide resistance evolution in weed
+species.
+
+An emerging concern in weed science is the ability of some species to
+stack genes for multiple herbicide resistance in a single population.
+Five- and six-way herbicide resistance has been reported in an \emph{A.
+tuberculatus} population from Illinois (Strom et al. 2019) and Missouri
+(Shergill et al. 2018), respectively. The 19 \emph{A. palmeri}
+populations used in the whole-plant phenotypic assay also tested
+positive (\textgreater80\% of individuals) to an ALS-inhibitor herbicide
+(imazethapyr {[}70 g ai ha\textsuperscript{-1}{]}; data not shown).
+Moreover, nearly half of the \emph{A. palmeri} populations in this study
+possessed multiple herbicide resistance (EPSPS and PPO; Figure 3). Thus,
+it is likely that two- and three-way resistance exists in most \emph{A.
+palmeri} populations from southwestern Nebraska. The random forest
+analysis suggested no/low influence of PPO-inhibitor resistance on
+EPSPS-inhibitor resistance, indicating \emph{EPSPS} gene amplification
+and PPO-inhibitor resistance mutations (\(\triangle\)G210 or R128M/G)
+are not genetically linked. Cosegregation of distinct SOA resistance
+mechanisms is unlikely but not impossible as it has been shown that ALS-
+and PPO-inhibitor resistance are genetically linked in a \emph{A.
+tuberculatus} population (Tranel et al. 2017).
+
+\hypertarget{conclusion}{%
+\section{Conclusion}\label{conclusion}}
+
+Herein we demonstrate the widespread occurrence of EPSPS- and
+PPO-inhibitor-resistant \emph{A. palmeri} in southwestern Nebraska.
+Glyphosate resistance via \emph{EPSPS} gene amplification was present in
+the majority of \emph{A. palmeri} populations from Nebraska, supporting
+the use of genotypic assays for faster detection of
+\emph{EPSPS}-inhibitor resistance in this region. Novel or non-target
+glyphosate resistance mechanisms may also be present in few \emph{A.
+palmeri} populations, but at a relatively low frequency. PPO-inhibitor
+resistance was also present in these populations, but was less
+correlated with known PPO-inhibitor resistance mutations, warranting the
+use of both genotypic and whole-plant bioassays for testing
+PPO-inhibitor resistance. The EPSPS- or PPO-inhibitor-resistant \emph{A.
+palmeri} populations were found in areas of low crop diversity,
+suggesting resistance evolution was mostly due to high selection
+pressures of EPSPS- and PPO-inhibitor herbicides. Great progress has
+been made towards understanding the \emph{A. palmeri} molecular basis of
+resistance, but the continuous spread of herbicide resistance to new
+geographies is evident. Thus, there is a need to change the current
+methods for crop and weed management, including dependence on
+corn/soybean rotation, use herbicide mixtures with different SOA rather
+than sequential applications, and bring non-herbicide weed management
+innovations to US cropping systems.
+
+\hypertarget{acknowledgments}{%
+\section{Acknowledgments}\label{acknowledgments}}
+
+This research received no specific grant from any funding agency. We
+also appreciate the help of Victor Ribeiro's assistance with the
+greenhouse projects.
+
+\hypertarget{conflicts-of-interest}{%
+\section{Conflicts of Interest}\label{conflicts-of-interest}}
+
+The authors declare no conflict of interest.
+
+\hypertarget{references}{%
+\section*{References}\label{references}}
+\addcontentsline{toc}{section}{References}
+
+\hypertarget{refs}{}
+\leavevmode\hypertarget{ref-andrade_weed_2017}{}%
+Andrade JF, Satorre EH, Ermácora CM, Poggio SL (2017) Weed communities
+respond to changes in the diversity of crop sequence composition and
+double cropping. Weed Research 57:148--158
+
+\leavevmode\hypertarget{ref-bass_gene_2011}{}%
+Bass C, Field LM (2011) Gene amplification and insecticide resistance.
+Pest Management Science 67:886--890
+
+\leavevmode\hypertarget{ref-beckie_selecting_2009}{}%
+Beckie HJ, Reboud X (2009) Selecting for weed resistance: Herbicide
+rotation and mixture. Weed Technology 23:363--370
+
+\leavevmode\hypertarget{ref-biau_random_2016}{}%
+Biau G, Scornet E (2016) A random forest guided tour. TEST 25:197--227
+
+\leavevmode\hypertarget{ref-breiman_random_2001}{}%
+Breiman L (2001) Random Forests. Machine Learning 45:5--32
+
+\leavevmode\hypertarget{ref-chahal_glyphosate-resistant_2017}{}%
+Chahal PS, Varanasi VK, Jugulam M, Jhala AJ (2017) Glyphosate-resistant
+Palmer amaranth (\emph{Amaranthus} \emph{Palmeri}) in Nebraska:
+Confirmation, EPSPS gene amplification, and response to POST corn and
+soybean herbicides. Weed Technology 31:80--93
+
+\leavevmode\hypertarget{ref-chatham_multistate_2015}{}%
+Chatham LA, Bradley KW, Kruger GR, Martin JR, Owen MDK, Peterson DE,
+Mithila J, Tranel PJ (2015) A Multistate study of the association
+between glyphosate resistance and EPSPS gene amplification in waterhemp
+(\emph{Amaranthus} \emph{Tuberculatus}). Weed Science 63:569--577
+
+\leavevmode\hypertarget{ref-coburn_influence_2017}{}%
+Coburn C (2017) Influence of Experimental Methods on Herbicide
+Resistance Confirmation. Ph.D dissertation. Laramie, WY: University of
+Wyoming. 145 p
+
+\leavevmode\hypertarget{ref-culpepper_glyphosate-resistant_2006}{}%
+Culpepper AS, Grey TL, Vencill WK, Kichler JM, Webster TM, Brown SM,
+York AC, Davis JW, Hanna WW (2006) Glyphosate-resistant Palmer amaranth
+(\emph{Amaranthus} \emph{Palmeri}) confirmed in Georgia. Weed Science
+54:620--626
+
+\leavevmode\hypertarget{ref-dominguez-valenzuela_first_2017}{}%
+Dominguez-Valenzuela JA, Gherekhloo J, Fernández-Moreno PT,
+Cruz-Hipolito HE, Alcántara-de la Cruz R, Sánchez-González E, De Prado R
+(2017) First confirmation and characterization of target and non-target
+site resistance to glyphosate in Palmer amaranth (\emph{Amaranthus}
+\emph{Palmeri}) from Mexico. Plant Physiology and Biochemistry
+115:212--218
+
+\leavevmode\hypertarget{ref-doyle_rapid_1987}{}%
+Doyle JJ, Doyle JL (1987) A rapid DNA isolation procedure for small
+quantities of fresh leaf tissue. Phytochemical Bull 19:11--15
+
+\leavevmode\hypertarget{ref-evans_managing_2016}{}%
+Evans JA, Tranel PJ, Hager AG, Schutte B, Wu C, Chatham LA, Davis AS
+(2016) Managing the evolution of herbicide resistance: Managing the
+evolution of herbicide resistance. Pest Manag Sci 72:74--80
+
+\leavevmode\hypertarget{ref-farmer_evaluating_2017}{}%
+Farmer JA, Webb EB, Pierce RA, Bradley KW (2017) Evaluating the
+potential for weed seed dispersal based on waterfowl consumption and
+seed viability. Pest Management Science 73:2592--2603
+
+\leavevmode\hypertarget{ref-gaines_molecular_2019}{}%
+Gaines TA, Patterson EL, Neve P (2019) Molecular mechanisms of adaptive
+evolution revealed by global selection for glyphosate resistance. New
+Phytologist 0
+
+\leavevmode\hypertarget{ref-gaines_mechanism_2011}{}%
+Gaines TA, Shaner DL, Ward SM, Leach JE, Preston C, Westra P (2011)
+Mechanism of Resistance of Evolved Glyphosate-Resistant Palmer Amaranth
+(\emph{Amaranthus} \emph{Palmeri}). J Agric Food Chem 59:5886--5889
+
+\leavevmode\hypertarget{ref-gaines_interspecific_2012}{}%
+Gaines TA, Ward SM, Bukun B, Preston C, Leach JE, Westra P (2012)
+Interspecific hybridization transfers a previously unknown glyphosate
+resistance mechanism in \emph{Amaranthus} species. Evolutionary
+Applications 5:29--38
+
+\leavevmode\hypertarget{ref-gaines_gene_2010}{}%
+Gaines TA, Zhang W, Wang D, Bukun B, Chisholm ST, Shaner DL, Nissen SJ,
+Patzoldt WL, Tranel PJ, Culpepper AS, Grey TL, Webster TM, Vencill WK,
+Sammons RD, Jiang J, Preston C, Leach JE, Westra P (2010) Gene
+amplification confers glyphosate resistance in \emph{Amaranthus}
+\emph{Palmeri}. Proceedings of the National Academy of Sciences
+107:1029--1034
+
+\leavevmode\hypertarget{ref-giacomini_two_2017-1}{}%
+Giacomini DA, Umphres AM, Nie H, Mueller TC, Steckel LE, Young BG, Scott
+RC, Tranel PJ (2017) Two new PPX2 mutations associated with resistance
+to PPO-inhibiting herbicides in \emph{Amaranthus} \emph{Palmeri}. Pest
+Management Science 73:1559--1563
+
+\leavevmode\hypertarget{ref-giacomini_variable_2019}{}%
+Giacomini DA, Westra P, Ward SM (2019) Variable Inheritance of Amplified
+EPSPS Gene Copies in Glyphosate-Resistant Palmer Amaranth
+(\emph{Amaranthus} \emph{Palmeri}). Weed Science 67:176--182
+
+\leavevmode\hypertarget{ref-gossett_resistance_1992}{}%
+Gossett BJ, Murdock EC, Toler JE (1992) Resistance of Palmer amaranth
+(\emph{Amaranthus} \emph{Palmeri}) to the dinitroaniline herbicides.
+Weed Technology 6:587--591
+
+\leavevmode\hypertarget{ref-hamilton_weeds_1958}{}%
+Hamilton KC, Arle HF (1958) Weeds od crops in Southern Arizona. Tucson,
+AZ: College of Agriculture, University of Arizona. 66 p
+
+\leavevmode\hypertarget{ref-heap_list_2019-1}{}%
+Heap I (2019) List of Herbicide Resistant Weeds by Weed Species.
+\url{http://www.weedscience.org/Summary/Species.aspx}. Accessed June 12,
+2019
+
+\leavevmode\hypertarget{ref-hicks_factors_2018}{}%
+Hicks HL, Comont D, Coutts SR, Crook L, Hull R, Norris K, Neve P, Childs
+DZ, Freckleton RP (2018) The factors driving evolved herbicide
+resistance at a national scale. Nature Ecology \& Evolution 2:529--536
+
+\leavevmode\hypertarget{ref-horak_biotypes_1995}{}%
+Horak MJ, Peterson DE (1995) Biotypes of Palmer amaranth
+(\emph{Amaranthus} \emph{Palmeri}) and common waterhemp
+(\emph{Amaranthus} \emph{Rudis}) are resistant to imazethapyr and
+thifensulfuron. Weed Technology 9:192--195
+
+\leavevmode\hypertarget{ref-jhala_confirmation_2014}{}%
+Jhala AJ, Sandell LD, Rana N, Kruger GR, Knezevic SZ (2014) Confirmation
+and control of triazine and 4-hydroxyphenylpyruvate
+dioxygenase-inhibiting herbicide-resistant Palmer amaranth
+(\emph{Amaranthus} \emph{Palmeri}) in Nebraska. Weed Technology
+28:28--38
+
+\leavevmode\hypertarget{ref-jugulam_tandem_2014}{}%
+Jugulam M, Niehues K, Godar AS, Koo D-H, Danilova T, Friebe B, Sehgal S,
+Varanasi VK, Wiersma A, Westra P, Stahlman PW, Gill BS (2014) Tandem
+amplification of a chromosomal segment harboring
+5-enolpyruvylshikimate-3-phosphate synthase locus confers glyphosate
+resistance in \emph{Kochia} \emph{Scoparia}. Plant Physiology
+166:1200--1207
+
+\leavevmode\hypertarget{ref-kohrt_confirmation_2017}{}%
+Kohrt JR, Sprague CL, Nadakuduti SS, Douches D (2017) Confirmation of a
+Three-Way (Glyphosate, ALS, and Atrazine) Herbicide-Resistant Population
+of Palmer Amaranth (Amaranthus palmeri) in Michigan. Weed Science
+65:327--338
+
+\leavevmode\hypertarget{ref-koo_extrachromosomal_2018}{}%
+Koo D-H, Molin WT, Saski CA, Jiang J, Putta K, Jugulam M, Friebe B, Gill
+BS (2018) Extrachromosomal circular DNA-based amplification and
+transmission of herbicide resistance in crop weed \emph{Amaranthus}
+\emph{Palmeri}. Proc Natl Acad Sci USA 115:3332--3337
+
+\leavevmode\hypertarget{ref-kumar_molecular_2015}{}%
+Kumar V, Jha P, Giacomini D, Westra EP, Westra P (2015) Molecular basis
+of evolved resistance to glyphosate and acetolactate synthase-inhibitor
+herbicides in Kochia (\emph{Kochia} \emph{Scoparia}) accessions from
+Montana. Weed sci 63:758--769
+
+\leavevmode\hypertarget{ref-kumar_confirmation_2019}{}%
+Kumar V, Liu R, Boyer G, Stahlman PW (2019) Confirmation of 2,4-D
+resistance and identification of multiple resistance in a Kansas Palmer
+amaranth (\emph{Amaranthus} \emph{Palmeri}) population. Pest Management
+Science 0
+
+\leavevmode\hypertarget{ref-kupper_population_2018}{}%
+Küpper A, Manmathan HK, Giacomini D, Patterson EL, McCloskey WB, Gaines
+TA (2018) Population genetic structure in glyphosate-resistant and
+-susceptible Palmer amaranth (\emph{Amaranthus} \emph{Palmeri})
+populations using genotyping-by-sequencing (GBS). Front Plant Sci 9
+
+\leavevmode\hypertarget{ref-langemeier_factors_2016}{}%
+Langemeier CB, Robertson AE, Wang D, Jackson-Ziems TA, Kruger GR (2016)
+Factors affecting the development and severity of goss's bacterial wilt
+and leaf blight of corn, caused by \emph{Clavibacter}
+\emph{Michiganensis} subsp. \emph{Nebraskensis}. Plant Disease
+101:54--61
+
+\leavevmode\hypertarget{ref-malone_epsps_2016}{}%
+Malone JM, Morran S, Shirley N, Boutsalis P, Preston C (2016) EPSPS gene
+amplification in glyphosate-resistant \emph{Bromus} \emph{Diandrus}.
+Pest Management Science 72:81--88
+
+\leavevmode\hypertarget{ref-massinga_water_2003}{}%
+Massinga RA, Currie RS, Trooien TP (2003) Water use and light
+interception under Palmer amaranth (\emph{Amaranthus} \emph{Palmeri})
+and corn competition. Weed Science 51:523--531
+
+\leavevmode\hypertarget{ref-morgan_competitive_2001}{}%
+Morgan GD, Baumann PA, Chandler JM (2001) Competitive impact of Palmer
+amaranth (\emph{Amaranthus} \emph{Palmeri}) on cotton (\emph{Gossypium}
+\emph{Hirsutum}) development and yield. Weed Technology 15:408--412
+
+\leavevmode\hypertarget{ref-norsworthy_-field_2014}{}%
+Norsworthy JK, Griffith G, Griffin T, Bagavathiannan M, Gbur EE (2014)
+In-field movement of glyphosate-resistant Palmer amaranth
+(\emph{Amaranthus} \emph{Palmeri}) and its impact on cotton lint Yield:
+Evidence supporting a zero-threshold strategy. Weed Science 62:237--249
+
+\leavevmode\hypertarget{ref-oliveira_interspecific_2018}{}%
+Oliveira MC, Gaines TA, Patterson EL, Jhala AJ, Irmak S, Amundsen K,
+Knezevic SZ (2018) Interspecific and intraspecific transference of
+metabolism-based mesotrione resistance in dioecious weedy
+\emph{Amaranthus}. The Plant Journal 96:1051--1063
+
+\leavevmode\hypertarget{ref-palma-bautista_reduced_2019}{}%
+Palma-Bautista C, Torra J, Garcia MJ, Bracamonte E, Rojano-Delgado AM,
+Alcántara-de la Cruz R, De Prado R (2019) Reduced Absorption and
+Impaired Translocation Endows Glyphosate Resistance in Amaranthus
+palmeri Harvested in Glyphosate-Resistant Soybean from Argentina. J
+Agric Food Chem 67:1052--1060
+
+\leavevmode\hypertarget{ref-patterson_glyphosate_2018}{}%
+Patterson EL, Pettinga DJ, Ravet K, Neve P, Gaines TA (2018) Glyphosate
+resistance and EPSPS gene duplication: Convergent evolution in multiple
+plant species. J Hered 109:117--125
+
+\leavevmode\hypertarget{ref-powles_evolved_2008}{}%
+Powles SB (2008) Evolved glyphosate-resistant weeds around the world:
+Lessons to be learnt. Pest Management Science 64:360--365
+
+\leavevmode\hypertarget{ref-price_glyphosate-resistant_2011}{}%
+Price AJ, Balkcom KS, Culpepper SA, Kelton JA, Nichols RL, Schomberg H
+(2011) Glyphosate-resistant Palmer amaranth: A threat to conservation
+tillage. Journal of Soil and Water Conservation 66:265--275
+
+\leavevmode\hypertarget{ref-r_core_team_r:_2019}{}%
+R: A Language and Environment for Statistical Computing (2019). Vienna,
+Austria: R Foundation for Statistical Computing
+
+\leavevmode\hypertarget{ref-rangani_novel_2019}{}%
+Rangani G, Salas-Perez RA, Aponte RA, Knapp M, Craig IR, Mietzner T,
+Langaro AC, Noguera MM, Porri A, Roma-Burgos N (2019) A Novel
+Single-Site Mutation in the Catalytic Domain of Protoporphyrinogen
+Oxidase IX (PPO) Confers Resistance to PPO-Inhibiting Herbicides. Front
+Plant Sci 10
+
+\leavevmode\hypertarget{ref-remnant_gene_2013}{}%
+Remnant EJ, Good RT, Schmidt JM, Lumb C, Robin C, Daborn PJ, Batterham P
+(2013) Gene duplication in the major insecticide target site, Rdl, in
+\emph{Drosophila} \emph{Melanogaster}. Proc Natl Acad Sci USA
+110:14705--14710
+
+\leavevmode\hypertarget{ref-salas_resistance_2016}{}%
+Salas RA, Burgos NR, Tranel PJ, Singh S, Glasgow L, Scott RC, Nichols RL
+(2016) Resistance to PPO-inhibiting herbicide in Palmer amaranth from
+Arkansas. Pest Management Science 72:864--869
+
+\leavevmode\hypertarget{ref-salas-perez_frequency_2017}{}%
+Salas-Perez RA, Burgos NR, Rangani G, Singh S, Refatti JP, Piveta L,
+Tranel PJ, Mauromoustakos A, Scott RC (2017) Frequency of gly-210
+deletion mutation among protoporphyrinogen oxidase inhibitor--resistant
+Palmer amaranth (\emph{Amaranthus} \emph{Palmeri}) populations. Weed
+Science 65:718--731
+
+\leavevmode\hypertarget{ref-sammons_glyphosate_2014}{}%
+Sammons RD, Gaines TA (2014) Glyphosate resistance: State of knowledge.
+Pest Management Science 70:1367--1377
+
+\leavevmode\hypertarget{ref-sarangi_statewide_2018-1}{}%
+Sarangi D, Jhala AJ (2018) A Statewide Survey of Stakeholders to Assess
+the Problem Weeds and Weed Management Practices in Nebraska. Weed
+Technology 32:642--655
+
+\leavevmode\hypertarget{ref-sauer_revision_1955}{}%
+Sauer J (1955) Revision of the dioecious Amaranths. Madroño 13:5--46
+
+\leavevmode\hypertarget{ref-sauer_recent_1957}{}%
+Sauer J (1957) Recent migration and evolution of the dioecious
+Amaranths. Evolution 11:11--31
+
+\leavevmode\hypertarget{ref-sauer_dioecious_1972}{}%
+Sauer JD (1972) The dioecious Amaranths: A new species name and major
+range extensions. Madroño 21:426--434
+
+\leavevmode\hypertarget{ref-schafer_rhizosphere_2014}{}%
+Schafer JR, Hallett SG, Johnson WG (2014) Rhizosphere Microbial
+Community Dynamics in Glyphosate-Treated Susceptible and Resistant
+Biotypes of Giant Ragweed (Ambrosia trifida). Weed Science 62:370--381
+
+\leavevmode\hypertarget{ref-schwartz-lazaro_resistance_2017}{}%
+Schwartz-Lazaro LM, Norsworthy JK, Scott RC, Barber LT (2017) Resistance
+of two Arkansas Palmer amaranth populations to multiple herbicide sites
+of action. Crop Protection 96:158--163
+
+\leavevmode\hypertarget{ref-shergill_investigations_2018}{}%
+Shergill LS, Barlow BR, Bish MD, Bradley KW (2018) Investigations of
+2,4-D and multiple herbicide resistance in a Missouri waterhemp
+(\emph{Amaranthus} \emph{Tuberculatus}) population. Weed Science
+66:386--394
+
+\leavevmode\hypertarget{ref-smith_fodder_1900}{}%
+Smith J (1900) Fodder and forage plants. Exclusive of the grasses.
+Washington. 65 p
+
+\leavevmode\hypertarget{ref-strom_characterization_2019}{}%
+Strom SA, Gonzini LC, Mitsdarfer C, Davis AS, Riechers DE, Hager AG
+(2019) Characterization of multiple herbicide--resistant waterhemp
+(\emph{Amaranthus} \emph{Tuberculatus}) populations from Illinois to
+VLCFA-inhibiting herbicides. Weed Science 67:369--379
+
+\leavevmode\hypertarget{ref-tranel_target-site_2017}{}%
+Tranel PJ, Wu C, Sadeque A (2017) Target-site resistances to ALS and PPO
+inhibitors are linked in waterhemp (\emph{Amaranthus}
+\emph{Tuberculatus}). Weed Science 65:4--8
+
+\leavevmode\hypertarget{ref-varanasi_confirmation_2018}{}%
+Varanasi VK, Brabham C, Norsworthy JK (2018a) Confirmation and
+Characterization of Non--target site Resistance to Fomesafen in Palmer
+amaranth (Amaranthus palmeri). Weed Science 66:702--709
+
+\leavevmode\hypertarget{ref-varanasi_statewide_2018}{}%
+Varanasi VK, Brabham C, Norsworthy JK, Nie H, Young BG, Houston M,
+Barber T, Scott RC (2018b) A Statewide survey of PPO-inhibitor
+resistance and the prevalent target-site mechanisms in Palmer amaranth
+(\emph{Amaranthus} \emph{Palmeri}) accessions from Arkansas. Weed
+Science 66:149--158
+
+\leavevmode\hypertarget{ref-vieira_distribution_2018}{}%
+Vieira BC, Samuelson SL, Alves GS, Gaines TA, Werle R, Kruger GR (2018)
+Distribution of glyphosate-resistant \emph{Amaranthus} spp. In Nebraska.
+Pest Management Science 74:2316--2324
+
+\leavevmode\hypertarget{ref-ward_palmer_2013}{}%
+Ward SM, Webster TM, Steckel LE (2013) Palmer Amaranth
+(\emph{Amaranthus} \emph{Palmeri}): A Review. Weed Technology 27:12--27
+
+\leavevmode\hypertarget{ref-wiersma_gene_2015}{}%
+Wiersma AT, Gaines TA, Preston C, Hamilton JP, Giacomini D, Robin Buell
+C, Leach JE, Westra P (2015) Gene amplification of
+5-enol-pyruvylshikimate-3-phosphate synthase in glyphosate-resistant
+\emph{Kochia} \emph{Scoparia}. Planta 241:463--474
+
+\leavevmode\hypertarget{ref-wuerffel_distribution_2015}{}%
+Wuerffel RJ, Young JM, Lee RM, Tranel PJ, Lightfoot DA, Young BG (2015)
+Distribution of the G210 protoporphyrinogen oxidase mutation in Illinois
+waterhemp (\emph{Amaranthus} \emph{Tuberculatus}) and an improved
+molecular method for detection. Weed Science 63:839--845
+
+\end{document}
