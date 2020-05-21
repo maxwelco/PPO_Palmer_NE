@@ -1,0 +1,150 @@
+---
+title: 
+output: 
+  postr::flex_dashboard_poster:
+    render_print: true
+---
+
+
+## Header row {data-height=6}
+
+###
+
+<table style="width:100%">
+<tr>
+  <td><center><h3>
+  **Molecular and Greenhouse Validation of Field-Evolved Resistance to Glyphosate and PPO-Inhibitors in Palmer amaranth**
+  </h3></center></td>
+  <td rowspan="2">
+  <img src="resources/wisc.png" style="width:128px"></img>
+  </td>
+</tr>
+<tr><td><center>
+  Maxwel C. Oliveira^1^, Darci Giacomini^2^, Patrick
+Tranel^2^, Gustavo De Souza Vieira, Nikola Arsenijevic^1^ and Rodrigo Werle^1^
+  </center></td>
+  
+</tr>
+</table> 
+<hr>
+
+<tr><td><center>
+^1^ University of Wisconsin-Madison and ^2^ University of Illinois Urbana-Champaign
+  </center></td>
+
+<tr><td><center>
+<font size="0.2"> ^1^Corresponding author's E-mail: max.oliveira@wisc.edu</font> 
+
+  </center></td>
+
+## Body row {data-height=89.5 .small}
+
+### 
+
+#### **Introduction**
+
+* Growers have reported that POST herbicide applications of EPSPS- (e.g. glyphosate) and PPO- (e.g., fomesafen and lactofen) inhibiting herbicides, are not providing adequate levels of Palmer amaranth control in Roundup Ready (RR) soybean systems.
+
+* Unsatisfactory levels of Palmer amaranth control may not be exclusively due to herbicide resistance. In some cases, poor control is a result of improper herbicide application, weed size, and/or adverse environmental conditions.
+
+* The **OBJECTIVE** of this study was to validate, under greenhouse conditions, the results of molecular confirmation of PPO- and EPSPS-inhibiting herbicide resistance in Palmer amaranth populations. 
+
+
+#### **Material and methods**
+
+- 51 Palmer amaranth populations from western Nebraska were screened for molecular resistance to ESPSP- and PPO-inhibiting herbicides in 2017 (Figure 1; Vieira et al, 2017).
+
+```{r, echo=FALSE, fig.cap="Figure 1. Distribution of EPSPS- and PPO-inhibiting herbicide resistance in Palmer amaranth populations from SW Nebraska according to molecular assays (Vieira et al, 2017).", out.width = '100%', fig.align="left", fig.retina = 2, fig.pos='h'}
+knitr::include_graphics("resources/map.png", dpi=600)
+```
+
+- Out of 51 Palmer amaranth populations, 19 were further screened in the greenhouse for EPSPS- and PPO-inhibiting herbicides. This study was conduted with 20 seedlings herbicide^-1^ run^-1^. The experimental unit was a single conetainer (164 cm^3^) and experimental runs were conducted during the winter, summer, and fall of 2018.
+
+- Palmer amaranth plants were treated when they reached 8-10 cm in height with glyphosate (870 g ae ha^-1^) and fomesafen (226 g ae ha^-1^) using a single nozzle sprayer.
+
+- At 21 days after herbicide treatment (DAT), plants were visually rated and evaluated as dead [susceptible (1-3)] or alive [resistant (4-10); Figures 2 and 4].
+
+- The percentage of Palmer amaranth populations with  EPSPS and/or PPO resistance was reported as: 
+
+
+<center>Y = R / T</center>
+
+
+where *Y* is the % of EPSPS or PPO resistant Palmer amararanth population in the molecular or greenhouse assay; *R* is the number of confirmed resistant plants in the molecualr assay (> 2 EPSPS copy number or ΔG210 deletion) or number of alive plantas after herbicide treatment in the greenhouse assay; and *T* is the total number of samples for each population used in the molecular (5) and greenhouse (20) assays.
+
+- Pearson’s correlation coefficient was performed in R statistical software to evaluate how well greenhouse assays corroborated results from the molecular assay.
+ 
+### 
+
+#### **Results**
+
+##### *Glyphosate (EPSPS-inhibiting herbicide)*
+
+```{r, echo=FALSE, fig.cap="Figure 2. EPSPS-inhibiting herbicide (glyphosate) injury evaluation at 21 DAT.", out.width = '80%', fig.align="center", fig.retina = 2, fig.pos='h'}
+knitr::include_graphics("resources/EPSPS.png", dpi=600)
+```
+
+
+
+
+```{r, echo=FALSE, fig.cap="Figure 3. Regression results between the glyphosate molecular and greenhouse assays. Result are presented for winter (top) and summer (bottom) experimental runs.", out.width = '90%', fig.align="center", fig.retina = 2, fig.pos='h'}
+knitr::include_graphics("resources/GlyphosateR.png", dpi=600)
+```
+
+- Strong correlation was found between greenhouse and molecular assays (EPSPS gene copy number) for glyphosate resistance (Figure 2).
+
+- The correlation was higher when Palmer amaranth plants were screened in summer (0.86; P<0.01) versus winter (0.43; P=0.06).
+
+
+
+
+
+
+### 
+
+#### **Results**
+
+##### *Fomesafen (PPO-inhibiting herbicide)*
+
+
+```{r, echo=FALSE, fig.cap=" Figure 4. PPO-inhibiting herbicide (fomesafen) injury evaluation at 21 DAT.", out.width = '80%', fig.align="center", fig.retina = 2, fig.pos='h'}
+knitr::include_graphics("resources/PPO.png", dpi=600)
+```
+
+
+
+```{r, echo=FALSE, fig.cap="Figure 5. Regression results between the fomesafen molecular and greenhouse assays. Results are presented for winter (top), summer (middle), and fall (bottom) experimental runs.", out.width = '70%', fig.align="center", fig.retina = 2, fig.pos='h'}
+knitr::include_graphics("resources/FomesafenR.png")
+```
+
+- Greenhouse assays results for fomesafen (PPO resistance) did not directly correlate with results from molecular assays (ΔG210 deletion, Figure 5).
+
+- The highest correlation for fomesafen (PPO resistance) was during the fall experimental run (0.40; P=0.09).
+
+
+
+
+## Footer row {data-height=6.5} 
+
+### {data-width=33 .small}
+
+##### **Literature cited**
+
+- <font size="0.3">Vieira G, Oliveira MC, Giacomini D, Arsenijevic N, Tranel P, Werle R (2017) Molecular screening of PPO and glyphosate resistance im Palmer amaranth populations from Southwest Nebraska. In: Proceedings of the 72^nd^ Annual Meeting of the NCWSS, Saint Louis, MO, page 32.</font> 
+
+##### **Acknowledgements**
+
+- <font size="0.3">The authors would like to thank Sarah Striegel and Victor Ribeiro for their assistance in the greenhouse assays.</font> 
+
+
+
+### {data-width=67 .small}
+
+#### **Conclusions**
+
+- The use of molecular techniques for the detection of glyphosate resistance in Palmer amaranth is robust and accurate, but not necessarily for PPO-inhibiting herbicides. 
+
+- The segregation for herbicide resistance in Palmer amaranth and possible variation in environmental conditions in the greenhouse assays might have influenced our results as correlations also deviate across experimental runs, especially for PPO resistance.
+
+- Further greenhouse assays will be conducted with another PPO-inhibiting herbicide (e.g., lactofen) to evaluate if correlations with PPO resistance (ΔG210 deletion) is higher than fomesafen. 
+
