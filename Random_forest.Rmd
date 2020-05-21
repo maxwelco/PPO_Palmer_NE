@@ -1,0 +1,185 @@
+---
+title: "Random_Forest"
+author: "Maxwel Coura Oliveira"
+date: "5/21/2020"
+output: html_document
+---
+
+```{r include=FALSE}
+library(tidyverse)
+library(tidymodels)
+```
+
+
+
+```{r}
+data <- read_csv("database.csv")
+```
+
+```{r}
+nd <- data %>% 
+   select(-geneampR, -population, -greenhouse, -multiple, -county) %>% 
+  na.omit()
+```
+
+
+```{r}
+skimr::skim(nd)
+```
+
+```{r}
+nd %>% 
+  ggplot(aes(x=longitude, y=latitude, color = glyresistant)) +
+  geom_point(alpha=0.4) +
+  labs(color=NULL)
+```
+
+```{r}
+nd %>% 
+  count(glyresistant, pporesist) %>% 
+  ggplot(aes(n, pporesist, fill=glyresistant)) +
+  geom_col(position = "dodge")
+```
+
+
+
+```{r}
+set.seed(123)
+trees_split <- initial_split(nd, strata = glyresistant)
+
+trees_train <- training(trees_split)
+trees_test <- testing(trees_split)
+```
+
+
+
+```{r}
+tree_rec <- recipe(glyresistant ~., data = trees_train) %>% 
+  update_role(geneamp, new_role="Gamp") %>% 
+  #step_other(currentcrop, previouscrop, threshold = 0.01) %>% 
+  step_dummy(all_nominal(), -all_outcomes()) %>% 
+  step_downsample(glyresistant)
+
+trees_prep <- prep(tree_rec) 
+juiced <- juice(trees_prep)
+```
+
+
+```{r}
+tune_spec <- rand_forest(
+  mtry = tune(),
+  trees = 1000,
+  min_n = tune()
+) %>% 
+  set_mode("classification") %>% 
+  set_engine("ranger")
+```
+
+
+```{r}
+tune_wf <- workflow() %>% 
+  add_recipe(tree_rec) %>% 
+  add_model(tune_spec)
+```
+
+
+# Train
+
+```{r}
+set.seed(456)
+tree_folds <- vfold_cv(trees_train)
+
+doParallel::registerDoParallel()
+
+set.seed(345)
+tune_res <- tune_grid(
+  tune_wf,
+  resamples = tree_folds,
+  grid=20
+)
+```
+
+
+
+
+```{r}
+tune_res %>% 
+  collect_metrics() %>% 
+  filter(.metric == "roc_auc") %>% 
+  select(mean, min_n, mtry) %>% 
+  pivot_longer(cols = min_n:mtry, 
+               values_to = "value",
+               names_to = "parameter") %>% 
+  ggplot(aes(value, mean, color=parameter)) +
+  geom_point(show.legend = FALSE) + 
+  facet_wrap(~ parameter, scales = "free_x")
+```
+
+```{r}
+rf_grid = grid_regular(
+  mtry(range = c(5,20)),
+  min_n(range = c(2,20)),
+  levels = 10
+)
+set.seed(246)
+regular_res <- tune_grid(
+  tune_wf,
+  resamples = tree_folds,
+  grid=rf_grid
+)
+
+regular_res 
+```
+
+
+
+```{r}
+regular_res %>% 
+  collect_metrics() %>% 
+  filter(.metric == "roc_auc") %>% 
+  mutate(min_n = factor(min_n)) %>% 
+  ggplot(aes(mtry, mean, color=min_n)) +
+  geom_line(alpha = 0.5, size=1.5) +
+  geom_point()
+```
+
+
+```{r}
+best_auc <- select_best(regular_res, "roc_auc")
+
+final_rf <- finalize_model(
+  tune_spec,
+  best_auc
+)
+```
+
+```{r}
+library(vip)
+
+final_rf %>% 
+  set_engine("ranger", importance = "permutation") %>% 
+  fit(glyresistant ~ ., 
+      data = juice(trees_prep) %>%  select(-geneamp)) %>% 
+  vip(geom="point") 
+```
+
+
+```{r}
+final_wf <- workflow() %>% 
+  add_recipe(tree_rec) %>% 
+  add_model(final_rf)
+
+final_res <- final_wf %>% 
+  last_fit(trees_split)
+
+final_res %>% 
+  collect_metrics()
+```
+
+```{r}
+final_res %>% 
+  collect_predictions() %>% 
+  mutate(correct = case_when(glyresistant == .pred_class ~ "Correct", TRUE ~ "Incorrect")) %>% 
+  bind_cols(trees_test)
+```
+

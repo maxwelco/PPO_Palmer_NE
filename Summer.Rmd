@@ -1,0 +1,141 @@
+---
+title: "Summer"
+author: "Maxwel Coura Oliveira"
+date: "8/1/2018"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+
+```{r}
+library(dplyr)
+```
+
+
+```{r}
+Data=read.csv("Data_PPO.csv")
+dplyr::tbl_df(Data)
+```
+
+
+
+```{r}
+Summer = dplyr::filter(Data, Time == "Summer")
+dplyr::tbl_df(Summer)
+```
+
+
+
+
+```{r Summer Glyphosate}
+dplyr::count(Summer, Population == "Cha 3" & Herbicide == "Glyphosate" & Rate > 3)
+dplyr::count(Summer, Population == "Dun 3" & Herbicide == "Glyphosate" & Rate > 3)
+dplyr::count(Summer, Population == "Dun 4" & Herbicide == "Glyphosate" & Rate > 3)
+dplyr::count(Summer, Population == "Dun 5" & Herbicide == "Glyphosate" & Rate > 3)
+dplyr::count(Summer, Population == "Hay 1" & Herbicide == "Glyphosate" & Rate > 3)
+dplyr::count(Summer, Population == "Hay 3" & Herbicide == "Glyphosate" & Rate > 3)
+dplyr::count(Summer, Population == "Hay 4" & Herbicide == "Glyphosate" & Rate > 3)
+dplyr::count(Summer, Population == "Kei 2" & Herbicide == "Glyphosate" & Rate > 3)
+dplyr::count(Summer, Population == "Kei 3" & Herbicide == "Glyphosate" & Rate > 3)
+dplyr::count(Summer, Population == "Kei 5" & Herbicide == "Glyphosate" & Rate > 3)
+dplyr::count(Summer, Population == "Kei 6" & Herbicide == "Glyphosate" & Rate > 3)
+dplyr::count(Summer, Population == "Log 1" & Herbicide == "Glyphosate" & Rate > 3)
+dplyr::count(Summer, Population == "Log 2" & Herbicide == "Glyphosate" & Rate > 3)
+dplyr::count(Summer, Population == "Log 4" & Herbicide == "Glyphosate" & Rate > 3)
+dplyr::count(Summer, Population == "Per 2" & Herbicide == "Glyphosate" & Rate > 3)
+dplyr::count(Summer, Population == "Per 4" & Herbicide == "Glyphosate" & Rate > 3)
+dplyr::count(Summer, Population == "Red 2" & Herbicide == "Glyphosate" & Rate > 3)
+dplyr::count(Summer, Population == "Red 4" & Herbicide == "Glyphosate" & Rate > 3)
+dplyr::count(Summer, Population == "Red 5" & Herbicide == "Glyphosate" & Rate > 3)
+```
+
+```{r Summer Fomesafen}
+dplyr::count(Summer, Population == "Cha 3" & Herbicide == "Fomesafen" & Rate > 3)
+dplyr::count(Summer, Population == "Dun 3" & Herbicide == "Fomesafen" & Rate > 3)
+dplyr::count(Summer, Population == "Dun 4" & Herbicide == "Fomesafen" & Rate > 3)
+dplyr::count(Summer, Population == "Dun 5" & Herbicide == "Fomesafen" & Rate > 3)
+dplyr::count(Summer, Population == "Hay 1" & Herbicide == "Fomesafen" & Rate > 3)
+dplyr::count(Summer, Population == "Hay 3" & Herbicide == "Fomesafen" & Rate > 3)
+dplyr::count(Summer, Population == "Hay 4" & Herbicide == "Fomesafen" & Rate > 3)
+dplyr::count(Summer, Population == "Kei 2" & Herbicide == "Fomesafen" & Rate > 3)
+dplyr::count(Summer, Population == "Kei 3" & Herbicide == "Fomesafen" & Rate > 3)
+dplyr::count(Summer, Population == "Kei 5" & Herbicide == "Fomesafen" & Rate > 3)
+dplyr::count(Summer, Population == "Kei 6" & Herbicide == "Fomesafen" & Rate > 3)
+dplyr::count(Summer, Population == "Log 1" & Herbicide == "Fomesafen" & Rate > 3)
+dplyr::count(Summer, Population == "Log 2" & Herbicide == "Fomesafen" & Rate > 3)
+dplyr::count(Summer, Population == "Log 4" & Herbicide == "Fomesafen" & Rate > 3)
+dplyr::count(Summer, Population == "Per 2" & Herbicide == "Fomesafen" & Rate > 3)
+dplyr::count(Summer, Population == "Per 4" & Herbicide == "Fomesafen" & Rate > 3)
+dplyr::count(Summer, Population == "Red 2" & Herbicide == "Fomesafen" & Rate > 3)
+dplyr::count(Summer, Population == "Red 4" & Herbicide == "Fomesafen" & Rate > 3)
+dplyr::count(Summer, Population == "Red 5" & Herbicide == "Fomesafen" & Rate > 3)
+```
+
+
+
+```{r}
+Spring = dplyr::filter(Data, Time == "Spring")
+dplyr::tbl_df(Spring)
+```
+
+
+
+
+```{r Spring Glyphosate}
+dplyr::count(Spring, Population == "Cha 3" & Herbicide == "Glyphosate" & Rate < 8)
+dplyr::count(Spring, Population == "Dun 3" & Herbicide == "Glyphosate" & Rate < 8)
+dplyr::count(Spring, Population == "Dun 4" & Herbicide == "Glyphosate" & Rate < 8)
+dplyr::count(Spring, Population == "Dun 5" & Herbicide == "Glyphosate" & Rate < 8)
+dplyr::count(Spring, Population == "Hay 1" & Herbicide == "Glyphosate" & Rate < 8)
+dplyr::count(Spring, Population == "Hay 3" & Herbicide == "Glyphosate" & Rate < 8)
+dplyr::count(Spring, Population == "Hay 4" & Herbicide == "Glyphosate" & Rate < 8)
+dplyr::count(Spring, Population == "Kei 2" & Herbicide == "Glyphosate" & Rate < 8)
+dplyr::count(Spring, Population == "Kei 3" & Herbicide == "Glyphosate" & Rate < 8)
+dplyr::count(Spring, Population == "Kei 5" & Herbicide == "Glyphosate" & Rate < 8)
+dplyr::count(Spring, Population == "Kei 6" & Herbicide == "Glyphosate" & Rate < 8)
+dplyr::count(Spring, Population == "Log 1" & Herbicide == "Glyphosate" & Rate < 8)
+dplyr::count(Spring, Population == "Log 2" & Herbicide == "Glyphosate" & Rate < 8)
+dplyr::count(Spring, Population == "Log 4" & Herbicide == "Glyphosate" & Rate < 8)
+dplyr::count(Spring, Population == "Per 2" & Herbicide == "Glyphosate" & Rate < 8)
+dplyr::count(Spring, Population == "Per 4" & Herbicide == "Glyphosate" & Rate < 8)
+dplyr::count(Spring, Population == "Red 2" & Herbicide == "Glyphosate" & Rate < 8)
+dplyr::count(Spring, Population == "Red 4" & Herbicide == "Glyphosate" & Rate < 8)
+dplyr::count(Spring, Population == "Red 5" & Herbicide == "Glyphosate" & Rate < 8)
+```
+
+```{r Spring Fomesafen}
+dplyr::count(Spring, Population == "Cha 3" & Herbicide == "Fomesafen" & Rate < 9)
+dplyr::count(Spring, Population == "Dun 3" & Herbicide == "Fomesafen" & Rate < 9)
+dplyr::count(Spring, Population == "Dun 4" & Herbicide == "Fomesafen" & Rate < 9)
+dplyr::count(Spring, Population == "Dun 5" & Herbicide == "Fomesafen" & Rate < 9)
+dplyr::count(Spring, Population == "Hay 1" & Herbicide == "Fomesafen" & Rate < 9)
+dplyr::count(Spring, Population == "Hay 3" & Herbicide == "Fomesafen" & Rate < 9)
+dplyr::count(Spring, Population == "Hay 4" & Herbicide == "Fomesafen" & Rate < 9)
+dplyr::count(Spring, Population == "Kei 2" & Herbicide == "Fomesafen" & Rate < 9)
+dplyr::count(Spring, Population == "Kei 3" & Herbicide == "Fomesafen" & Rate < 9)
+dplyr::count(Spring, Population == "Kei 5" & Herbicide == "Fomesafen" & Rate < 9)
+dplyr::count(Spring, Population == "Kei 6" & Herbicide == "Fomesafen" & Rate < 9)
+dplyr::count(Spring, Population == "Log 1" & Herbicide == "Fomesafen" & Rate < 9)
+dplyr::count(Spring, Population == "Log 2" & Herbicide == "Fomesafen" & Rate < 9)
+dplyr::count(Spring, Population == "Log 4" & Herbicide == "Fomesafen" & Rate < 9)
+dplyr::count(Spring, Population == "Per 2" & Herbicide == "Fomesafen" & Rate < 9)
+dplyr::count(Spring, Population == "Per 4" & Herbicide == "Fomesafen" & Rate < 9)
+dplyr::count(Spring, Population == "Red 2" & Herbicide == "Fomesafen" & Rate < 9)
+dplyr::count(Spring, Population == "Red 4" & Herbicide == "Fomesafen" & Rate < 9)
+dplyr::count(Spring, Population == "Red 5" & Herbicide == "Fomesafen" & Rate < 9)
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+

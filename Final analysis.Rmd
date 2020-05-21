@@ -1,0 +1,180 @@
+---
+title: "Data"
+author: "Maxwel Coura Oliveira"
+date: "5/8/2019"
+output: pdf_document
+---
+
+
+
+```{r include=FALSE}
+library(tidyverse)
+library(ggplot2)
+library(reshape2)
+library(ggrepel)
+library(rticles)
+```
+
+
+
+```{r include=FALSE}
+Data=read_csv("data.csv") 
+```
+
+
+
+
+```{r}
+Gly <- Data %>% 
+  filter(Herbicide =="Glyphosate" & Time !="Spring") %>% 
+  group_by(Herbicide, Population) %>% 
+  mutate(PercH = sum((alive)/40)*100) %>% 
+  filter(Time == "Summer" )
+```
+
+```{r}
+cor.test(Gly$PercH, Gly$PercMolec, method = "pearson", conf.level = 0.95)
+```
+
+```{r fig.cap="", fig.height=10, fig.pos='h', fig.width=10, include=FALSE}
+ggplot(Gly, aes(x=PercH, y=PercMolec, label=Population)) + geom_point(aes(size=AvegGAm, color=PPO)) + geom_smooth(method='lm',formula=y~x, se=F, color="blue", size=2) +
+ labs(x="% of Palmer amaranth alive after glyphosate treatment (P)", y="% EPSPS-resistant Palmer amaranth in genotypic assay (G)") + theme_bw() +
+  theme(axis.text=element_text(size=16, color="black"),  #legend.key.size = unit(3, "cm"),
+        axis.title=element_text(size=18,face="bold"), legend.background = element_rect(linetype = "solid", color="black"), panel.border = element_rect(colour = "black", fill=NA),
+        panel.background = element_rect(fill="white", color = "black"), legend.position=c("bottom"), legend.title = element_text(face="bold", size=20), legend.key = element_blank(), legend.box = "vertical", legend.text = element_text(size=14),
+        panel.grid.major = element_line(color = "white"), plot.title = element_text(lineheight=.8, face="bold", hjust = 0.5),
+  panel.grid.minor = element_blank(), strip.background = element_rect(fill="grey95", color="white"), strip.text.y = element_text(size = 25, color="white"), strip.text.x = element_text(size = 17, color="black", face="bold")) + 
+  ylim(0,100) + xlim(0,100) +
+  geom_label_repel(aes(label = Population),
+                box.padding   = 0.35, 
+                  point.padding = 0.5,
+                  segment.color = 'grey50', size=4) + #annotate("text", x = 17, y = 100, label = "Pearson's correlation = 0.83 (P=0.00)", size=5) +
+  scale_colour_manual(name="PPO resistance:", values = c("darkgreen", "red")) + 
+   scale_size_continuous(name="EPSPS copy number:", range=c(1,5), limits=c(1,50), breaks=c(1,10,20,30,40), labels=c("<3","3 to 10","11 to 20","21 to 30",">30")) + 
+    ggsave("Figure 1.tiff", units="in", width=10, height=10, dpi=300) 
+```
+
+
+
+
+
+```{r}
+Fom <- Data %>% 
+  filter(Herbicide =="Fomesafen" & Time !="Spring" & Time !="Fall") %>% 
+  group_by(Herbicide, Population) %>% 
+  mutate(PercF = sum((alive)/40)*100) %>% 
+  filter(Time == "Summer" )
+```
+
+```{r}
+cor.test(Fom$PercF, Fom$PercMolec, method = "pearson", conf.level = 0.90)
+```
+
+
+
+```{r fig.cap="", fig.height=10, fig.pos='h', fig.width=10, include=FALSE}
+p1<-ggplot(Fom, aes(x=PercF, y=PercMolec, label=Population, size=AvegGAm)) + geom_point() + geom_smooth(method='lm',formula=y~x, se=F, color="blue", size=2) +
+ labs(x="% of Palmer amaranth alive after fomesafen treatment (P)", y="% PPO-resistant Palmer amaranth in genotypic assay (G)") + theme_bw() + 
+  theme(axis.text=element_text(size=16, color="black"), 
+        axis.title=element_text(size=18,face="bold"), legend.background = element_rect(linetype = "solid", color="black"), panel.border = element_rect(colour = "black", fill=NA),
+        panel.background = element_rect(fill="white", color = "black"), legend.position=c("bottom"), legend.title = element_text(face="bold", size=20), legend.key = element_blank(), legend.box = "vertical", legend.text = element_text(size=14),
+        panel.grid.major = element_line(color = "white"), plot.title = element_text(lineheight=.8, face="bold", hjust = 0.5),
+  panel.grid.minor = element_blank(), strip.background = element_rect(fill="grey95", color="white"), strip.text.y = element_text(size = 25, color="white"), strip.text.x = element_text(size = 17, color="black", face="bold")) + 
+  annotate("text", x = 2, y = 100, label = "Fomesafen", size=6) +
+  ylim(0,100) + xlim(0,50) +
+  geom_label_repel(aes(label = Population),
+                box.padding   = 0.35, 
+                  point.padding = 0.5,
+                  segment.color = 'grey50', size=4) + #annotate("text", x = 8, y = 100, label = "Pearson's correlation = 0.52 (P=0.02)", size=5) +
+  #scale_colour_manual(name="PPO resistance:", values = c("darkgreen", "red")) + 
+   scale_size_continuous(name="EPSPS copy number:", range=c(1,5), limits=c(1,50), breaks=c(1,10,20,30,40), labels=c("<3","3 to 10","11 to 20","21 to 30",">30")) #+
+    #scale_colour_gradient(low = "#132B43", high = "#56B1F7") #+
+    #ggsave("Figure 3.pdf", units="in", width=10, height=10, dpi=600) 
+```
+
+
+
+
+
+```{r}
+Lac <- Data %>% 
+  filter(Herbicide =="Lactofen") %>% 
+  group_by(Herbicide, Population) %>% 
+  mutate(PercL = sum((alive)/40)*100)  %>% 
+  filter(Time == "Fall" )
+```
+
+```{r}
+cor.test(Lac$PercL, Lac$PercMolec, method = "pearson", conf.level = 0.95)
+```
+
+
+```{r fig.cap="", include=FALSE}
+p2<-ggplot(Lac, aes(x=PercL, y=PercMolec, label=Population)) + geom_point(aes(size=AvegGAm)) + geom_smooth(method='lm',formula=y~x, se=F, color="blue", size=2) +
+ labs(x="% of Palmer amaranth alive after lactofen treatment (P)", y="% PPO-resistant Palmer amaranth in genotypic assay (G)") + theme_bw() +
+  theme(axis.text=element_text(size=16, color="black"), 
+        axis.title=element_text(size=18,face="bold"), legend.background = element_rect(linetype = "solid", color="black"), panel.border = element_rect(colour = "black", fill=NA),
+        panel.background = element_rect(fill="white", color = "black"), legend.position=c("bottom"), legend.title = element_text(face="bold", size=20), legend.key = element_blank(), legend.box = "vertical", legend.text = element_text(size=14),
+        panel.grid.major = element_line(color = "white"), plot.title = element_text(lineheight=.8, face="bold", hjust = 0.5),
+  panel.grid.minor = element_blank(), strip.background = element_rect(fill="grey95", color="white"), strip.text.y = element_text(size = 25, color="white"), strip.text.x = element_text(size = 17, color="black", face="bold")) + 
+  annotate("text", x = 48, y = 100, label = "Lactofen", size=6) +
+      ylim(0,100) + xlim(0,50) +
+  geom_label_repel(aes(label = Population),
+                box.padding   = 0.35, 
+                  point.padding = 0.5,
+                  segment.color = 'grey50', size=4) + #annotate("text", x = 42, y = 100, label = "Pearson's correlation = -0.05 (P=0.84)", size=5) +
+  #scale_colour_manual(name="PPO resistance:", values = c("darkgreen", "red")) + 
+   scale_size_continuous(name="EPSPS copy number:", range=c(1,5), limits=c(1,50), breaks=c(1,10,20,30,40), labels=c("<3","3 to 10","11 to 20","21 to 30",">30")) #+ 
+    #ggsave("Figure 4.pdf", units="in", width=10, height=10, dpi=600) 
+```
+
+```{r}
+library(gridExtra)
+library(cowplot)
+plot_grid(p1, p2, nrow = 1, labels = c("A", "B")) +
+  ggsave("Figure 2.tiff", height=10, width=20, dpi=300)
+```
+
+```{r eval=FALSE, include=FALSE}
+Fom1 <- Fom %>% 
+  select(Population, PercF, AvegGA, PPO) 
+  
+Lac1 <- Lac %>% 
+  select(PercL) 
+
+PPOdata <- full_join(Fom1, Lac1, by="Population")
+  
+write_csv(PPOdata, "NewCorr.csv")
+```
+
+
+```{r include=FALSE}
+PPO <- read_csv("NewCorr.csv")  
+```
+
+
+```{r}
+cor.test(PPO$PercF, PPO$PercL, method = "pearson", conf.level = 0.95)
+```
+
+
+
+```{r fig.cap="", include=FALSE}
+ggplot(PPO, aes(x=PercF, y=PercL, label=Population)) + geom_point(aes(size=AvegGA, color=PPO)) + geom_smooth(method='lm',formula=y~x, se=F, color="blue", size=2) +
+ labs(x="% of alive Palmer amaranth treated with fomesafen (G)", y="% of alive Palmer amaranth treated with lactofen (G)") + theme_bw() +
+  theme(axis.text=element_text(size=16, color="black"), 
+        axis.title=element_text(size=18,face="bold"), legend.background = element_rect(linetype = "solid", color="black"), panel.border = element_rect(colour = "black", fill=NA),
+        panel.background = element_rect(fill="white", color = "black"), legend.position=c("bottom"), legend.title = element_text(face="bold", size=20), legend.key = element_blank(), legend.box = "vertical", legend.text = element_text(size=14),
+        panel.grid.major = element_line(color = "white"), plot.title = element_text(lineheight=.8, face="bold", hjust = 0.5),
+  panel.grid.minor = element_blank(), strip.background = element_rect(fill="grey95", color="white")) + 
+   ylim(0,50) + xlim(0,50) +
+   geom_label_repel(aes(label = Population),
+               box.padding   = 0.35, 
+                  point.padding = 0.5,
+                  segment.color = 'grey50', size=4) + 
+  #annotate("text", x = 8, y = 50, label = "Pearson's correlation = 0.50 (P=0.03)", size=5) +
+  scale_colour_manual(name="PPO resistance:", values = c("darkgreen", "red")) + 
+   scale_size_continuous(name="EPSPS copy number:", range=c(1,5), limits=c(1,50), breaks=c(1,10,20,30,40), labels=c("<3","3 to 10","11 to 20","21 to 30",">30")) + 
+    ggsave("Figure 6.pdf", units="in", width=10, height=10, dpi=600) 
+```
+

@@ -1,0 +1,191 @@
+---
+title: "Palmer"
+author: "Maxwel Coura Oliveira"
+date: "11/15/2017"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+
+
+```{r packages, eval=FALSE, include=FALSE}
+library(ggplot2)
+library(ggmap)
+library(ggrepel)
+library(maps)
+library(grid)
+library(mapdata)
+library(maptools)
+library(stringr)
+library(dplyr)
+library(ggsn)
+library(ggthemes)
+```
+
+```{r read Data, include=FALSE}
+Data=read.csv("database.csv")
+str(Data)
+```
+
+```{r}
+states = map_data("state")
+```
+
+```{r}
+ggplot(data = states) +
+  geom_polygon(aes(x = long, y = lat, fill = region, group = group), color = "white") + 
+  coord_fixed(1.3) +
+  guides(fill=FALSE)
+```
+
+```{r}
+ne_df <- subset(states, region == "nebraska")
+
+head(ne_df)
+```
+
+```{r}
+counties <- map_data("county")
+ne_county <- subset(counties, region == "nebraska")
+
+head(ne_county)
+```
+
+```{r}
+ne_base <- ggplot(data = ne_df, mapping = aes(x = long, y = lat, group = group)) + 
+  coord_fixed(1.3) + 
+  geom_polygon(color = "black", fill = "white")
+ne_base + theme_nothing()
+```
+
+
+```{r}
+Data$multiple <-factor(Data$multiple, levels=c("sucep", "gly", "ppo", "both"), labels=c("Susceptible", "Glyphosate-only", "PPO-only", "Glyphosate + PPO"))
+```
+
+```{r}
+#devtools::install_github('oswaldosantos/ggsn')
+```
+
+
+```{r}
+library(ggsn)
+ne_base + 
+  geom_polygon(data = ne_county, fill = "NA", color = "gray") +
+  geom_polygon(color = "black", fill = NA)  +
+  geom_point(data=Data, aes(x=longitude, y=latitude, group=multiple, shape=multiple, color=multiple, label=population), size=2) +
+  labs(fill="", y="", x="") + #theme_map() +
+  north(ne_df, location = 'topleft', symbol = 3, anchor = c(x = -104.7, y = 43.1)) +
+  scalebar(ne_df, dist = 50, dist_unit="km", model = 'International', location = "topright", transform = TRUE) +
+  scale_colour_manual(values = c("green", "black", "blue", "red")) +
+  scale_shape_manual(values = c(16, 17, 18, 19)) +
+    theme(axis.text=element_text(size=17, color="black"), 
+        axis.title=element_text(size=20,face="bold"), 
+        panel.background = element_rect(fill="white", color = "black"), 
+        panel.grid.major = element_line(color = "white"), 
+  panel.grid.minor = element_blank(),
+  legend.position=c(0.115,0.18), legend.text = element_text(size = 16, colour = "black"), legend.key = element_rect(fill=NA), panel.border = element_rect(fill=NA,color="black", size=0.5, linetype="solid"),
+legend.background = element_rect(fill =NA), legend.key.width = unit(2.2, "line"), legend.title=element_blank()) + #geom_label_repel(aes(label = Population), box.padding= 0.35, point.padding = 0.5,
+                  #segment.color = 'grey50', size=3) +
+  geom_text(data=cnames, aes(long, lat, label = subregion, group=subregion), size=3, color="black") +
+  ggsave("Figure 4.tiff", units="in", width=13, height=6, dpi=300)
+```
+
+
+```{r}
+Data$greenhouse <- factor(Data$greenhouse, levels = c("yes", "no"), labels = c("molecular and greenhouse assays", "molecular assay only"))
+```
+
+```{r}
+nd <- ne_county %>% 
+  filter(subregion == "chase"| subregion == "dundy"| subregion == "frontier" | subregion == "hayes" | subregion == "hitchcock" | subregion == "keith" | subregion == "lincoln" | subregion == "logan" | subregion == "perkins"  | subregion == "red willow")
+cnames <- aggregate(cbind(long, lat) ~ subregion, data=nd, FUN=mean)
+```
+
+```{r}
+cnames$subregion <- factor(cnames$subregion, levels = c("chase", "dundy", "frontier", "hayes", "hitchcock", "keith", "lincoln", "logan", "perkins", "red willow"), labels = c("Chase", "Dundy", "Frontier", "Hayes", "Hitchcock", "Keith", "Lincoln", "Logan", "Perkins", "Red Willow"))
+```
+
+```{r}
+cnames[1, 2:3] <- c(-101.8241, 40.43676)
+cnames[3, 2:3] <- c(-100.2412, 40.60697)
+cnames[10, 2:3] <- c(-100.46723, 40.29137)
+cnames[2, 2:3] <- c(-101.7502, 40.24445)
+cnames[6, 2:3] <- c(-101.5894, 41.28165)
+cnames[5, 2:3] <- c(-101.0421, 40.08153)
+cnames[7, 2:3] <- c(-100.7894, 40.98449)
+cnames[9, 2:3] <- c(-101.4835, 40.78027)
+```
+
+
+```{r}
+ne_base + 
+  geom_jitter(data=Data, aes(x=longitude, y=latitude, group=population, shape=greenhouse, color=greenhouse), size=2) +
+  geom_polygon(data = ne_county, fill = "NA", color = "gray") +
+  geom_polygon(color = "black", fill = NA)  +
+  labs(fill="", y="Latitude", x="Longitude") +
+  north(ne_df, location = 'topleft', symbol = 1, anchor = c(x = -104.7, y = 43.2)) +
+ # scalebar(data=ne_df, dist = 100, dd2km = T, model = 'International', location = "topright") +
+  scale_color_manual(values = c("blue","red")) +
+    scale_shape_manual(values = c(16, 15)) + 
+  #xlim(-103, 98) +
+  geom_text(data=cnames, aes(long, lat, label = subregion, group=subregion), size=3, color="black") +
+    theme(axis.text=element_text(size=12, color="black"), 
+        axis.title=element_blank(), 
+        panel.background = element_rect(fill="white", color = "black"), 
+        panel.grid.major = element_line(color = "white"), 
+  panel.grid.minor = element_blank(),
+  legend.position=c(0.0,0.18), legend.text = element_text(size = 10, colour = "black"), legend.key = element_rect(fill=NA), panel.border = element_rect(fill=NA,color="black", size=0.5,   linetype="solid"),
+  legend.background = element_rect(fill =NA), legend.key.width = unit(2.2, "line"), legend.title=element_blank()) + 
+  ggsave("map1.pdf", 
+   units="in", width=12, height=6, dpi=600)
+```
+
+
+
+```{r EPSPS}
+ne_base + 
+  geom_jitter(data=Data, aes(x=longitude, y=latitude, group=population, shape=currentcrop, color=glyresistant), size=2) +
+  geom_polygon(data = ne_county, fill = "NA", color = "gray") + #geom_point(aes(size=geneamp, color=pporesist))
+  geom_polygon(color = "black", fill = NA)  +
+  labs(fill="", y="Latitude", x="Longitude") +
+  north(ne_df, location = 'topleft', symbol = 1, anchor = c(x = -104.7, y = 43.2)) +
+  scalebar(data=ne_df, dist = 100, dd2km = T, model = 'International', location = "topright") +
+ scale_colour_manual(name="Glyphosayte resistance", values = c("darkgreen", "red")) + 
+  #xlim(-103, 98) +
+  geom_text(data=cnames, aes(long, lat, label = subregion, group=subregion), size=3, color="black") +
+    theme(axis.text=element_text(size=12, color="black"), legend.position="bottom", legend.box = "horizontal",
+        axis.title=element_blank(), 
+        panel.background = element_rect(fill="white", color = "black"), 
+        panel.grid.major = element_line(color = "white"), 
+  panel.grid.minor = element_blank(),
+  legend.text = element_text(size = 12, colour = "black"), legend.key = element_rect(fill=NA), panel.border = element_rect(fill=NA,color="black", size=0.5,   linetype="solid"),
+  legend.background = element_rect(fill =NA), legend.key.width = unit(2.2, "line"), legend.title = element_text(face="bold", size=13)) + 
+  ggsave("map2.pdf", 
+   units="in", width=12, height=6, dpi=600)
+```
+
+
+
+```{r PPO}
+ne_base + 
+  geom_jitter(data=Data, aes(x=longitude, y=latitude, group=population, shape=currentcrop, color=pporesist), size=2) +
+  geom_polygon(data = ne_county, fill = "NA", color = "gray") + #geom_point(aes(size=geneamp, color=pporesist))
+  geom_polygon(color = "black", fill = NA)  +
+  labs(fill="", y="Latitude", x="Longitude") +
+  north(ne_df, location = 'topleft', symbol = 1, anchor = c(x = -104.7, y = 43.2)) +
+  scalebar(data=ne_df, dist = 100, dd2km = T, model = 'International', location = "topright") +
+ scale_colour_manual(name="PPO resistance", values = c("darkgreen", "red")) + 
+  #xlim(-103, 98) +
+  geom_text(data=cnames, aes(long, lat, label = subregion, group=subregion), size=3, color="black") +
+    theme(axis.text=element_text(size=12, color="black"), legend.position="bottom", legend.box = "horizontal",
+        axis.title=element_blank(), 
+        panel.background = element_rect(fill="white", color = "black"), 
+        panel.grid.major = element_line(color = "white"), 
+  panel.grid.minor = element_blank(),
+  legend.text = element_text(size = 12, colour = "black"), legend.key = element_rect(fill=NA), panel.border = element_rect(fill=NA,color="black", size=0.5,   linetype="solid"),
+  legend.background = element_rect(fill =NA), legend.key.width = unit(2.2, "line"), legend.title = element_text(face="bold", size=13)) + 
+  ggsave("map3.pdf", 
+   units="in", width=12, height=6, dpi=600)
+```

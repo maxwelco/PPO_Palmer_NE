@@ -1,0 +1,225 @@
+---
+title: "Random"
+author: "Maxwel Coura Oliveira"
+date: "5/8/2019"
+output: pdf_document
+---
+
+
+```{r include=FALSE}
+library(tidyverse)
+library(randomForest)
+library(caret)
+library(e1071)
+library(tree)
+library(patchwork)
+```
+
+```{r}
+a <- data %>% 
+  group_by(county) %>% 
+  count(glyresistant) %>% 
+  add_tally(name='nn') %>% 
+  mutate(perc=round((n/nn)*100)) %>% 
+  rename(Resistance = glyresistant) %>% 
+  mutate(Herbicide = "EPSPS") %>% 
+ggplot(aes(x=county, y=perc, fill=Resistance)) + geom_col(position = "stack",
+     width = 0.8, color="black") + theme_bw() + labs(x="", y="% Resistance in genotypic assays") +
+    scale_fill_manual(values = c("lightgreen", "brown1")) +
+  coord_flip() + theme(legend.title = element_text(size=12, face = "bold"), 
+                         strip.text = element_text(size=13, face="bold"), 
+                       panel.grid = element_blank(),
+   axis.title = element_text(size=14, color="black"), axis.text = element_text(size=13, color="black"), legend.text = element_text(size=12), legend.position = "right") +
+  ggsave("Figure 6.png", height = 5, width=10, dpi=600) 
+```
+```{r}
+b <- data %>% 
+  group_by(county) %>% 
+  count(pporesist) %>% 
+  add_tally(name='nn') %>% 
+  mutate(perc=round((n/nn)*100)) %>% 
+  rename(Resistance = pporesist) %>% 
+  mutate(Herbicide = "PPO") %>% 
+  ggplot(aes(x=county, y=perc, fill=Resistance)) + geom_col(position = "stack",
+     width = 0.8, color="black") + theme_bw() + labs(x="", y="% Resistance in genotypic assays") +
+    scale_fill_manual(values = c("lightgreen", "brown1")) +
+  coord_flip() + theme(legend.title = element_text(size=12, face = "bold"), 
+                         strip.text = element_text(size=13, face="bold"), 
+                       panel.grid = element_blank(),
+   axis.title = element_text(size=14, color="black"), axis.text = element_text(size=13, color="black"), legend.text = element_text(size=12), legend.position = "right") +
+  ggsave("Figure 11.png", height = 5, width=10, dpi=600) 
+```
+
+
+
+```{r}
+a <- data %>% 
+  group_by(county) %>% 
+  count(glyresistant) %>% 
+  add_tally(name='nn') %>% 
+  mutate(perc=round((n/nn)*100)) %>% 
+  rename(Resistance = glyresistant) %>% 
+  mutate(Herbicide = "EPSPS")
+
+b <- data %>% 
+  group_by(county) %>% 
+  count(pporesist) %>% 
+  add_tally(name='nn') %>% 
+  mutate(perc=round((n/nn)*100)) %>% 
+  rename(Resistance = pporesist) %>% 
+  mutate(Herbicide = "PPO")
+
+newdt <- rbind(a, b)
+  
+ggplot(newdt, aes(x=county, y=perc, fill=Resistance)) + geom_col(position = "stack",
+     width = 0.5, color="black") + theme_bw() + labs(x="County", y="% Resistance in genotypic assays") +
+  facet_wrap(~Herbicide) + scale_fill_manual(values = c("lightgreen", "brown1")) +
+  coord_flip() + theme(panel.grid = element_blank()) +
+  ggsave("Figure 7.png", height = 5, width=10, dpi=600) 
+```
+
+```{r}
+b<-Data %>% 
+  filter(Role1 %in% c("Decision influencer", "Farmer")) %>% 
+  group_by(State) %>% 
+  count(Role1, na.rm = TRUE) %>% 
+  add_tally() %>% 
+  mutate(Perc=(n/nn)*100) %>%  
+  select(-nn, -na.rm) %>% 
+  mutate_at(4, round, 0)
+```
+
+
+```{r}
+data=read.csv("database.csv",header=TRUE, na.strings = "") %>% 
+  select(glyresistant, county, pporesist, geneamp, currentcrop, tillage, irrigation, populationdistribution, populationdensity, previouscrop)
+data <- na.omit(data)
+glimpse(data)
+```
+
+
+
+
+
+
+```{r}
+data <- na.omit(data)
+set.seed(2)
+table(data$glyresistant)
+
+id <- sample(2, nrow(data), replace=TRUE, prob=c(0.7, 0.3))
+train <- data[id==1,]
+test <- data[id==2,]
+
+data$glyresistant <- as.factor(data$glyresistant)
+
+rf <- randomForest(glyresistant ~ ., data = data, ntree=500, mtry=2, importance=TRUE, proximity=TRUE)
+
+print(rf)
+plot(rf)
+
+
+p1 <- predict(rf, train)
+confusionMatrix(p1, train$glyresistant)
+p2 <- predict(rf, test)
+confusionMatrix(p2, test$glyresistant)
+p3 <- predict(rf, data)
+confusionMatrix(p3, data$glyresistant)
+
+
+
+#t < - tuneRF(data[, -1], data[, 1], stepFactor = 0.5, plot = TRUE, 
+#             ntreeTry = 500,
+#             trace = TRUE,
+#             improve= 0.05)
+
+hist(treesize(rf))
+
+varImp(rf)
+varImpPlot(rf, sort=T, main="")
+importance(rf)
+
+#partialPlot(rf, train, county, "yes")
+```
+
+
+
+```{r}
+Variables <- c("County", "PPO resistance", "EPSPS gene amplification", "Current crop", "Tillage", "Irrigation", "Population distribution", "Population density", "Previous crop")
+Value <- c(4.1708940, 0.4426042, 8.1548504, 2.6924349, 0.9223056, 0.7266807, 0.4621973, 0.9370659, 1.3669311)
+
+dd <- data.frame(Variables, Value)
+
+dd$Variables <- factor(dd$Variables, levels = c("PPO resistance", "Population distribution", "Irrigation", "Tillage", "Population density", "Previous crop", "Current crop", "County", "EPSPS gene amplification"), labels = c("PPO resistance", "Population distribution", "Irrigation", "Tillage", "Population density", "Previous crop", "Current crop", "County", "EPSPS gene amplification"))
+```
+
+```{r}
+random <- ggplot(dd, aes(x=Variables, y=round(Value, digits=2), fill=Variables)) + geom_point(size=3) + theme_bw() + coord_flip() + labs(y="Gini Index", x="") + scale_y_continuous(limits=c(0, 10), labels = scales::number_format(accuracy = 1)) +
+  theme(panel.grid.major.y = element_line(colour = "grey80"), panel.grid.major.x = element_blank(), panel.grid.minor.x = element_blank(), legend.position = "none", axis.title = element_text(size=15, color="black"), axis.text =element_text(size=13, color="black")) + ggsave("Figure 4.png", height = 6, width=8, dpi=800)
+```
+
+
+```{r}
+ggplot(dd, aes(x=Variables, y=Value, fill=Variables)) + geom_bar(stat = "identity", width = 0.6, color="darkgreen") + theme_bw() + coord_flip() + labs(y="Gini Index", x="") + scale_fill_brewer(palette = "oranges") +
+  theme(panel.grid = element_blank(), legend.position = "none", axis.title = element_text(size=15, color="black"), axis.text =element_text(size=13, color="black")) + ggsave("Figure 4.pdf", height = 6, width=8, dpi=600)
+```
+
+
+
+
+
+```{r}
+varImp(rf)
+varImpPlot(rf, sort=T, main="")
+dd<- importance(rf)
+```
+
+
+
+```{r}
+ppo=read.csv("database.csv",header=TRUE, na.strings = "") %>% 
+  select(pporesist, glyresistant, currentcrop, county, tillage, irrigation, herbicideinjury, populationdistribution, populationdensity, previouscrop)
+ppo <- na.omit(ppo)
+str(ppo)
+```
+
+
+```{r}
+
+rfppo <- randomForest(pporesist ~ ., data = ppo, ntree=500, mtry=2, importance=TRUE, proximity=TRUE)
+
+print(rfppo)
+plot(rfppo)
+
+
+
+
+hist(treesize(rfppo))
+
+varImp(rfppo)
+varImpPlot(rfppo, sort=T, main="")
+ppodat <- importance(rfppo)
+
+#partialPlot(rfppo, train, currentcrop, "yes")
+```
+
+
+
+
+
+
+```{r}
+ppodata
+Variables <- c("County", "EPSPS resistance", "Current crop", "Tillage", "Irrigation", "Herbicide injury", "Population distribution", "Population density", "Previous crop")
+Value <- c(5.3140813, 1.0304991, 2.8077257, 1.6438026, 0.9979942, 0.6300471, 0.7971184, 2.0644607, 2.2101004)
+
+ppodata <- data_frame(Variables, Value)
+
+ppodata$Variables <- factor(ppodata$Variables, levels = c("Herbicide injury", "Population distribution", "Irrigation", "EPSPS resistance", "Tillage", "Population density", "Previous crop", "Current crop", "County"), labels = c("Herbicide injury", "Population distribution", "Irrigation", "EPSPS resistance", "Tillage", "Population density", "Previous crop", "Current crop", "County"))
+```
+
+```{r}
+random2 <- ggplot(ppodata, aes(x=Variables, y=round(Value, digits=2), fill=Variables)) + geom_point(size=3) + theme_bw() + coord_flip() + labs(y="Gini Index", x="") + scale_y_continuous(limits=c(0, 6), labels = scales::number_format(accuracy = 1)) +
+  theme(panel.grid.major.y = element_line(colour = "grey80"), panel.grid.major.x = element_blank(), panel.grid.minor.x = element_blank(), legend.position = "none", axis.title = element_text(size=15, color="black"), axis.text =element_text(size=13, color="black")) + ggsave("Figure 10.png", height = 6, width=8, dpi=800)
+```
+

@@ -1,0 +1,129 @@
+---
+title: "Survival"
+author: "Maxwel Coura Oliveira"
+date: "8/3/2018"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+
+```{r}
+library(ggplot2)
+library(dplyr)
+library(cowplot)
+```
+
+
+```{r}
+Survival=read.csv("Survival.csv")
+
+dplyr::tbl_df(Survival)
+```
+
+```{r}
+ggplot(data=Survival, aes(y=Perc, x=Population)) + geom_bar(stat="summary", fun.y="mean", fill="red", width=0.5) +
+    theme(axis.text=element_text(size=14, color="black"), 
+        axis.title=element_text(size=17,face="bold"), 
+        panel.background = element_rect(fill="white", color = "black"), axis.text.x = element_text(angle = 90, hjust = 1),
+        panel.grid.major = element_line(color = "white"), plot.title = element_text(lineheight=.8, face="bold", hjust = 0.5),
+  panel.grid.minor = element_blank(), strip.background = element_rect(fill="lightblue", color="black"), strip.text.y = element_text(size = 16, color="black"), strip.text.x = element_text(size = 16, color="black")) + ylim(0,100) + facet_grid(Herbicide~Time) + labs(y="% Survival", x="Population") +
+    ggsave("Large trial.tiff", units="in", width=12, height=6, dpi=300)
+```
+
+
+```{r}
+Summer = dplyr::filter(Survival, Time == "Summer")
+dplyr::tbl_df(Summer)
+str(Summer)
+```
+
+
+```{r}
+a<-ggplot(data=Summer, aes(y=Perc, x=Population, fill=Rate)) + geom_bar(stat="identity", width=0.5, aes(fill=Rate)) +
+ scale_fill_continuous(low="red", high="darkgreen", limits=c(0,10)) +
+    theme(axis.text=element_text(size=14, color="black"), 
+        axis.title=element_text(size=17,face="bold"), 
+        panel.background = element_rect(fill="white", color = "black"), axis.text.x = element_text(angle = 90, hjust = 1), legend.position="none",
+        panel.grid.major = element_line(color = "white"), plot.title = element_text(lineheight=.8, face="bold", hjust = 0.5),
+  panel.grid.minor = element_blank(), strip.background = element_rect(fill="lightblue", color="black"), strip.text.y = element_text(size = 16, color="black"), strip.text.x = element_text(size = 16, color="black")) + ylim(0,100) + facet_grid(~Herbicide) + labs(y="% Survival", x="Population") +
+     ggsave("Survival.tiff", units="in", width=12, height=6, dpi=300)
+```
+
+
+
+
+
+
+```{r}
+b<-ggplot(data=Summer, aes(y=Molecular, x=Population)) + geom_bar(stat="identity", width=0.5) +
+     theme(axis.text=element_text(size=14, color="black"), 
+        axis.title=element_text(size=17,face="bold"), 
+        panel.background = element_rect(fill="white", color = "black"), axis.text.x = element_text(angle = 90, hjust = 1),
+        panel.grid.major = element_line(color = "white"), plot.title = element_text(lineheight=.8, face="bold", hjust = 0.5),
+  panel.grid.minor = element_blank(), strip.background = element_rect(fill="lightblue", color="black"), strip.text.y = element_text(size = 16, color="black"), strip.text.x = element_text(size = 16, color="black")) + ylim(0,100) + facet_grid(~Herbicide) + labs(y="% Resistant Plants Molecular Screening", x="Population") +
+     ggsave("Molecular.tiff", units="in", width=12, height=6, dpi=800)
+```
+
+
+
+```{r}
+C<-plot_grid(a, b, nrow=2, ncol=1, vjust=2) 
+```
+
+```{r}
+ggsave("Combined.pdf", plot = C, device = NULL, path = NULL,
+  scale = 1, units="in", width=18, height=8, dpi=300)
+```
+
+
+
+
+
+
+
+
+
+
+
+
+```{r}
+All=read.csv("Data_PPO.csv")
+
+dplyr::tbl_df(All)
+```
+
+
+```{r}
+Summer = dplyr::filter(All, Time == "Summer")
+dplyr::tbl_df(Summer)
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+```{r}
+ggplot(data=Summer, aes(y=Perc, x=Population, fill=Rate)) + geom_bar(stat="identity", width=0.5, aes(fill=Rate)) +
+  #scale_fill_continuous(low="darkgreen", high="red", limits=c(0,10)) +
+    theme(axis.text=element_text(size=14, color="black"), 
+        axis.title=element_text(size=17,face="bold"), 
+        panel.background = element_rect(fill="white", color = "black"), axis.text.x = element_text(angle = 90, hjust = 1),
+        panel.grid.major = element_line(color = "white"), plot.title = element_text(lineheight=.8, face="bold", hjust = 0.5),
+  panel.grid.minor = element_blank(), strip.background = element_rect(fill="lightblue", color="black"), strip.text.y = element_text(size = 16, color="black"), strip.text.x = element_text(size = 16, color="black")) + ylim(0,100) + facet_grid(~Herbicide) + labs(y="% Survival", x="Population") +
+     ggsave("Large trial.tiff", units="in", width=12, height=6, dpi=300)
+```
+
+
+
+

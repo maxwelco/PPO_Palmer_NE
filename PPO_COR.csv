@@ -1,0 +1,19 @@
+Population,Time,Herbicide,PercSurvL,PercSurvF,PercMolec,AvegGA,PPO
+Cha 3,Fall,PPO,10,0,0,12,None
+Dun 3,Fall,PPO,0,15,67,1,PPX2 _G210
+Dun 4,Fall,PPO,10,0,0,6,None
+Dun 5,Fall,PPO,0,0,20,24,PPX2 _G210
+Hay 1,Fall,PPO,10,35,100,1,PPX2 _G210
+Hay 3 ,Fall,PPO,0,5,100,1,PPX2 _G210
+Hay 4,Fall,PPO,10,5,67,1,PPX2 _G210
+Kei 2,Fall,PPO,0,0,33,12,PPX2 _G210
+Kei 3,Fall,PPO,10,20,0,1,None
+Kei 5,Fall,PPO,0,5,67,7,PPX2 _G210
+Kei 6,Fall,PPO,25,20,0,21,None
+Log 1,Fall,PPO,0,0,33,50,PPX2 _G210
+Log 2,Fall,PPO,0,0,0,1,None
+Log 4,Fall,PPO,0,20,67,5,PPX2 _G210
+Per 4,Fall,PPO,10,5,0,14,None
+Red 2,Fall,PPO,5,5,67,3,PPX2 _G210
+Red 4,Fall,PPO,15,15,67,5,PPX2 _G210
+Red 5,Fall,PPO,15,5,0,1,None
