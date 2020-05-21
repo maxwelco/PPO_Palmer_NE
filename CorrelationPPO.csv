@@ -1,0 +1,39 @@
+Population,Site,Time,Herbicide,PercX,aliveF,died,Resistant,PercMolec,AvegGA,PPO,Site,Time,Herbicide,PercY,aliveL,died
+Cha 3,PPO,Fall,Fomesafen,0,0,20,0 out 3,0,12,None,PPO,Fall,Lactofen,10,2,18
+Dun 3,PPO,Fall,Fomesafen,15,3,17,2 out 3,67,1,PPX2 _G210,PPO,Fall,Lactofen,0,0,20
+Dun 4,PPO,Fall,Fomesafen,0,0,20,0 out 3,0,6,None,PPO,Fall,Lactofen,10,2,18
+Dun 5,PPO,Fall,Fomesafen,0,0,20,1 out 5,20,24,PPX2 _G210,PPO,Fall,Lactofen,0,0,20
+Hay 1,PPO,Fall,Fomesafen,35,7,13,3 out 3,100,1,PPX2 _G210,PPO,Fall,Lactofen,10,2,18
+Hay 3 ,PPO,Fall,Fomesafen,5,1,19,3 ou 3,100,2,PPX2 _G210,PPO,Fall,Lactofen,0,0,20
+Hay 4,PPO,Fall,Fomesafen,10,2,18,2 ou 3,67,1,PPX2 _G210,PPO,Fall,Lactofen,10,2,18
+Kei 2,PPO,Fall,Fomesafen,0,0,20,1 out 3,33,12,PPX2 _G210,PPO,Fall,Lactofen,0,0,20
+Kei 3,PPO,Fall,Fomesafen,20,4,16,0 out 3,0,1,None,PPO,Fall,Lactofen,10,2,18
+Kei 5,PPO,Fall,Fomesafen,5,1,19,2 out 3,67,7,PPX2 _G210,PPO,Fall,Lactofen,0,0,20
+Kei 6,PPO,Fall,Fomesafen,20,4,16,0 ou 3,0,17,None,PPO,Fall,Lactofen,25,5,15
+Log 1,PPO,Fall,Fomesafen,0,0,20,1 out 3,33,50,PPX2 _G210,PPO,Fall,Lactofen,0,0,20
+Log 2,PPO,Fall,Fomesafen,0,0,20,0 out 3,0,1,None,PPO,Fall,Lactofen,0,0,20
+Log 4,PPO,Fall,Fomesafen,20,4,16,2 out 3,33,5,PPX2 _G210,PPO,Fall,Lactofen,0,0,20
+Per 2,PPO,Fall,Fomesafen,5,1,19,0 out 3,0,39,None,PPO,Fall,Lactofen,40,8,12
+Per 4,PPO,Fall,Fomesafen,5,1,19,0 out 3,0,14,None,PPO,Fall,Lactofen,10,2,18
+Red 2,PPO,Fall,Fomesafen,5,1,19,2 ou 3,67,3,PPX2 _G210,PPO,Fall,Lactofen,5,1,19
+Red 4,PPO,Fall,Fomesafen,15,3,17,2 ou 3,67,5,PPX2 _G210,PPO,Fall,Lactofen,15,3,17
+Red 5,PPO,Fall,Fomesafen,5,1,19,0 out 5,0,1,None,PPO,Fall,Lactofen,15,3,17
+Cha 3,PPO,Spring19,Fomesafen,35,7,13,0 out 3,0,12,None,PPO,Spring19,Lactofen,20,4,16
+Dun 3,PPO,Spring19,Fomesafen,10,2,18,2 out 3,67,1,PPX2 _G210,PPO,Spring19,Lactofen,15,3,17
+Dun 4,PPO,Spring19,Fomesafen,0,0,20,0 out 3,0,6,None,PPO,Spring19,Lactofen,10,2,18
+Dun 5,PPO,Spring19,Fomesafen,0,0,20,1 out 5,20,24,PPX2 _G210,PPO,Spring19,Lactofen,0,0,20
+Hay 1,PPO,Spring19,Fomesafen,45,9,11,3 out 3,100,1,PPX2 _G210,PPO,Spring19,Lactofen,35,7,13
+Hay 3 ,PPO,Spring19,Fomesafen,30,6,14,3 ou 3,100,2,PPX2 _G210,PPO,Spring19,Lactofen,10,2,18
+Hay 4,PPO,Spring19,Fomesafen,15,3,17,2 ou 3,67,1,PPX2 _G210,PPO,Spring19,Lactofen,10,2,18
+Kei 2,PPO,Spring19,Fomesafen,0,0,20,1 out 3,33,12,PPX2 _G210,PPO,Spring19,Lactofen,0,0,20
+Kei 3,PPO,Spring19,Fomesafen,10,2,18,0 out 3,0,1,None,PPO,Spring19,Lactofen,15,3,17
+Kei 5,PPO,Spring19,Fomesafen,15,3,17,2 out 3,67,7,PPX2 _G210,PPO,Spring19,Lactofen,0,0,20
+Kei 6,PPO,Spring19,Fomesafen,10,2,18,0 ou 3,0,17,None,PPO,Spring19,Lactofen,10,2,18
+Log 1,PPO,Spring19,Fomesafen,15,3,17,1 out 3,33,50,PPX2 _G210,PPO,Spring19,Lactofen,10,2,18
+Log 2,PPO,Spring19,Fomesafen,0,0,20,0 out 3,0,1,None,PPO,Spring19,Lactofen,0,0,20
+Log 4,PPO,Spring19,Fomesafen,0,0,20,2 out 3,67,5,PPX2 _G210,PPO,Spring19,Lactofen,0,0,20
+Per 2,PPO,Spring19,Fomesafen,10,2,18,0 out 3,0,39,None,PPO,Spring19,Lactofen,20,4,16
+Per 4,PPO,Spring19,Fomesafen,15,3,17,0 out 3,0,14,None,PPO,Spring19,Lactofen,10,2,18
+Red 2,PPO,Spring19,Fomesafen,15,3,17,2 ou 3,67,3,PPX2 _G210,PPO,Spring19,Lactofen,25,5,15
+Red 4,PPO,Spring19,Fomesafen,0,0,20,2 ou 3,67,5,PPX2 _G210,PPO,Spring19,Lactofen,10,2,18
+Red 5,PPO,Spring19,Fomesafen,0,0,20,0 out 5,0,1,None,PPO,Spring19,Lactofen,0,0,20

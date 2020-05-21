@@ -1,0 +1,58 @@
+Population,Herbicide,PercSurv,Resistant,PercMolec,AvegGA,PPO
+Cha 3,Glyphosate,58,4 out 5,80,12,None
+Dun 3,Glyphosate,8,0 out 3,0,1,PPX2 _G210
+Dun 4,Glyphosate,63,5 out 5,100,6,None
+Dun 5,Glyphosate,30,5 out 5,100,24,PPX2 _G210
+Hay 1,Glyphosate,23,0 out 3,0,1,PPX2 _G210
+Hay 3 ,Glyphosate,0,0 out 3,0,1,PPX2 _G210
+Hay 4,Glyphosate,42,0 out 3,0,1,PPX2 _G210
+Kei 2,Glyphosate,62,3 out 3,100,12,PPX2 _G210
+Kei 3,Glyphosate,32,0 out 5,0,1,None
+Kei 5,Glyphosate,67,2 out 3,67,7,PPX2 _G210
+Kei 6,Glyphosate,65,4 out 5,80,21,None
+Log 1,Glyphosate,63,2 out 3,67,50,PPX2 _G210
+Log 2,Glyphosate,23,0 out 3,0,1,None
+Log 4,Glyphosate,65,2 out 3,67,5,PPX2 _G210
+Per 2,Glyphosate,63,4 out 5,80,39,None
+Per 4,Glyphosate,45,2 out 5,67,14,None
+Red 2,Glyphosate,15,1 out 3,33,3,PPX2 _G210
+Red 4,Glyphosate,58,1 out 3,33,5,PPX2 _G210
+Red 5,Glyphosate,50,0 out 5,0,1,None
+Cha 3,Fomesafen,45,0 out 3,0,12,None
+Dun 3,Fomesafen,48,2 out 3,67,1,PPX2 _G210
+Dun 4,Fomesafen,45,0 out 3,0,6,None
+Dun 5,Fomesafen,22,1 out 5,20,24,PPX2 _G210
+Hay 1,Fomesafen,33,3 out 3,100,1,PPX2 _G210
+Hay 3 ,Fomesafen,22,3 ou 3,100,1,PPX2 _G210
+Hay 4,Fomesafen,38,2 ou 3,67,1,PPX2 _G210
+Kei 2,Fomesafen,42,1 out 3,33,12,PPX2 _G210
+Kei 3,Fomesafen,47,0 out 3,0,1,None
+Kei 5,Fomesafen,42,2 out 3,67,7,PPX2 _G210
+Kei 6,Fomesafen,48,0 ou 3,0,17,None
+Log 1,Fomesafen,32,1 out 3,33,34,PPX2 _G210
+Log 2,Fomesafen,43,0 out 3,0,1,None
+Log 4,Fomesafen,52,2 out 3,67,5,PPX2 _G210
+Per 2,Fomesafen,40,0 out 3,0,39,None
+Per 4,Fomesafen,35,0 out 3,0,14,None
+Red 2,Fomesafen,25,2 ou 3,67,3,PPX2 _G210
+Red 4,Fomesafen,65,2 ou 3,67,5,PPX2 _G210
+Red 5,Fomesafen,42,0 out 3,0,1,None
+Cha 3,Lactofen,35,0 out 3,0,12,None
+Dun 3,Lactofen,45,2 out 3,67,1,PPX2 _G210
+Dun 4,Lactofen,35,0 out 3,0,6,None
+Dun 5,Lactofen,30,1 out 5,20,24,PPX2 _G210
+Hay 1,Lactofen,30,3 out 3,100,1,PPX2 _G210
+Hay 3 ,Lactofen,35,3 ou 3,100,1,PPX2 _G210
+Hay 4,Lactofen,40,2 ou 3,67,1,PPX2 _G210
+Kei 2,Lactofen,45,1 out 3,33,12,PPX2 _G210
+Kei 3,Lactofen,65,0 out 3,0,1,None
+Kei 5,Lactofen,40,2 out 3,67,7,PPX2 _G210
+Kei 6,Lactofen,45,0 ou 3,0,21,None
+Log 1,Lactofen,30,1 out 3,33,50,PPX2 _G210
+Log 2,Lactofen,35,0 out 3,0,1,None
+Log 4,Lactofen,55,2 out 3,67,5,PPX2 _G210
+Per 2,Lactofen,20,0 out 3,0,39,None
+Per 4,Lactofen,35,0 out 3,0,14,None
+Red 2,Lactofen,45,2 ou 3,67,3,PPX2 _G210
+Red 4,Lactofen,80,2 ou 3,67,5,PPX2 _G210
+Red 5,Lactofen,25,0 out 3,0,1,None

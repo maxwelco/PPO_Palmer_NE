@@ -1,0 +1,190 @@
+﻿Population,Site,Time,Herbicide,Perc,alive,died,Resistant,PercMolec,AvegGA,AvegGAm,PPO
+Cha 3,ALS,Spring19,Imazethapyr,90,18,2,,,12,9,No 
+Dun 3,ALS,Spring19,Imazethapyr,90,18,2,,,1,1,Yes
+Dun 4,ALS,Spring19,Imazethapyr,100,20,0,,,6,6,No 
+Dun 5,ALS,Spring19,Imazethapyr,90,18,2,,,24,24,Yes
+Hay 1,ALS,Spring19,Imazethapyr,100,20,0,,,1,1,Yes
+Hay 3 ,ALS,Spring19,Imazethapyr,100,20,0,,,2,2,Yes
+Hay 4,ALS,Spring19,Imazethapyr,75,15,5,,,1,1,Yes
+Kei 2,ALS,Spring19,Imazethapyr,80,16,4,,,12,12,Yes
+Kei 3,ALS,Spring19,Imazethapyr,65,13,7,,,1,1,No 
+Kei 5,ALS,Spring19,Imazethapyr,60,12,8,,,7,5,Yes
+Log 1,ALS,Spring19,Imazethapyr,95,19,1,,,50,17,Yes
+Log 2,ALS,Spring19,Imazethapyr,95,19,1,,,1,34,No 
+Log 4,ALS,Spring19,Imazethapyr,70,14,6,,,5,1,Yes
+Per 2,ALS,Spring19,Imazethapyr,100,20,0,,,39,3,No 
+Per 4,ALS,Spring19,Imazethapyr,100,20,0,,,14,32,No 
+Red 2,ALS,Spring19,Imazethapyr,90,18,2,,,3,10,Yes
+Red 4,ALS,Spring19,Imazethapyr,75,15,5,,,5,2,Yes
+Red 5,ALS,Spring19,Imazethapyr,90,18,2,,,1,2,No 
+Cha 3,EPSPS,Spring,Glyphosate,75,15,5,4 out 5,80,12,1,No 
+Dun 3,EPSPS,Spring,Glyphosate,20,4,16,0 out 3,0,1,1,Yes
+Dun 4,EPSPS,Spring,Glyphosate,100,20,0,5 out 5,100,6,6,No 
+Dun 5,EPSPS,Spring,Glyphosate,15,3,17,5 out 5,100,24,24,Yes
+Hay 1,EPSPS,Spring,Glyphosate,55,11,9,0 out 3,0,1,1,Yes
+Hay 3 ,EPSPS,Spring,Glyphosate,0,0,,0 out 3,0,2,2,Yes
+Hay 4,EPSPS,Spring,Glyphosate,90,18,2,0 out 3,0,1,1,Yes
+Kei 2,EPSPS,Spring,Glyphosate,90,18,2,3 out 3,100,12,12,Yes
+Kei 3,EPSPS,Spring,Glyphosate,80,16,4,0 out 5,0,1,1,No 
+Kei 5,EPSPS,Spring,Glyphosate,100,20,0,2 out 3,67,7,5,Yes
+Kei 6,EPSPS,Spring,Glyphosate,95,19,1,4 out 5,80,21,17,No 
+Log 1,EPSPS,Spring,Glyphosate,100,20,0,2 out 3,67,50,34,Yes
+Log 2,EPSPS,Spring,Glyphosate,65,13,7,0 out 3,0,1,1,No 
+Log 4,EPSPS,Spring,Glyphosate,100,20,0,2 out 3,67,5,3,Yes
+Per 2,EPSPS,Spring,Glyphosate,100,20,0,4 out 5,80,39,32,No 
+Per 4,EPSPS,Spring,Glyphosate,80,16,4,2 out 5,40,14,10,No 
+Red 2,EPSPS,Spring,Glyphosate,,,,1 out 3,33,3,2,Yes
+Red 4,EPSPS,Spring,Glyphosate,90,18,2,1 out 3,33,5,2,Yes
+Red 5,EPSPS,Spring,Glyphosate,95,19,1,0 out 5,0,1,1,No 
+Cha 3,EPSPS,Spring19,Glyphosate,85,17,3,4 out 5,80,12,9,No 
+Dun 3,EPSPS,Spring19,Glyphosate,5,1,19,0 out 3,0,1,1,Yes
+Dun 4,EPSPS,Spring19,Glyphosate,80,16,4,5 out 5,100,6,6,No 
+Dun 5,EPSPS,Spring19,Glyphosate,75,15,5,5 out 5,100,24,24,Yes
+Hay 1,EPSPS,Spring19,Glyphosate,20,4,16,0 out 3,0,1,1,Yes
+Hay 3 ,EPSPS,Spring19,Glyphosate,0,0,20,0 out 3,0,2,2,Yes
+Hay 4,EPSPS,Spring19,Glyphosate,35,7,13,0 out 3,0,1,1,Yes
+Kei 2,EPSPS,Spring19,Glyphosate,95,19,1,3 out 3,100,12,12,Yes
+Kei 3,EPSPS,Spring19,Glyphosate,5,1,19,0 out 5,0,1,1,No 
+Kei 5,EPSPS,Spring19,Glyphosate,95,19,1,2 out 3,67,7,5,Yes
+Kei 6,EPSPS,Spring19,Glyphosate,100,20,0,4 out 5,80,21,17,No 
+Log 1,EPSPS,Spring19,Glyphosate,95,19,1,2 out 3,67,50,34,Yes
+Log 2,EPSPS,Spring19,Glyphosate,0,0,20,0 out 3,0,1,1,No 
+Log 4,EPSPS,Spring19,Glyphosate,85,17,3,2 out 3,67,5,3,Yes
+Per 2,EPSPS,Spring19,Glyphosate,100,20,0,4 out 5,80,39,32,No 
+Per 4,EPSPS,Spring19,Glyphosate,60,12,8,2 out 5,40,14,10,No 
+Red 2,EPSPS,Spring19,Glyphosate,60,12,8,1 out 3,33,3,2,Yes
+Red 4,EPSPS,Spring19,Glyphosate,85,17,3,1 out 3,33,5,2,Yes
+Red 5,EPSPS,Spring19,Glyphosate,95,19,1,0 out 5,0,1,1,No 
+Cha 3,EPSPS,Summer,Glyphosate,100,20,0,4 out 5,80,12,9,No 
+Dun 3,EPSPS,Summer,Glyphosate,5,1,19,0 out 3,0,1,1,Yes
+Dun 4,EPSPS,Summer,Glyphosate,90,18,2,5 out 5,100,6,6,No 
+Dun 5,EPSPS,Summer,Glyphosate,75,15,5,5 out 5,100,24,24,Yes
+Hay 1,EPSPS,Summer,Glyphosate,15,3,17,0 out 3,0,1,1,Yes
+Hay 3 ,EPSPS,Summer,Glyphosate,0,0,20,0 out 3,0,2,2,Yes
+Hay 4,EPSPS,Summer,Glyphosate,35,7,13,0 out 3,0,1,1,Yes
+Kei 2,EPSPS,Summer,Glyphosate,95,19,1,3 out 3,100,12,12,Yes
+Kei 3,EPSPS,Summer,Glyphosate,15,3,17,0 out 5,0,1,1,No 
+Kei 5,EPSPS,Summer,Glyphosate,100,20,0,2 out 3,67,7,5,Yes
+Kei 6,EPSPS,Summer,Glyphosate,100,20,0,4 out 5,80,21,17,No 
+Log 1,EPSPS,Summer,Glyphosate,90,18,2,2 out 3,67,50,34,Yes
+Log 2,EPSPS,Summer,Glyphosate,5,1,19,0 out 3,0,1,1,No 
+Log 4,EPSPS,Summer,Glyphosate,95,19,1,2 out 3,67,5,3,Yes
+Per 2,EPSPS,Summer,Glyphosate,90,18,2,4 out 5,80,39,32,No 
+Per 4,EPSPS,Summer,Glyphosate,55,11,9,2 out 5,40,14,10,No 
+Red 2,EPSPS,Summer,Glyphosate,45,9,11,1 out 3,33,3,2,Yes
+Red 4,EPSPS,Summer,Glyphosate,85,17,3,1 out 3,33,5,2,Yes
+Red 5,EPSPS,Summer,Glyphosate,55,11,9,0 out 5,0,1,1,No 
+Cha 3,PPO,Fall,Fomesafen,0,0,20,0 out 3,0,12,9,No 
+Dun 3,PPO,Fall,Fomesafen,15,3,17,2 out 3,67,1,1,Yes
+Dun 4,PPO,Fall,Fomesafen,0,0,20,0 out 3,0,6,6,No 
+Dun 5,PPO,Fall,Fomesafen,0,0,20,1 out 5,20,24,24,Yes
+Hay 1,PPO,Fall,Fomesafen,35,7,13,3 out 3,100,1,1,Yes
+Hay 3 ,PPO,Fall,Fomesafen,5,1,19,3 ou 3,100,2,2,Yes
+Hay 4,PPO,Fall,Fomesafen,10,2,18,2 ou 3,67,1,1,Yes
+Kei 2,PPO,Fall,Fomesafen,0,0,20,1 out 3,33,12,12,Yes
+Kei 3,PPO,Fall,Fomesafen,20,4,16,0 out 3,0,1,1,No 
+Kei 5,PPO,Fall,Fomesafen,5,1,19,2 out 3,67,7,5,Yes
+Kei 6,PPO,Fall,Fomesafen,20,4,16,0 ou 3,0,17,17,No 
+Log 1,PPO,Fall,Fomesafen,0,0,20,1 out 3,33,50,34,Yes
+Log 2,PPO,Fall,Fomesafen,0,0,20,0 out 3,0,1,1,No 
+Log 4,PPO,Fall,Fomesafen,20,4,16,2 out 3,33,5,3,Yes
+Per 2,PPO,Fall,Fomesafen,5,1,19,0 out 3,0,39,32,No 
+Per 4,PPO,Fall,Fomesafen,5,1,19,0 out 3,0,14,10,No 
+Red 2,PPO,Fall,Fomesafen,5,1,19,2 ou 3,67,3,2,Yes
+Red 4,PPO,Fall,Fomesafen,15,3,17,2 ou 3,67,5,2,Yes
+Red 5,PPO,Fall,Fomesafen,5,1,19,0 out 5,0,1,1,No 
+Cha 3,PPO,Spring19,Fomesafen,35,7,13,0 out 3,0,12,9,No 
+Dun 3,PPO,Spring19,Fomesafen,10,2,18,2 out 3,67,1,1,Yes
+Dun 4,PPO,Spring19,Fomesafen,0,0,20,0 out 3,0,6,6,No 
+Dun 5,PPO,Spring19,Fomesafen,0,0,20,1 out 5,20,24,24,Yes
+Hay 1,PPO,Spring19,Fomesafen,45,9,11,3 out 3,100,1,1,Yes
+Hay 3 ,PPO,Spring19,Fomesafen,30,6,14,3 ou 3,100,2,2,Yes
+Hay 4,PPO,Spring19,Fomesafen,15,3,17,2 ou 3,67,1,1,Yes
+Kei 2,PPO,Spring19,Fomesafen,0,0,20,1 out 3,33,12,12,Yes
+Kei 3,PPO,Spring19,Fomesafen,10,2,18,0 out 3,0,1,1,No 
+Kei 5,PPO,Spring19,Fomesafen,15,3,17,2 out 3,67,7,5,Yes
+Kei 6,PPO,Spring19,Fomesafen,10,2,18,0 ou 3,0,17,17,No 
+Log 1,PPO,Spring19,Fomesafen,15,3,17,1 out 3,33,50,34,Yes
+Log 2,PPO,Spring19,Fomesafen,0,0,20,0 out 3,0,1,1,No 
+Log 4,PPO,Spring19,Fomesafen,0,0,20,2 out 3,67,5,3,Yes
+Per 2,PPO,Spring19,Fomesafen,10,2,18,0 out 3,0,39,32,No 
+Per 4,PPO,Spring19,Fomesafen,15,3,17,0 out 3,0,14,10,No 
+Red 2,PPO,Spring19,Fomesafen,15,3,17,2 ou 3,67,3,2,Yes
+Red 4,PPO,Spring19,Fomesafen,0,0,20,2 ou 3,67,5,2,Yes
+Red 5,PPO,Spring19,Fomesafen,0,0,20,0 out 5,0,1,1,No 
+Cha 3,PPO,Spring,Fomesafen,100,20,0,0 out 3,0,12,9,No 
+Dun 3,PPO,Spring,Fomesafen,85,17,3,2 out 3,67,1,1,Yes
+Dun 4,PPO,Spring,Fomesafen,100,20,0,0 out 3,0,6,6,No 
+Dun 5,PPO,Spring,Fomesafen,35,7,13,1 out 5,20,24,24,Yes
+Hay 1,PPO,Spring,Fomesafen,35,7,13,3 out 3,100,1,1,Yes
+Hay 3 ,PPO,Spring,Fomesafen,25,5,15,3 ou 3,100,2,2,Yes
+Hay 4,PPO,Spring,Fomesafen,70,14,6,2 ou 3,67,1,1,Yes
+Kei 2,PPO,Spring,Fomesafen,80,16,4,1 out 3,33,12,12,Yes
+Kei 3,PPO,Spring,Fomesafen,55,11,9,0 out 3,0,1,1,No 
+Kei 5,PPO,Spring,Fomesafen,80,16,4,2 out 3,67,7,5,Yes
+Kei 6,PPO,Spring,Fomesafen,80,16,4,0 ou 3,0,17,17,No 
+Log 1,PPO,Spring,Fomesafen,65,13,7,1 out 3,33,50,34,Yes
+Log 2,PPO,Spring,Fomesafen,95,19,1,0 out 3,0,1,1,No 
+Log 4,PPO,Spring,Fomesafen,80,16,4,2 out 3,33,5,3,Yes
+Per 2,PPO,Spring,Fomesafen,95,19,1,0 out 3,0,39,32,No 
+Per 4,PPO,Spring,Fomesafen,65,13,7,0 out 3,0,14,10,No 
+Red 2,PPO,Spring,Fomesafen,,,,,,3,2,Yes
+Red 4,PPO,Spring,Fomesafen,100,20,0,2 ou 3,67,5,2,Yes
+Red 5,PPO,Spring,Fomesafen,95,19,1,0 out 5,0,1,1,No 
+Cha 3,PPO,Summer,Fomesafen,35,7,13,0 out 3,0,12,9,No 
+Dun 3,PPO,Summer,Fomesafen,45,9,11,2 out 3,67,1,1,Yes
+Dun 4,PPO,Summer,Fomesafen,35,7,13,0 out 3,0,6,6,No 
+Dun 5,PPO,Summer,Fomesafen,30,6,14,1 out 5,20,24,24,Yes
+Hay 1,PPO,Summer,Fomesafen,30,6,14,3 out 3,100,1,1,Yes
+Hay 3 ,PPO,Summer,Fomesafen,35,7,13,3 ou 3,100,2,2,Yes
+Hay 4,PPO,Summer,Fomesafen,40,8,12,2 ou 3,67,1,1,Yes
+Kei 2,PPO,Summer,Fomesafen,45,9,11,1 out 3,33,12,12,Yes
+Kei 3,PPO,Summer,Fomesafen,65,13,7,0 out 3,0,1,1,No 
+Kei 5,PPO,Summer,Fomesafen,40,8,12,2 out 3,67,7,5,Yes
+Kei 6,PPO,Summer,Fomesafen,45,9,11,0 ou 3,0,17,17,No 
+Log 1,PPO,Summer,Fomesafen,30,6,14,1 out 3,33,50,34,Yes
+Log 2,PPO,Summer,Fomesafen,35,7,13,0 out 3,0,1,1,No 
+Log 4,PPO,Summer,Fomesafen,55,11,9,2 out 3,33,5,3,Yes
+Per 2,PPO,Summer,Fomesafen,20,4,16,0 out 5,0,39,32,No 
+Per 4,PPO,Summer,Fomesafen,35,7,13,0 out 3,0,14,10,No 
+Red 2,PPO,Summer,Fomesafen,45,9,11,2 ou 3,67,3,2,Yes
+Red 4,PPO,Summer,Fomesafen,80,16,4,2 ou 3,67,5,2,Yes
+Red 5,PPO,Summer,Fomesafen,25,5,15,0 out 5,0,1,1,No 
+Cha 3,PPO,Fall,Lactofen,10,2,18,0 out 3,0,12,9,No 
+Dun 3,PPO,Fall,Lactofen,0,0,20,2 out 3,67,1,1,Yes
+Dun 4,PPO,Fall,Lactofen,10,2,18,0 out 3,0,6,6,No 
+Dun 5,PPO,Fall,Lactofen,0,0,20,1 out 5,20,24,24,Yes
+Hay 1,PPO,Fall,Lactofen,10,2,18,3 out 3,100,1,1,Yes
+Hay 3 ,PPO,Fall,Lactofen,0,0,20,3 ou 3,100,2,2,Yes
+Hay 4,PPO,Fall,Lactofen,10,2,18,2 ou 3,67,1,1,Yes
+Kei 2,PPO,Fall,Lactofen,0,0,20,1 out 3,33,12,12,Yes
+Kei 3,PPO,Fall,Lactofen,10,2,18,0 out 3,0,1,1,No 
+Kei 5,PPO,Fall,Lactofen,0,0,20,2 out 3,67,7,5,Yes
+Kei 6,PPO,Fall,Lactofen,25,5,15,0 ou 3,0,17,17,No 
+Log 1,PPO,Fall,Lactofen,0,0,20,1 out 3,33,50,34,Yes
+Log 2,PPO,Fall,Lactofen,0,0,20,0 out 3,0,1,1,No 
+Log 4,PPO,Fall,Lactofen,0,0,20,2 out 3,33,5,3,Yes
+Per 2,PPO,Fall,Lactofen,40,8,12,0 out 3,0,39,32,No 
+Per 4,PPO,Fall,Lactofen,10,2,18,0 out 3,0,14,10,No 
+Red 2,PPO,Fall,Lactofen,5,1,19,2 ou 3,67,3,2,Yes
+Red 4,PPO,Fall,Lactofen,15,3,17,2 ou 3,67,5,2,Yes
+Red 5,PPO,Fall,Lactofen,15,3,17,0 out 5,0,1,1,No 
+Cha 3,PPO,Spring19,Lactofen,20,4,16,0 out 3,0,12,9,No 
+Dun 3,PPO,Spring19,Lactofen,15,3,17,2 out 3,67,1,1,Yes
+Dun 4,PPO,Spring19,Lactofen,10,2,18,0 out 3,0,6,6,No 
+Dun 5,PPO,Spring19,Lactofen,0,0,20,1 out 5,20,24,24,Yes
+Hay 1,PPO,Spring19,Lactofen,35,7,13,3 out 3,100,1,1,Yes
+Hay 3 ,PPO,Spring19,Lactofen,10,2,18,3 ou 3,100,2,2,Yes
+Hay 4,PPO,Spring19,Lactofen,10,2,18,2 ou 3,67,1,1,Yes
+Kei 2,PPO,Spring19,Lactofen,0,0,20,1 out 3,33,12,12,Yes
+Kei 3,PPO,Spring19,Lactofen,15,3,17,0 out 3,0,1,1,No 
+Kei 5,PPO,Spring19,Lactofen,0,0,20,2 out 3,67,7,5,Yes
+Kei 6,PPO,Spring19,Lactofen,10,2,18,0 ou 3,0,17,17,No 
+Log 1,PPO,Spring19,Lactofen,10,2,18,1 out 3,33,50,34,Yes
+Log 2,PPO,Spring19,Lactofen,0,0,20,0 out 3,0,1,1,No 
+Log 4,PPO,Spring19,Lactofen,0,0,20,2 out 3,67,5,3,Yes
+Per 2,PPO,Spring19,Lactofen,20,4,16,0 out 3,0,39,32,No 
+Per 4,PPO,Spring19,Lactofen,10,2,18,0 out 3,0,14,10,No 
+Red 2,PPO,Spring19,Lactofen,25,5,15,2 ou 3,67,3,2,Yes
+Red 4,PPO,Spring19,Lactofen,10,2,18,2 ou 3,67,5,2,Yes
+Red 5,PPO,Spring19,Lactofen,0,0,20,0 out 5,0,1,1,No 

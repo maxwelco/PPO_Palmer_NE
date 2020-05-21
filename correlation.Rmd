@@ -1,0 +1,419 @@
+---
+title: "Greenhouse and Molecular correlation"
+output:
+  pdf_document: default
+  html_document:
+    df_print: paged
+---
+
+
+
+```{r load packages, include=FALSE}
+library(ggplot2)
+library(tidyverse)
+library(reshape2)
+library(ggrepel)
+library(gganimate)
+```
+
+
+# Molecular and greenhouse validation of field evolved resistance to glyphosate and PPO-inhibitors in Palmer amaranth populations
+
+Methods: Glyphosate was applied 
+
+
+```{r load full data, include=FALSE}
+Data=read_csv("Survival.csv")
+glimpse(Data)
+Data$Time=factor(Data$Time, levels=c("Winter", "Summer", "Fall"), labels=c("Winter", "Summer", "Fall"))
+```
+
+
+# Gliphosate Resistant Population
+
+```{r filter Gly and R, include=FALSE}
+DataRG=filter(Data, Herbicide=="Glyphosate" & Level=="Resistant")
+```
+
+
+```{r correlation, echo=FALSE}
+DataRGS=filter(DataRG, Time=="Winter")
+cor.test(DataRGS$Perc, DataRGS$PercMolec, method = "pearson", conf.level = 0.95)
+DataRGSu=filter(DataRG, Time=="Summer")
+cor.test(DataRGSu$Perc, DataRGSu$PercMolec, method = "pearson", conf.level = 0.95)
+```
+
+
+```{r, Figure GLY and Resistant, fig.width = 12, fig.height= 6}
+ggplot(DataRG, aes(x=Perc, y=PercMolec, label=Population)) + geom_point(aes(size=AvegGA, color=PPO)) + geom_smooth(method='lm',formula=y~x, se=F, color="blue") +
+  facet_grid(~Herbicide) + labs(x="% of survival plants 21 days after herbicide application", y="% resistant plants in a molecular screening") + 
+  theme(axis.text=element_text(size=11, color="black"), 
+        axis.title=element_text(size=13,face="bold"), legend.background = element_rect(linetype = "solid", color="black"), 
+        panel.background = element_rect(fill="white", color = "black"), legend.position=c("bottom"), legend.title = element_text(face="bold"), legend.key = element_blank(), 
+        panel.grid.major = element_line(color = "white"), plot.title = element_text(lineheight=.8, face="bold", hjust = 0.5),
+  panel.grid.minor = element_blank(), strip.background = element_rect(fill="grey95", color="white"), strip.text.y = element_text(size = 16, color="white"), strip.text.x = element_text(size = 16, color="black")) + 
+  geom_label_repel(aes(label = Population),
+                box.padding   = 0.35, 
+                  point.padding = 0.5,
+                  segment.color = 'grey50', size=3) + annotate("text", x = 23, y = 100, label = c("Pearson's correlation = 0.43 (P=0.06)", "Pearson's correlation = 0.86 (P=0.00)")) +
+  scale_colour_manual(name="PPO resistance:", values = c("darkgreen", "red")) + facet_wrap(~Time) +
+   scale_size_continuous(name="EPSPS gene amplification:", range=c(1,5), limits=c(1,50), breaks=c(1,10,20,30,40),labels=c("<2","3 to 10","11 to 20","21 to 30",">30")) + 
+    ggsave("GlyphosateR.tiff", units="in", width=12, height=6, dpi=600) 
+```
+
+
+
+
+
+# Gliphosate Susceptible Population
+
+
+```{r filter GLY and S, echo=FALSE, include=FALSE}
+DataSG=filter(Data, Herbicide=="Glyphosate" & Level=="Susceptible")
+```
+
+```{r correlation GLY and S, filter GLY and S, echo=FALSE}
+DataSGS=filter(DataSG, Time=="Winter")
+cor.test(DataSGS$Perc, DataSGS$PercMolec, method = "pearson", conf.level = 0.95)
+DataSGSu=filter(DataSG, Time=="Summer")
+cor.test(DataSGSu$Perc, DataSGSu$PercMolec, method = "pearson", conf.level = 0.95)
+```
+
+
+
+```{r, Figure GLY and Susceptible, fig.width = 12, fig.height= 6, echo=FALSE}
+ggplot(DataSG, aes(x=Perc, y=PercMolec, label=Population)) + geom_point(aes(size=AvegGA, color=PPO)) + geom_smooth(method='lm',formula=y~x, se=F, color="blue") +
+  facet_grid(~Herbicide) + labs(x="% of dead plants 21 days after herbicide application", y="% resistant plants in a molecular screening") + 
+  theme(axis.text=element_text(size=11, color="black"), 
+        axis.title=element_text(size=13,face="bold"), legend.background = element_rect(linetype = "solid", color="black"), 
+        panel.background = element_rect(fill="white", color = "black"), legend.position=c("bottom"), legend.title = element_text(face="bold"), legend.key = element_blank(), 
+        panel.grid.major = element_line(color = "white"), plot.title = element_text(lineheight=.8, face="bold", hjust = 0.5),
+  panel.grid.minor = element_blank(), strip.background = element_rect(fill="grey95", color="white"), strip.text.y = element_text(size = 16, color="white"), strip.text.x = element_text(size = 16, color="black")) + 
+  geom_label_repel(aes(label = Population),
+                box.padding   = 0.35, 
+                  point.padding = 0.5,
+                  segment.color = 'grey50', size=3) + annotate("text", x = 75, y = 100, label = c("Pearson's correlation = -0.27 (P=0.25)", "Pearson's correlation = -0.86 (P=0.00)")) +
+  scale_colour_manual(name="PPO resistance:", values = c("darkgreen", "red")) + facet_wrap(~Time) +
+   scale_size_continuous(name="EPSPS gene amplification:", range=c(1,5), limits=c(1,50), breaks=c(1,10,20,30,40),labels=c("<2","3 to 10","11 to 20","21 to 30",">30")) + 
+    ggsave("GlyphosateS.tiff", units="in", width=12, height=6, dpi=300) 
+```
+
+
+
+# Gliphosate Medium Population
+
+```{r load Gly and M, echo=FALSE, include=FALSE}
+DataMG=filter(Data, Herbicide=="Glyphosate" & Level=="Medium")
+```
+
+
+```{r Correlation Gly and M, echo=FALSE}
+DataMGS=filter(DataMG, Time=="Winter")
+cor.test(DataMGS$Perc, DataMGS$PercMolec, method = "pearson", conf.level = 0.95)
+DataMGSu=filter(DataMG, Time=="Summer")
+cor.test(DataMGSu$Perc, DataMGSu$PercMolec, method = "pearson", conf.level = 0.95)
+```
+
+```{r, fig.width = 12, fig.height= 6, echo=FALSE}
+ggplot(DataMG, aes(x=Perc, y=PercMolec, label=Population)) + geom_point(aes(size=AvegGA, color=PPO)) + geom_smooth(method='lm',formula=y~x, se=F, color="blue") +
+  facet_grid(~Herbicide) + labs(x="% of medium injury plants 21 days after herbicide application", y="% resistant plants in a molecular screening") + 
+  theme(axis.text=element_text(size=11, color="black"), 
+        axis.title=element_text(size=13,face="bold"), legend.background = element_rect(linetype = "solid", color="black"), 
+        panel.background = element_rect(fill="white", color = "black"), legend.position=c("bottom"), legend.title = element_text(face="bold"), legend.key = element_blank(), 
+        panel.grid.major = element_line(color = "white"), plot.title = element_text(lineheight=.8, face="bold", hjust = 0.5),
+  panel.grid.minor = element_blank(), strip.background = element_rect(fill="grey95", color="white"), strip.text.y = element_text(size = 16, color="white"), strip.text.x = element_text(size = 16, color="black")) + 
+  geom_label_repel(aes(label = Population),
+                box.padding   = 0.35, 
+                  point.padding = 0.5,
+                  segment.color = 'grey50', size=3) + annotate("text", x = 78, y = -15, label = c("Pearson's correlation = -0.06 (P=0.81)", "Pearson's correlation = 0.87 (P=0.00)")) +
+  scale_colour_manual(name="PPO resistance:", values = c("darkgreen", "red")) + facet_wrap(~Time) +
+   scale_size_continuous(name="EPSPS gene amplification:", range=c(1,5), limits=c(1,50), breaks=c(1,10,20,30,40),labels=c("<2","3 to 10","11 to 20","21 to 30",">30")) + 
+    ggsave("GlyphosateM.tiff", units="in", width=12, height=6, dpi=300) 
+```
+
+
+
+
+# Glyphosate High Population
+
+```{r include=FALSE}
+DataLG=filter(Data, Herbicide=="Glyphosate" & Level=="Low")
+```
+
+
+```{r}
+DataLGS=filter(DataLG, Time=="Winter")
+cor.test(DataLGS$Perc, DataLGS$PercMolec, method = "pearson", conf.level = 0.95)
+DataLGSu=filter(DataMG, Time=="Summer")
+cor.test(DataLGSu$Perc, DataLGSu$PercMolec, method = "pearson", conf.level = 0.95)
+```
+
+
+
+```{r, fig.width = 12, fig.height= 6, echo=FALSE}
+ggplot(DataLG, aes(x=Perc, y=PercMolec, label=Population)) + geom_point(aes(size=AvegGA, color=PPO)) + geom_smooth(method='lm',formula=y~x, se=F, color="blue") +
+  labs(x="% of low injury plants 21 days after herbicide application", y="% resistant plants in a molecular screening") + 
+  theme(axis.text=element_text(size=11, color="black"), 
+        axis.title=element_text(size=13,face="bold"), legend.background = element_rect(linetype = "solid", color="black"), 
+        panel.background = element_rect(fill="white", color = "black"), legend.position=c("bottom"), legend.title = element_text(face="bold"), legend.key = element_blank(), 
+        panel.grid.major = element_line(color = "white"), plot.title = element_text(lineheight=.8, face="bold", hjust = 0.5),
+  panel.grid.minor = element_blank(), strip.background = element_rect(fill="grey95", color="white"), strip.text.y = element_text(size = 16, color="white"), strip.text.x = element_text(size = 16, color="black")) + 
+  geom_label_repel(aes(label = Population),
+                box.padding   = 0.35, 
+                  point.padding = 0.5,
+                  segment.color = 'grey50', size=3) + annotate("text", x = 85, y = -17, label = c("Pearson's correlation = 0.21", "Pearson's correlation = 0.87")) +
+  scale_colour_manual(name="PPO resistance:", values = c("darkgreen", "red")) + facet_grid(~Time) +
+   scale_size_continuous(name="EPSPS gene amplification:", range=c(1,5), limits=c(1,50), breaks=c(1,10,20,30,40),labels=c("<2","3 to 10","11 to 20","21 to 30",">30")) + 
+    ggsave("GlyphosateL.tiff", units="in", width=12, height=6, dpi=300) 
+```
+
+
+
+
+
+
+
+# Fomesafen Resistant
+
+
+```{r}
+DataRF=filter(Data, Herbicide=="Fomesafen" & Level=="Resistant")
+DataRF$Time=factor(DataRF$Time, levels=c("Winter", "Summer", "Fall"), labels=c("Winter", "Summer", "Fall"))
+```
+
+
+```{r}
+FomesafenRS=subset(DataRF, Time=="Winter")
+cor.test(FomesafenRS$Perc, FomesafenRS$PercMolec, method = "pearson", conf.level = 0.95)
+
+FomesafenRSu=subset(DataRF, Time=="Summer")
+cor.test(FomesafenRSu$Perc, FomesafenRSu$PercMolec, method = "pearson", conf.level = 0.95)
+
+FomesafenRF=subset(DataRF, Time=="Fall")
+cor.test(FomesafenRF$Perc, FomesafenRF$PercMolec, method = "pearson", conf.level = 0.95)
+```
+
+
+
+```{r, echo=FALSE, fig.width = 12, fig.height= 12}
+ggplot(DataRF, aes(x=Perc, y=PercMolec, label=Population)) + geom_point(aes(size=AvegGA, color=PPO)) + geom_smooth(method='lm',formula=y~x, se=F, color="blue") + facet_grid(~Time) +
+  labs(x="% of survival plants 21 days after herbicide application", y="% resistant plants in a molecular screening") + 
+  theme(axis.text=element_text(size=11, color="black"), 
+        axis.title=element_text(size=13,face="bold"), legend.background = element_rect(linetype = "solid", color="black"), #panel.border = element_rect(colour = "black", fill=NA, size=5),
+        panel.background = element_rect(fill="white", color = "black"), legend.position=c("bottom"), legend.title = element_text(face="bold"), legend.key = element_blank(), 
+        panel.grid.major = element_line(color = "white"), plot.title = element_text(lineheight=.8, face="bold", hjust = 0.5),
+  panel.grid.minor = element_blank(), strip.background = element_rect(fill="grey95", color="white"), strip.text.y = element_text(size = 16, color="white"), strip.text.x = element_text(size = 16, color="black")) + 
+  geom_label_repel(aes(label = Population),
+                box.padding   = 0.35, 
+                  point.padding = 0.5,
+                  segment.color = 'grey50', size=3) + annotate("text", x = 60, y = -17, label = c("Pearson's correlation = 0.14", "Pearson's correlation = 0.23", "Pearson's correlation = 0.40")) +
+  scale_colour_manual(name="PPO resistance:", values = c("darkgreen", "red")) + 
+   scale_size_continuous(name="EPSPS gene amplification:", range=c(1,5), limits=c(1,50), breaks=c(1,10,20,30,40),labels=c("<2","3 to 10","11 to 20","21 to 30",">30")) + 
+    ggsave("FomesafenR.tiff", units="in", width=12, height=6, dpi=300) 
+```
+
+
+
+
+# Fomesafen Susceptible
+
+
+```{r}
+DataSF=filter(Data, Herbicide=="Fomesafen" & Level=="Susceptible")
+DataSF$Time=factor(DataSF$Time, levels=c("Spring", "Summer", "Fall"), labels=c("Spring", "Summer", "Fall"))
+```
+
+
+```{r}
+FomesafenSS=subset(DataSF, Time=="Spring")
+cor.test(FomesafenSS$Perc, FomesafenSS$PercMolec, method = "pearson", conf.level = 0.95)
+
+FomesafenSSu=subset(DataSF, Time=="Summer")
+cor.test(FomesafenSSu$Perc, FomesafenSSu$PercMolec, method = "pearson", conf.level = 0.95)
+
+FomesafenSF=subset(DataSF, Time=="Fall")
+cor.test(FomesafenSF$Perc, FomesafenSF$PercMolec, method = "pearson", conf.level = 0.95)
+```
+
+
+
+```{r, echo=FALSE, fig.width = 12, fig.height= 12}
+ggplot(DataSF, aes(x=Perc, y=PercMolec, label=Population)) + geom_point(aes(size=AvegGA, color=PPO)) + geom_smooth(method='lm',formula=y~x, se=F, color="blue") + facet_grid(~Time) +
+  labs(x="% of dead plants 21 days after herbicide application", y="% resistant plants in a molecular screening") + 
+  theme(axis.text=element_text(size=11, color="black"), 
+        axis.title=element_text(size=13,face="bold"), legend.background = element_rect(linetype = "solid", color="black"), #panel.border = element_rect(colour = "black", fill=NA, size=5),
+        panel.background = element_rect(fill="white", color = "black"), legend.position=c("bottom"), legend.title = element_text(face="bold"), legend.key = element_blank(), 
+        panel.grid.major = element_line(color = "white"), plot.title = element_text(lineheight=.8, face="bold", hjust = 0.5),
+  panel.grid.minor = element_blank(), strip.background = element_rect(fill="grey95", color="white"), strip.text.y = element_text(size = 16, color="white"), strip.text.x = element_text(size = 16, color="black")) + 
+  geom_label_repel(aes(label = Population),
+                box.padding   = 0.35, 
+                  point.padding = 0.5,
+                  segment.color = 'grey50', size=3) + annotate("text", x = 60, y = -17, label = c("Pearson's correlation = -0.14", "Pearson's correlation = -0.22", "Pearson's correlation = -0.40")) +
+  scale_colour_manual(name="PPO resistance:", values = c("darkgreen", "red")) + 
+   scale_size_continuous(name="EPSPS gene amplification:", range=c(1,5), limits=c(1,50), breaks=c(1,10,20,30,40),labels=c("<2","3 to 10","11 to 20","21 to 30",">30")) + 
+    ggsave("FomesafenS.tiff", units="in", width=12, height=6, dpi=300) 
+```
+
+
+# Fomesafen Medium
+
+
+```{r}
+DataMF=filter(Data, Herbicide=="Fomesafen" & Level=="Medium")
+DataMF$Time=factor(DataMF$Time, levels=c("Spring", "Summer", "Fall"), labels=c("Spring", "Summer", "Fall"))
+```
+
+
+```{r}
+FomesafenMS=subset(DataMF, Time=="Spring")
+cor.test(FomesafenMS$Perc, FomesafenMS$PercMolec, method = "pearson", conf.level = 0.95)
+
+FomesafenMSu=subset(DataMF, Time=="Summer")
+cor.test(FomesafenMSu$Perc, FomesafenMSu$PercMolec, method = "pearson", conf.level = 0.95)
+
+FomesafenMF=subset(DataMF, Time=="Fall")
+cor.test(FomesafenMF$Perc, FomesafenMF$PercMolec, method = "pearson", conf.level = 0.95)
+```
+
+
+
+```{r, echo=FALSE, fig.width = 12, fig.height= 12}
+ggplot(DataMF, aes(x=Perc, y=PercMolec, label=Population)) + geom_point(aes(size=AvegGA, color=PPO)) + geom_smooth(method='lm',formula=y~x, se=F, color="blue") + facet_grid(~Time) +
+  labs(x="% of plants with medium injury 21 days after herbicide application", y="% resistant plants in a molecular screening") + 
+  theme(axis.text=element_text(size=11, color="black"), 
+        axis.title=element_text(size=13,face="bold"), legend.background = element_rect(linetype = "solid", color="black"), #panel.border = element_rect(colour = "black", fill=NA, size=5),
+        panel.background = element_rect(fill="white", color = "black"), legend.position=c("bottom"), legend.title = element_text(face="bold"), legend.key = element_blank(), 
+        panel.grid.major = element_line(color = "white"), plot.title = element_text(lineheight=.8, face="bold", hjust = 0.5),
+  panel.grid.minor = element_blank(), strip.background = element_rect(fill="grey95", color="white"), strip.text.y = element_text(size = 16, color="white"), strip.text.x = element_text(size = 16, color="black")) + 
+  geom_label_repel(aes(label = Population),
+                box.padding   = 0.35, 
+                  point.padding = 0.5,
+                  segment.color = 'grey50', size=3) + annotate("text", x = 60, y = -17, label = c("Pearson's correlation = 0.18", "Pearson's correlation = 0.35", "Pearson's correlation = 0.40")) +
+  scale_colour_manual(name="PPO resistance:", values = c("darkgreen", "red")) + 
+   scale_size_continuous(name="EPSPS gene amplification:", range=c(1,5), limits=c(1,50), breaks=c(1,10,20,30,40),labels=c("<2","3 to 10","11 to 20","21 to 30",">30")) + 
+    ggsave("FomesafenM.tiff", units="in", width=12, height=6, dpi=300) 
+```
+
+
+
+
+# Fomesafen Low
+
+
+```{r}
+DataLF=filter(Data, Herbicide=="Fomesafen" & Level=="Low")
+DataLF$Time=factor(DataLF$Time, levels=c("Spring", "Summer", "Fall"), labels=c("Spring", "Summer", "Fall"))
+```
+
+
+```{r}
+FomesafenLS=subset(DataLF, Time=="Spring")
+cor.test(FomesafenLS$Perc, FomesafenLS$PercMolec, method = "pearson", conf.level = 0.95)
+
+FomesafenLSu=subset(DataLF, Time=="Summer")
+cor.test(FomesafenLSu$Perc, FomesafenLSu$PercMolec, method = "pearson", conf.level = 0.95)
+
+FomesafenLF=subset(DataLF, Time=="Fall")
+cor.test(FomesafenLF$Perc, FomesafenLF$PercMolec, method = "pearson", conf.level = 0.95)
+```
+
+
+
+```{r, echo=FALSE, fig.width = 12, fig.height= 12}
+ggplot(DataLF, aes(x=Perc, y=PercMolec, label=Population)) + geom_point(aes(size=AvegGA, color=PPO)) + geom_smooth(method='lm',formula=y~x, se=F, color="blue") + facet_grid(~Time) +
+  labs(x="% of plants with low injury 21 days after herbicide application", y="% resistant plants in a molecular screening") + 
+  theme(axis.text=element_text(size=11, color="black"), 
+        axis.title=element_text(size=13,face="bold"), legend.background = element_rect(linetype = "solid", color="black"), #panel.border = element_rect(colour = "black", fill=NA, size=5),
+        panel.background = element_rect(fill="white", color = "black"), legend.position=c("bottom"), legend.title = element_text(face="bold"), legend.key = element_blank(), 
+        panel.grid.major = element_line(color = "white"), plot.title = element_text(lineheight=.8, face="bold", hjust = 0.5),
+  panel.grid.minor = element_blank(), strip.background = element_rect(fill="grey95", color="white"), strip.text.y = element_text(size = 16, color="white"), strip.text.x = element_text(size = 16, color="black")) + 
+  geom_label_repel(aes(label = Population),
+                box.padding   = 0.35, 
+                  point.padding = 0.5,
+                  segment.color = 'grey50', size=3) + annotate("text", x = 60, y = -17, label = c("Pearson's correlation = -0.31", "Pearson's correlation = -0.33", "Pearson's correlation = 0.40")) +
+  scale_colour_manual(name="PPO resistance:", values = c("darkgreen", "red")) + 
+   scale_size_continuous(name="EPSPS gene amplification:", range=c(1,5), limits=c(1,50), breaks=c(1,10,20,30,40),labels=c("<2","3 to 10","11 to 20","21 to 30",">30")) + 
+    ggsave("FomesafenL.tiff", units="in", width=12, height=6, dpi=300) 
+```
+
+
+
+# Lactofen
+
+```{r}
+DataML=filter(Data, Herbicide=="Lactofen" & Level=="Resistant")
+DataML$Time=factor(DataML$Time, levels=c("Spring", "Summer", "Fall"), labels=c("Spring", "Summer", "Fall"))
+```
+
+
+```{r}
+LactofenMS=subset(DataMF, Time=="Spring")
+cor.test(FomesafenMS$Perc, FomesafenMS$PercMolec, method = "pearson", conf.level = 0.95)
+
+FomesafenMSu=subset(DataMF, Time=="Summer")
+cor.test(FomesafenMSu$Perc, FomesafenMSu$PercMolec, method = "pearson", conf.level = 0.95)
+
+FomesafenMF=subset(DataMF, Time=="Fall")
+cor.test(FomesafenMF$Perc, FomesafenMF$PercMolec, method = "pearson", conf.level = 0.95)
+```
+
+
+
+```{r, echo=FALSE, fig.width = 12, fig.height= 12}
+ggplot(DataMF, aes(x=Perc, y=PercMolec, label=Population)) + geom_point(aes(size=AvegGA, color=PPO)) + geom_smooth(method='lm',formula=y~x, se=F, color="blue") + facet_grid(~Time) +
+  labs(x="% of plants with medium injury 21 days after herbicide application", y="% resistant plants in a molecular screening") + 
+  theme(axis.text=element_text(size=11, color="black"), 
+        axis.title=element_text(size=13,face="bold"), legend.background = element_rect(linetype = "solid", color="black"), #panel.border = element_rect(colour = "black", fill=NA, size=5),
+        panel.background = element_rect(fill="white", color = "black"), legend.position=c("bottom"), legend.title = element_text(face="bold"), legend.key = element_blank(), 
+        panel.grid.major = element_line(color = "white"), plot.title = element_text(lineheight=.8, face="bold", hjust = 0.5),
+  panel.grid.minor = element_blank(), strip.background = element_rect(fill="grey95", color="white"), strip.text.y = element_text(size = 16, color="white"), strip.text.x = element_text(size = 16, color="black")) + 
+  geom_label_repel(aes(label = Population),
+                box.padding   = 0.35, 
+                  point.padding = 0.5,
+                  segment.color = 'grey50', size=3) + annotate("text", x = 60, y = -17, label = c("Pearson's correlation = 0.18", "Pearson's correlation = 0.35", "Pearson's correlation = 0.40")) +
+  scale_colour_manual(name="PPO resistance:", values = c("darkgreen", "red")) + 
+   scale_size_continuous(name="EPSPS gene amplification:", range=c(1,5), limits=c(1,50), breaks=c(1,10,20,30,40),labels=c("<2","3 to 10","11 to 20","21 to 30",">30")) + 
+    ggsave("FomesafenM.tiff", units="in", width=12, height=6, dpi=300) 
+```
+
+
+
+
+
+
+```{r}
+Corr=read_csv("PPO_COR.csv")
+```
+
+
+```{r}
+cor.test(Corr$PercSurvL, Corr$PercMolec, method = "pearson", conf.level = 0.95)
+
+
+cor.test(Corr$PercSurvF, Corr$PercMolec, method = "pearson", conf.level = 0.95)
+
+
+cor.test(Corr$PercSurvF, Corr$PercSurvL, method = "pearson", conf.level = 0.95)
+```
+
+
+```{r, echo=FALSE, fig.width = 12, fig.height= 12}
+ggplot(Corr, aes(x=PercSurvL, y=PercMolec, label=Population)) + geom_point(aes(size=AvegGA, color=PPO)) + geom_smooth(method='lm',formula=y~x, se=F, color="blue") +
+  labs(x="% of Lactofen", y="% Molecular") + 
+  theme(axis.text=element_text(size=11, color="black"), 
+        axis.title=element_text(size=13,face="bold"), legend.background = element_rect(linetype = "solid", color="black"), #panel.border = element_rect(colour = "black", fill=NA, size=5),
+        panel.background = element_rect(fill="white", color = "black"), legend.position=c("bottom"), legend.title = element_text(face="bold"), legend.key = element_blank(), 
+        panel.grid.major = element_line(color = "white"), plot.title = element_text(lineheight=.8, face="bold", hjust = 0.5),
+  panel.grid.minor = element_blank(), strip.background = element_rect(fill="grey95", color="white"), strip.text.y = element_text(size = 16, color="white"), strip.text.x = element_text(size = 16, color="black")) + 
+  geom_label_repel(aes(label = Population),
+                box.padding   = 0.35, 
+                  point.padding = 0.5,
+                  segment.color = 'grey50', size=3) + annotate("text", x = 60, y = -17, label = c("Pearson's correlation = 0.14")) +
+  scale_colour_manual(name="PPO resistance:", values = c("darkgreen", "red")) + 
+   scale_size_continuous(name="EPSPS gene amplification:", range=c(1,5), limits=c(1,50), breaks=c(1,10,20,30,40),labels=c("<2","3 to 10","11 to 20","21 to 30",">30")) + 
+    ggsave("PPOcorr.tiff", units="in", width=6, height=6, dpi=300) 
+```
+
+
+
+
