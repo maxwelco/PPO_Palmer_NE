@@ -12,13 +12,14 @@ library(tidymodels)
 
 
 
-```{r}
-data <- read_csv("database.csv")
+```{r include=FALSE}
+data <- read_csv("Random_forest.csv")
 ```
 
 ```{r}
 nd <- data %>% 
-   select(-geneampR, -population, -greenhouse, -multiple, -county) %>% 
+   mutate(EPSPS = ifelse(EPSPS > 2, "Yes", "No")) %>% 
+   select(-Date, -County, -OtherSpecies, -Rep) %>% 
   na.omit()
 ```
 
@@ -29,15 +30,15 @@ skimr::skim(nd)
 
 ```{r}
 nd %>% 
-  ggplot(aes(x=longitude, y=latitude, color = glyresistant)) +
+  ggplot(aes(x=Longitude, y=Latitude, color = EPSPS)) +
   geom_point(alpha=0.4) +
   labs(color=NULL)
 ```
 
 ```{r}
 nd %>% 
-  count(glyresistant, pporesist) %>% 
-  ggplot(aes(n, pporesist, fill=glyresistant)) +
+  count(EPSPS, CurrentCrop) %>% 
+  ggplot(aes(n, CurrentCrop, fill=EPSPS)) +
   geom_col(position = "dodge")
 ```
 
@@ -45,7 +46,7 @@ nd %>%
 
 ```{r}
 set.seed(123)
-trees_split <- initial_split(nd, strata = glyresistant)
+trees_split <- initial_split(nd, strata = EPSPS)
 
 trees_train <- training(trees_split)
 trees_test <- testing(trees_split)
@@ -54,11 +55,11 @@ trees_test <- testing(trees_split)
 
 
 ```{r}
-tree_rec <- recipe(glyresistant ~., data = trees_train) %>% 
-  update_role(geneamp, new_role="Gamp") %>% 
+tree_rec <- recipe(EPSPS ~., data = trees_train) %>% 
+  update_role(PopulationID, new_role="ID") %>% 
   #step_other(currentcrop, previouscrop, threshold = 0.01) %>% 
   step_dummy(all_nominal(), -all_outcomes()) %>% 
-  step_downsample(glyresistant)
+  step_downsample(EPSPS)
 
 trees_prep <- prep(tree_rec) 
 juiced <- juice(trees_prep)
@@ -82,7 +83,7 @@ tune_wf <- workflow() %>%
   add_model(tune_spec)
 ```
 
-
+ 
 # Train
 
 ```{r}
@@ -117,8 +118,8 @@ tune_res %>%
 
 ```{r}
 rf_grid = grid_regular(
-  mtry(range = c(5,20)),
-  min_n(range = c(2,20)),
+  mtry(range = c(20,70)),
+  min_n(range = c(2,10)),
   levels = 10
 )
 set.seed(246)
@@ -158,8 +159,8 @@ library(vip)
 
 final_rf %>% 
   set_engine("ranger", importance = "permutation") %>% 
-  fit(glyresistant ~ ., 
-      data = juice(trees_prep) %>%  select(-geneamp)) %>% 
+  fit(EPSPS ~ ., 
+      data = juice(trees_prep)) # %>% select(-PopulationID)) %>% 
   vip(geom="point") 
 ```
 
@@ -179,7 +180,7 @@ final_res %>%
 ```{r}
 final_res %>% 
   collect_predictions() %>% 
-  mutate(correct = case_when(glyresistant == .pred_class ~ "Correct", TRUE ~ "Incorrect")) %>% 
+  mutate(correct = case_when(EPSPS == .pred_class ~ "Correct", TRUE ~ "Incorrect")) %>% 
   bind_cols(trees_test)
 ```
 

@@ -1,0 +1,189 @@
+Date,County,PopulationID,Rep,PPX2_G210,EPSPS,PPX2_R128GM,Latitude,Longitude,CurrentCrop,Tillage,Irrigation,PopulationDistribution,PopulationDensity,HerbicideInjury,PreviousCrop,OtherSpecies
+8/7/17,Chase,Cha.1,1,No,,No,40.685468,-101.62101,sorghum,tilled,rainfed,spread,low,no,corn,no
+8/7/17,Chase,Cha.1,2,No,23,No,40.685468,-101.62101,sorghum,tilled,rainfed,spread,low,no,corn,no
+8/7/17,Chase,Cha.1,3,No,1,No,40.685468,-101.62101,sorghum,tilled,rainfed,spread,low,no,corn,no
+8/7/17,Chase,Cha.1,4,No,1,No,40.685468,-101.62101,sorghum,tilled,rainfed,spread,low,no,corn,no
+8/7/17,Chase,Cha.1,5,No,1,No,40.685468,-101.62101,sorghum,tilled,rainfed,spread,low,no,corn,no
+8/7/17,Chase,Cha.2,1,No,1,No,40.634612,-101.590776,corn,strip-till,centerpivot,spread,high,no,wheatstubble,no
+8/7/17,Chase,Cha.2,2,No,1,No,40.634612,-101.590776,corn,strip-till,centerpivot,spread,high,no,wheatstubble,no
+8/7/17,Chase,Cha.2,3,No,1,No,40.634612,-101.590776,corn,strip-till,centerpivot,spread,high,no,wheatstubble,no
+8/7/17,Chase,Cha.2,4,No,3,No,40.634612,-101.590776,corn,strip-till,centerpivot,spread,high,no,wheatstubble,no
+8/7/17,Chase,Cha.2,5,No,1,No,40.634612,-101.590776,corn,strip-till,centerpivot,spread,high,no,wheatstubble,no
+8/7/17,Chase,Cha.3,1,No,10,No,40.566647,-101.631201,corn,no-till,centerpivot,spread,high,no,fallow/cornstalks,green foxtail
+8/7/17,Chase,Cha.3,2,No,9,No,40.566647,-101.631201,corn,no-till,centerpivot,spread,high,no,fallow/cornstalks,green foxtail
+8/7/17,Chase,Cha.3,3,No,15,No,40.566647,-101.631201,corn,no-till,centerpivot,spread,high,no,fallow/cornstalks,green foxtail
+8/7/17,Chase,Cha.3,4,No,12,No,40.566647,-101.631201,corn,no-till,centerpivot,spread,high,no,fallow/cornstalks,green foxtail
+8/7/17,Chase,Cha.3,5,No,1,No,40.566647,-101.631201,corn,no-till,centerpivot,spread,high,no,fallow/cornstalks,green foxtail
+8/7/17,Chase,Cha.4,1,No,1,No,40.566638,-101.699424,soybeans,no-till,centerpivot,spread,low,no,fallow/cornstalks,no
+8/7/17,Chase,Cha.4,2,No,19,No,40.566638,-101.699424,soybeans,no-till,centerpivot,spread,low,no,fallow/cornstalks,no
+8/7/17,Chase,Cha.4,3,No,26,Yes,40.566638,-101.699424,soybeans,no-till,centerpivot,spread,low,no,fallow/cornstalks,no
+8/7/17,Chase,Cha.4,4,No,1,No,40.566638,-101.699424,soybeans,no-till,centerpivot,spread,low,no,fallow/cornstalks,no
+8/7/17,Chase,Cha.4,5,No,1,No,40.566638,-101.699424,soybeans,no-till,centerpivot,spread,low,no,fallow/cornstalks,no
+8/7/17,Chase,Cha.5,1,No,1,No,40.557448,-101.760667,corn,strip-till,rainfed,spread,low,no,corn,"kochia, Russian thistle"
+8/7/17,Chase,Cha.5,2,Yes,1,No,40.557448,-101.760667,corn,strip-till,rainfed,spread,low,no,corn,"kochia, Russian thistle"
+8/7/17,Chase,Cha.5,4,No,1,No,40.557448,-101.760667,corn,strip-till,rainfed,spread,low,no,corn,"kochia, Russian thistle"
+8/8/17,Dundy,Dun.1,1,No,3,No,40.144524,-101.415029,wheatstubble,tilled,rainfed,spread,intermediate,no,other,"kochia, Russian thistle"
+8/8/17,Dundy,Dun.1,2,Yes,18,No,40.144524,-101.415029,wheatstubble,tilled,rainfed,spread,intermediate,no,other,"kochia, Russian thistle"
+8/8/17,Dundy,Dun.1,3,No,1,No,40.144524,-101.415029,wheatstubble,tilled,rainfed,spread,intermediate,no,other,"kochia, Russian thistle"
+8/8/17,Dundy,Dun.1,4,No,3,No,40.144524,-101.415029,wheatstubble,tilled,rainfed,spread,intermediate,no,other,"kochia, Russian thistle"
+8/8/17,Dundy,Dun.1,5,No,1,No,40.144524,-101.415029,wheatstubble,tilled,rainfed,spread,intermediate,no,other,"kochia, Russian thistle"
+8/8/17,Dundy,Dun.2,1,No,1,No,40.163365,-101.526339,corn,no-till,rainfed,spread,intermediate,no,sorghum,"Digitariasanguinalis, Cenchruslongispinus"
+8/8/17,Dundy,Dun.2,4,Yes,1,No,40.163365,-101.526339,corn,no-till,rainfed,spread,intermediate,no,sorghum,"Digitariasanguinalis, Cenchruslongispinus"
+8/8/17,Dundy,Dun.2,5,No,1,No,40.163365,-101.526339,corn,no-till,rainfed,spread,intermediate,no,sorghum,"Digitariasanguinalis, Cenchruslongispinus"
+8/8/17,Dundy,Dun.3,1,Yes,1,No,40.162482,-101.570355,other,tilled,centerpivot,spread,intermediate,yes,,no
+8/8/17,Dundy,Dun.3,2,Yes,1,No,40.162482,-101.570355,other,tilled,centerpivot,spread,intermediate,yes,,no
+8/8/17,Dundy,Dun.3,3,No,1,No,40.162482,-101.570355,other,tilled,centerpivot,spread,intermediate,yes,,no
+8/8/17,Dundy,Dun.4,1,No,10,No,40.173475,-101.644362,corn,no-till,centerpivot,edges,high,yes,corn,large crabgrass
+8/8/17,Dundy,Dun.4,2,No,4,No,40.173475,-101.644362,corn,no-till,centerpivot,edges,high,yes,corn,large crabgrass
+8/8/17,Dundy,Dun.4,3,No,6,No,40.173475,-101.644362,corn,no-till,centerpivot,edges,high,yes,corn,large crabgrass
+8/8/17,Dundy,Dun.4,4,No,5,No,40.173475,-101.644362,corn,no-till,centerpivot,edges,high,yes,corn,large crabgrass
+8/8/17,Dundy,Dun.4,5,No,8,No,40.173475,-101.644362,corn,no-till,centerpivot,edges,high,yes,corn,large crabgrass
+8/8/17,Dundy,Dun.5,1,Yes,48,No,40.14808,-101.734971,soybeans,tilled,centerpivot,spread,low,no,corn,no
+8/8/17,Dundy,Dun.5,2,No,4,No,40.14808,-101.734971,soybeans,tilled,centerpivot,spread,low,no,corn,no
+8/8/17,Dundy,Dun.5,3,No,6,No,40.14808,-101.734971,soybeans,tilled,centerpivot,spread,low,no,corn,no
+8/8/17,Dundy,Dun.5,4,No,51,No,40.14808,-101.734971,soybeans,tilled,centerpivot,spread,low,no,corn,no
+8/8/17,Dundy,Dun.5,5,No,13,No,40.14808,-101.734971,soybeans,tilled,centerpivot,spread,low,no,corn,no
+8/3/17,Frontier,Fro.1,1,No,10,No,40.585022,-100.47665,corn,no-till,rainfed,edges,high,no,sorghum,common purslane
+8/3/17,Frontier,Fro.1,2,No,3,No,40.585022,-100.47665,corn,no-till,rainfed,edges,high,no,sorghum,common purslane
+8/3/17,Frontier,Fro.1,3,Yes,5,No,40.585022,-100.47665,corn,no-till,rainfed,edges,high,no,sorghum,common purslane
+8/3/17,Frontier,Fro.2,1,Yes,6,No,40.540969,-100.398143,soybeans,tilled,rainfed,edges,low,yes,corn,"kochia, bristly foxtail"
+8/3/17,Frontier,Fro.2,2,Yes,1,No,40.540969,-100.398143,soybeans,tilled,rainfed,edges,low,yes,corn,"kochia, bristly foxtail"
+8/3/17,Frontier,Fro.2,3,Yes,1,No,40.540969,-100.398143,soybeans,tilled,rainfed,edges,low,yes,corn,"kochia, bristly foxtail"
+8/3/17,Frontier,Fro.3,1,Yes,2,No,40.540899,-100.263293,soybeans,tilled,centerpivot,spread,high,yes,wheatstubble,no
+8/3/17,Frontier,Fro.3,2,No,11,No,40.540899,-100.263293,soybeans,tilled,centerpivot,spread,high,yes,wheatstubble,no
+8/3/17,Frontier,Fro.3,3,Yes,1,No,40.540899,-100.263293,soybeans,tilled,centerpivot,spread,high,yes,wheatstubble,no
+8/3/17,Frontier,Fro.4,1,Yes,1,No,40.42332,-100.481296,sorghum,tilled,rainfed,edges,intermediate,no,fallow/cornstalks,kochoa
+8/3/17,Frontier,Fro.4,2,Yes,1,No,40.42332,-100.481296,sorghum,tilled,rainfed,edges,intermediate,no,fallow/cornstalks,kochoa
+8/3/17,Frontier,Fro.4,3,Yes,1,No,40.42332,-100.481296,sorghum,tilled,rainfed,edges,intermediate,no,fallow/cornstalks,kochoa
+8/3/17,Frontier,Fro.5,1,No,1,No,40.416201,-100.585716,soybeans,tilled,centerpivot,edges,high,no,corn,no
+8/3/17,Frontier,Fro.5,2,No,1,No,40.416201,-100.585716,soybeans,tilled,centerpivot,edges,high,no,corn,no
+8/3/17,Frontier,Fro.5,3,No,2,No,40.416201,-100.585716,soybeans,tilled,centerpivot,edges,high,no,corn,no
+8/3/17,Frontier,Fro.5,4,No,1,No,40.416201,-100.585716,soybeans,tilled,centerpivot,edges,high,no,corn,no
+8/3/17,Frontier,Fro.5,5,No,1,No,40.416201,-100.585716,soybeans,tilled,centerpivot,edges,high,no,corn,no
+8/3/17,Hayes,Hay.1,1,Yes,1,No,40.622278,-100.818085,sorghum,tilled,centerpivot,spread,intermediate,no,fallow/cornstalks,no
+8/3/17,Hayes,Hay.1,2,Yes,1,No,40.622278,-100.818085,sorghum,tilled,centerpivot,spread,intermediate,no,fallow/cornstalks,no
+8/3/17,Hayes,Hay.1,3,Yes,1,No,40.622278,-100.818085,sorghum,tilled,centerpivot,spread,intermediate,no,fallow/cornstalks,no
+8/3/17,Hayes,Hay.2,1,No,3,No,40.625317,-101.036986,corn,no-till,rainfed,spread,intermediate,no,wheatstubble,"kochia, several weeds"
+8/3/17,Hayes,Hay.2,2,Yes,1,No,40.625317,-101.036986,corn,no-till,rainfed,spread,intermediate,no,wheatstubble,"kochia, several weeds"
+8/3/17,Hayes,Hay.2,3,No,1,No,40.625317,-101.036986,corn,no-till,rainfed,spread,intermediate,no,wheatstubble,"kochia, several weeds"
+8/3/17,Hayes,Hay.3,1,Yes,2,No,40.569543,-101.073034,sorghum,tilled,centerpivot,spread,high,no,wheatstubble,dandelion
+8/3/17,Hayes,Hay.3,2,Yes,2,No,40.569543,-101.073034,sorghum,tilled,centerpivot,spread,high,no,wheatstubble,dandelion
+8/3/17,Hayes,Hay.3,3,Yes,1,No,40.569543,-101.073034,sorghum,tilled,centerpivot,spread,high,no,wheatstubble,dandelion
+8/3/17,Hayes,Hay.4,1,Yes,1,No,40.415382,-101.055879,corn,no-till,rainfed,edges,intermediate,yes,wheatstubble,"kochia, Russian thistle"
+8/3/17,Hayes,Hay.4,2,Yes,1,No,40.415382,-101.055879,corn,no-till,rainfed,edges,intermediate,yes,wheatstubble,"kochia, Russian thistle"
+8/3/17,Hayes,Hay.4,3,No,1,No,40.415382,-101.055879,corn,no-till,rainfed,edges,intermediate,yes,wheatstubble,"kochia, Russian thistle"
+8/3/17,Hayes,Hay.5,1,No,1,No,40.424524,-101.004149,sorghum,no-till,rainfed,spread,high,no,wheatstubble,"tuble pigweed, redroot pigweed"
+8/3/17,Hayes,Hay.5,2,No,1,No,40.424524,-101.004149,sorghum,no-till,rainfed,spread,high,no,wheatstubble,"tuble pigweed, redroot pigweed"
+8/3/17,Hayes,Hay.5,3,No,1,No,40.424524,-101.004149,sorghum,no-till,rainfed,spread,high,no,wheatstubble,"tuble pigweed, redroot pigweed"
+8/3/17,Hayes,Hay.5,5,No,1,No,40.424524,-101.004149,sorghum,no-till,rainfed,spread,high,no,wheatstubble,"tuble pigweed, redroot pigweed"
+8/3/17,Hitchcoock,Hit.1,1,No,1,No,40.335389,-101.139517,corn,tilled,centerpivot,edges,low,no,fallow/cornstalks,no
+8/3/17,Hitchcoock,Hit.1,2,No,1,No,40.335389,-101.139517,corn,tilled,centerpivot,edges,low,no,fallow/cornstalks,no
+8/3/17,Hitchcoock,Hit.1,3,No,1,No,40.335389,-101.139517,corn,tilled,centerpivot,edges,low,no,fallow/cornstalks,no
+8/3/17,Hitchcoock,Hit.1,4,No,1,No,40.335389,-101.139517,corn,tilled,centerpivot,edges,low,no,fallow/cornstalks,no
+8/3/17,Hitchcoock,Hit.1,5,No,20,No,40.335389,-101.139517,corn,tilled,centerpivot,edges,low,no,fallow/cornstalks,no
+8/3/17,Hitchcoock,Hit.2,1,No,1,No,40.284923,-101.123414,soybeans,no-till,rainfed,spread,low,no,corn,no
+8/3/17,Hitchcoock,Hit.2,2,No,57,No,40.284923,-101.123414,soybeans,no-till,rainfed,spread,low,no,corn,no
+8/3/17,Hitchcoock,Hit.2,3,No,3,No,40.284923,-101.123414,soybeans,no-till,rainfed,spread,low,no,corn,no
+8/3/17,Hitchcoock,Hit.3,1,Yes,1,No,40.216374,-101.124232,corn,no-till,rainfed,edges,high,no,corn,kochia
+8/3/17,Hitchcoock,Hit.3,2,No,1,No,40.216374,-101.124232,corn,no-till,rainfed,edges,high,no,corn,kochia
+8/3/17,Hitchcoock,Hit.3,3,No,6,No,40.216374,-101.124232,corn,no-till,rainfed,edges,high,no,corn,kochia
+8/3/17,Hitchcoock,Hit.4,1,No,1,No,40.219716,-100.933308,sorghum,no-till,rainfed,edges,high,no,wheatstubble,"kochia, several weeds"
+8/3/17,Hitchcoock,Hit.4,2,No,3,No,40.219716,-100.933308,sorghum,no-till,rainfed,edges,high,no,wheatstubble,"kochia, several weeds"
+8/3/17,Hitchcoock,Hit.4,3,No,1,No,40.219716,-100.933308,sorghum,no-till,rainfed,edges,high,no,wheatstubble,"kochia, several weeds"
+8/3/17,Hitchcoock,Hit.4,4,No,1,No,40.219716,-100.933308,sorghum,no-till,rainfed,edges,high,no,wheatstubble,"kochia, several weeds"
+8/3/17,Hitchcoock,Hit.4,5,No,2,No,40.219716,-100.933308,sorghum,no-till,rainfed,edges,high,no,wheatstubble,"kochia, several weeds"
+8/3/17,Hitchcoock,Hit.5,1,Yes,1,No,40.20569,-100.826568,soybeans,no-till,centerpivot,edges,high,no,corn,"kochia, Russian thistle"
+8/3/17,Hitchcoock,Hit.5,2,No,1,No,40.20569,-100.826568,soybeans,no-till,centerpivot,edges,high,no,corn,"kochia, Russian thistle"
+8/3/17,Hitchcoock,Hit.5,3,No,1,No,40.20569,-100.826568,soybeans,no-till,centerpivot,edges,high,no,corn,"kochia, Russian thistle"
+8/5/17,Keith,Kei.1,1,No,1,No,41.163793,-101.443197,other,tilled,centerpivot,spread,high,no,fallow/cornstalks,no
+8/5/17,Keith,Kei.1,2,Yes,38,No,41.163793,-101.443197,other,tilled,centerpivot,spread,high,no,fallow/cornstalks,no
+8/5/17,Keith,Kei.1,3,No,1,No,41.163793,-101.443197,other,tilled,centerpivot,spread,high,no,fallow/cornstalks,no
+8/5/17,Keith,Kei.2,1,No,19,No,41.170795,-101.477058,corn,no-till,centerpivot,spread,intermediate,yes,fallow/cornstalks,no
+8/5/17,Keith,Kei.2,2,Yes,7,No,41.170795,-101.477058,corn,no-till,centerpivot,spread,intermediate,yes,fallow/cornstalks,no
+8/5/17,Keith,Kei.2,3,No,11,No,41.170795,-101.477058,corn,no-till,centerpivot,spread,intermediate,yes,fallow/cornstalks,no
+8/5/17,Keith,Kei.3,1,No,1,No,41.112656,-101.814853,soybeans,tilled,furrow,spread,high,no,,no
+8/5/17,Keith,Kei.3,2,No,1,No,41.112656,-101.814853,soybeans,tilled,furrow,spread,high,no,,no
+8/5/17,Keith,Kei.3,3,No,1,No,41.112656,-101.814853,soybeans,tilled,furrow,spread,high,no,,no
+8/5/17,Keith,Kei.3,4,No,1,No,41.112656,-101.814853,soybeans,tilled,furrow,spread,high,no,,no
+8/5/17,Keith,Kei.3,5,No,1,No,41.112656,-101.814853,soybeans,tilled,furrow,spread,high,no,,no
+8/5/17,Keith,Kei.4,1,No,1,No,41.105328,-101.854665,soybeans,no-till,centerpivot,spread,low,no,,no
+8/5/17,Keith,Kei.4,2,No,1,No,41.105328,-101.854665,soybeans,no-till,centerpivot,spread,low,no,,no
+8/5/17,Keith,Kei.4,3,No,7,No,41.105328,-101.854665,soybeans,no-till,centerpivot,spread,low,no,,no
+8/5/17,Keith,Kei.4,4,No,10,No,41.105328,-101.854665,soybeans,no-till,centerpivot,spread,low,no,,no
+8/5/17,Keith,Kei.4,5,No,18,No,41.105328,-101.854665,soybeans,no-till,centerpivot,spread,low,no,,no
+8/5/17,Keith,Kei.5,1,Yes,6,No,41.072661,-101.883254,other,tilled,centerpivot,spread,low,no,corn,Kochiascoparia
+8/5/17,Keith,Kei.5,2,No,8,No,41.072661,-101.883254,other,tilled,centerpivot,spread,low,no,corn,Kochiascoparia
+8/5/17,Keith,Kei.5,3,Yes,1,No,41.072661,-101.883254,other,tilled,centerpivot,spread,low,no,corn,Kochiascoparia
+8/5/17,Keith,Kei.6,1,No,10,No,41.090923,-101.7586,soybeans,no-till,centerpivot,spread,high,no,,no
+8/5/17,Keith,Kei.6,2,No,13,No,41.090923,-101.7586,soybeans,no-till,centerpivot,spread,high,no,,no
+8/5/17,Keith,Kei.6,3,No,21,No,41.090923,-101.7586,soybeans,no-till,centerpivot,spread,high,no,,no
+8/5/17,Keith,Kei.6,4,No,2,No,41.090923,-101.7586,soybeans,no-till,centerpivot,spread,high,no,,no
+8/5/17,Keith,Kei.6,5,No,40,No,41.090923,-101.7586,soybeans,no-till,centerpivot,spread,high,no,,no
+8/4/17,Lincoln,Lin.1,1,Yes,1,No,41.070242,-100.523869,corn,no-till,centerpivot,spread,high,no,other,"kochia, several weeds"
+8/4/17,Lincoln,Lin.1,2,Yes,2,No,41.070242,-100.523869,corn,no-till,centerpivot,spread,high,no,other,"kochia, several weeds"
+8/4/17,Lincoln,Lin.1,4,Yes,1,No,41.070242,-100.523869,corn,no-till,centerpivot,spread,high,no,other,"kochia, several weeds"
+8/4/17,Lincoln,Lin.2,1,No,3,No,41.04679,-100.597546,soybeans,tilled,centerpivot,spread,low,yes,corn,no
+8/4/17,Lincoln,Lin.2,2,Yes,6,No,41.04679,-100.597546,soybeans,tilled,centerpivot,spread,low,yes,corn,no
+8/4/17,Lincoln,Lin.2,4,Yes,6,No,41.04679,-100.597546,soybeans,tilled,centerpivot,spread,low,yes,corn,no
+8/4/17,Lincoln,Lin.3,2,Yes,6,No,41.076055,-100.677006,soybeans,tilled,centerpivot,spread,low,yes,,no
+8/4/17,Lincoln,Lin.3,3,Yes,1,No,41.076055,-100.677006,soybeans,tilled,centerpivot,spread,low,yes,,no
+8/4/17,Lincoln,Lin.3,4,Yes,4,No,41.076055,-100.677006,soybeans,tilled,centerpivot,spread,low,yes,,no
+8/4/17,Lincoln,Lin.4,1,Yes,6,No,41.090601,-100.781644,corn,tilled,furrow,spread,high,no,,giant foxtail
+8/4/17,Lincoln,Lin.4,4,Yes,1,No,41.090601,-100.781644,corn,tilled,furrow,spread,high,no,,giant foxtail
+8/4/17,Lincoln,Lin.4,5,Yes,2,No,41.090601,-100.781644,corn,tilled,furrow,spread,high,no,,giant foxtail
+8/4/17,Lincoln,Lin.5,1,No,1,No,41.082532,-100.848936,corn,no-till,rainfed,spread,high,no,wheatstubble,"Kochiascoparia, Severalweeds"
+8/4/17,Lincoln,Lin.5,2,No,1,No,41.082532,-100.848936,corn,no-till,rainfed,spread,high,no,wheatstubble,"Kochiascoparia, Severalweeds"
+8/4/17,Lincoln,Lin.5,3,No,1,No,41.082532,-100.848936,corn,no-till,rainfed,spread,high,no,wheatstubble,"Kochiascoparia, Severalweeds"
+8/4/17,Lincoln,Lin.5,4,No,1,No,41.082532,-100.848936,corn,no-till,rainfed,spread,high,no,wheatstubble,"Kochiascoparia, Severalweeds"
+8/4/17,Lincoln,Lin.5,5,No,1,No,41.082532,-100.848936,corn,no-till,rainfed,spread,high,no,wheatstubble,"Kochiascoparia, Severalweeds"
+8/7/17,Logan,Log.1,1,No,57,No,41.407938,-100.473926,soybeans,tilled,centerpivot,edges,intermediate,no,fallow/cornstalks,kochia
+8/7/17,Logan,Log.1,2,No,43,No,41.407938,-100.473926,soybeans,tilled,centerpivot,edges,intermediate,no,fallow/cornstalks,kochia
+8/7/17,Logan,Log.1,4,Yes,2,No,41.407938,-100.473926,soybeans,tilled,centerpivot,edges,intermediate,no,fallow/cornstalks,kochia
+8/7/17,Logan,Log.2,1,No,1,No,41.408019,-100.407051,other,no-till,rainfed,spread,intermediate,no,fallow/cornstalks,kochia
+8/7/17,Logan,Log.2,2,No,1,No,41.408019,-100.407051,other,no-till,rainfed,spread,intermediate,no,fallow/cornstalks,kochia
+8/7/17,Logan,Log.2,3,No,1,No,41.408019,-100.407051,other,no-till,rainfed,spread,intermediate,no,fallow/cornstalks,kochia
+8/7/17,Logan,Log.3,1,No,4,No,41.407927,-100.391383,soybeans,tilled,centerpivot,edges,high,yes,corn,no
+8/7/17,Logan,Log.3,2,Yes,7,No,41.407927,-100.391383,soybeans,tilled,centerpivot,edges,high,yes,corn,no
+8/7/17,Logan,Log.3,4,No,1,No,41.407927,-100.391383,soybeans,tilled,centerpivot,edges,high,yes,corn,no
+8/7/17,Logan,Log.4,1,Yes,6,No,41.382704,-100.446747,soybeans,tilled,rainfed,spread,low,no,corn,kochia
+8/7/17,Logan,Log.4,3,No,3,No,41.382704,-100.446747,soybeans,tilled,rainfed,spread,low,no,corn,kochia
+8/7/17,Logan,Log.4,4,Yes,1,No,41.382704,-100.446747,soybeans,tilled,rainfed,spread,low,no,corn,kochia
+8/4/17,Perkins,Per.1,1,No,1,No,40.885212,-101.84097,other,no-till,rainfed,spread,low,no,sorghum,"buffalobur, common sunflwer"
+8/4/17,Perkins,Per.1,2,No,1,No,40.885212,-101.84097,other,no-till,rainfed,spread,low,no,sorghum,"buffalobur, common sunflwer"
+8/4/17,Perkins,Per.1,3,Yes,1,No,40.885212,-101.84097,other,no-till,rainfed,spread,low,no,sorghum,"buffalobur, common sunflwer"
+8/4/17,Perkins,Per.2,1,No,49,No,40.881178,-101.840939,soybeans,strip-till,centerpivot,spread,intermediate,no,corn,no
+8/4/17,Perkins,Per.2,2,No,44,No,40.881178,-101.840939,soybeans,strip-till,centerpivot,spread,intermediate,no,corn,no
+8/4/17,Perkins,Per.2,3,No,59,No,40.881178,-101.840939,soybeans,strip-till,centerpivot,spread,intermediate,no,corn,no
+8/4/17,Perkins,Per.2,4,No,5,No,40.881178,-101.840939,soybeans,strip-till,centerpivot,spread,intermediate,no,corn,no
+8/4/17,Perkins,Per.2,5,No,1,No,40.881178,-101.840939,soybeans,strip-till,centerpivot,spread,intermediate,no,corn,no
+8/4/17,Perkins,Per.3,1,No,1,No,40.814409,-101.775249,fallow/cornstalks,tilled,rainfed,spread,high,no,corn,no
+8/4/17,Perkins,Per.3,2,No,1,No,40.814409,-101.775249,fallow/cornstalks,tilled,rainfed,spread,high,no,corn,no
+8/4/17,Perkins,Per.3,3,Yes,1,No,40.814409,-101.775249,fallow/cornstalks,tilled,rainfed,spread,high,no,corn,no
+8/4/17,Perkins,Per.4,1,No,22,No,40.852538,-101.706116,soybeans,no-till,centerpivot,spread,high,yes,corn,no
+8/4/17,Perkins,Per.4,2,No,1,No,40.852538,-101.706116,soybeans,no-till,centerpivot,spread,high,yes,corn,no
+8/4/17,Perkins,Per.4,3,No,7,No,40.852538,-101.706116,soybeans,no-till,centerpivot,spread,high,yes,corn,no
+8/4/17,Perkins,Per.5,1,No,1,No,40.843726,-101.623288,other,no-till,centerpivot,spread,intermediate,no,fallow/cornstalks,kochia
+8/4/17,Perkins,Per.5,2,Yes,1,No,40.843726,-101.623288,other,no-till,centerpivot,spread,intermediate,no,fallow/cornstalks,kochia
+8/4/17,Perkins,Per.5,3,No,2,No,40.843726,-101.623288,other,no-till,centerpivot,spread,intermediate,no,fallow/cornstalks,kochia
+8/4/17,Perkins,Per.6,1,Yes,1,No,40.843834,-101.575231,other,no-till,centerpivot,spread,high,yes,fallow/cornstalks,"horseweed, common sunflower"
+8/4/17,Perkins,Per.6,2,No,2,No,40.843834,-101.575231,other,no-till,centerpivot,spread,high,yes,fallow/cornstalks,"horseweed, common sunflower"
+8/4/17,Perkins,Per.6,3,No,1,No,40.843834,-101.575231,other,no-till,centerpivot,spread,high,yes,fallow/cornstalks,"horseweed, common sunflower"
+8/2/17,RedWillow,Red.1,1,No,3,No,40.253016,-100.735672,soybeans,no-till,centerpivot,edges,high,yes,corn,kochia 
+8/2/17,RedWillow,Red.1,2,No,1,No,40.253016,-100.735672,soybeans,no-till,centerpivot,edges,high,yes,corn,kochia 
+8/2/17,RedWillow,Red.1,4,Yes,1,No,40.253016,-100.735672,soybeans,no-till,centerpivot,edges,high,yes,corn,kochia 
+8/2/17,RedWillow,Red.2,1,Yes,1,No,40.183597,-100.697959,corn,tilled,centerpivot,edges,high,yes,corn,large crabgrass
+8/2/17,RedWillow,Red.2,2,Yes,1,No,40.183597,-100.697959,corn,tilled,centerpivot,edges,high,yes,corn,large crabgrass
+8/2/17,RedWillow,Red.2,3,No,3,No,40.183597,-100.697959,corn,tilled,centerpivot,edges,high,yes,corn,large crabgrass
+8/2/17,RedWillow,Red.3,1,No,1,No,40.119661,-100.561002,wheatstubble,no-till,rainfed,spread,intermediate,no,wheat,Several weeds
+8/2/17,RedWillow,Red.3,2,No,1,No,40.119661,-100.561002,wheatstubble,no-till,rainfed,spread,intermediate,no,wheat,Several weeds
+8/2/17,RedWillow,Red.3,3,No,1,No,40.119661,-100.561002,wheatstubble,no-till,rainfed,spread,intermediate,no,wheat,Several weeds
+8/2/17,RedWillow,Red.3,4,No,1,Yes,40.119661,-100.561002,wheatstubble,no-till,rainfed,spread,intermediate,no,wheat,Several weeds
+8/2/17,RedWillow,Red.3,5,No,6,No,40.119661,-100.561002,wheatstubble,no-till,rainfed,spread,intermediate,no,wheat,Several weeds
+8/2/17,RedWillow,Red.4,1,Yes,1,No,40.089701,-100.458605,corn,no-till,rainfed,spread,low,yes,corn,no
+8/2/17,RedWillow,Red.4,2,Yes,5,No,40.089701,-100.458605,corn,no-till,rainfed,spread,low,yes,corn,no
+8/2/17,RedWillow,Red.4,3,No,1,No,40.089701,-100.458605,corn,no-till,rainfed,spread,low,yes,corn,no
+8/2/17,RedWillow,Red.5,1,No,1,No,40.206921,-100.497,fallow/cornstalks,no-till,rainfed,spread,high,yes,corn,no
+8/2/17,RedWillow,Red.5,2,No,2,No,40.206921,-100.497,fallow/cornstalks,no-till,rainfed,spread,high,yes,corn,no
+8/2/17,RedWillow,Red.5,3,No,1,No,40.206921,-100.497,fallow/cornstalks,no-till,rainfed,spread,high,yes,corn,no
+8/2/17,RedWillow,Red.5,4,No,1,No,40.206921,-100.497,fallow/cornstalks,no-till,rainfed,spread,high,yes,corn,no
+8/2/17,RedWillow,Red.5,5,No,1,No,40.206921,-100.497,fallow/cornstalks,no-till,rainfed,spread,high,yes,corn,no
