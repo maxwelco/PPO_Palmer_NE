@@ -1,0 +1,374 @@
+---
+title: "Cluster"
+author: "Maxwel Coura Oliveira"
+date: "5/31/2020"
+output: html_document
+---
+
+```{r include=FALSE}
+library(tidyverse)
+library(ggplot2)
+library(reshape2)
+library(ggrepel)
+library(rticles)
+library(tidymodels)
+```
+
+
+
+```{r include=FALSE}
+Data=read_csv("data.csv") 
+```
+
+
+```{r}
+Gly <- Data %>% 
+  filter(Herbicide =="Glyphosate" & Time !="Spring") %>% 
+  group_by(Herbicide, Population) %>% 
+  mutate(PercH = sum((alive)/40)*100) %>% 
+  filter(Time == "Summer" )
+```
+
+
+
+```{r}
+data_gly <- Gly %>% 
+  select(Herbicide,Population) 
+
+nd_gly <- Gly %>% 
+  ungroup(Herbicide,Population) %>% 
+  select(PercH, PercMolec) %>% 
+  rename(x1 = PercH) %>% 
+  rename(x2 = PercMolec)
+```
+
+
+```{r}
+kclust_G <- kmeans(nd_gly, centers = 3)
+kclust_G
+
+summary(kclust_G)
+add_G <- augment(kclust_G, nd_gly)
+tidy(kclust_G)
+glance(kclust_G)
+```
+
+
+```{r}
+kclusts_G <- 
+  tibble(k = 1:6) %>%
+  mutate(
+    kclust_G = map(k, ~kmeans(nd_gly, .x)),
+    tidied_gly = map(kclust_G, tidy),
+    glanced_gly = map(kclust_G, glance),
+    augmented_gly = map(kclust_G, augment, nd_gly))
+
+kclust_G
+```
+
+```{r}
+clusters_G <- 
+  kclusts_G %>%
+  unnest(cols = c(tidied_gly))
+
+assignments_G <- 
+  kclusts_G %>% 
+  unnest(cols = c(augmented_gly))
+
+clusterings_G <- 
+  kclusts_G %>%
+  unnest(cols = c(glanced_gly))
+```
+
+
+```{r}
+p1 <- 
+  ggplot(assignments_G, aes(x = x1, y = x2)) +
+  geom_point(aes(color = .cluster), alpha = 0.8) + 
+  facet_wrap(~ k)
+p1
+```
+
+
+```{r}
+p2 <- p1 + geom_point(data = clusters_G, size = 10, shape = "x")
+p2
+```
+
+
+```{r}
+ggplot(clusterings_G, aes(k, tot.withinss)) +
+  geom_line() +
+  geom_point()
+```
+
+
+```{r}
+new_Gly <- Gly %>% 
+  bind_cols(add_G) %>% 
+  mutate(.cluster = ifelse(.cluster == "1", "R",
+                           ifelse(.cluster == "2", "S",
+                                  ifelse(.cluster == "3", "M", NA))))
+
+new_Gly$.cluster <- factor(new_Gly$.cluster, levels = c("S", "M", "R"))
+```
+
+
+```{r fig.cap="", fig.height=10, fig.pos='h', fig.width=10, include=FALSE}
+ggplot(new_Gly, aes(x=PercH, y=PercMolec, label=Population)) + geom_point(aes(size=AvegGAm, color=.cluster), alpha=0.5) + geom_smooth(method='lm',formula=y~x, se=F, color="#494949", size=2) +
+ labs(x="% of Palmer amaranth alive after glyphosate treatment (P)", y="% of glyphosate-resistant Palmer amaranth in genotypic assay (G)") + theme_bw() +
+  theme(axis.text=element_text(size=16, color="#282728"),  #legend.key.size = unit(3),
+        axis.title=element_text(size=18,face="bold"), legend.background = element_rect(linetype = "solid", color="#282728"), panel.border = element_rect(colour = "#282728", fill=NA),
+        panel.background = element_rect(fill="white", color = "#282728"), legend.position=c("bottom"), legend.title = element_text(face="bold", size=20), legend.key = element_blank(), legend.box = "vertical", legend.text = element_text(size=14),
+        panel.grid.major = element_line(color = "white"), plot.title = element_text(lineheight=.8, face="bold", hjust = 0.5),
+  panel.grid.minor = element_blank(), strip.background = element_rect(fill="grey95", color="white"), strip.text.y = element_text(size = 25, color="white"), strip.text.x = element_text(size = 17, color="#282728", face="bold")) + 
+  ylim(0,100) + xlim(0,100) +
+  geom_label_repel(aes(label = Population),
+                box.padding   = 0.35, 
+                  point.padding = 0.5,
+                  segment.color = 'grey50', size=4) + #annotate("text", x = 17, y = 100, label = "Pearson's correlation = 0.83 (P=0.00)", size=5) +
+  scale_colour_manual(name="k-means cluster:", values = c("green", "#0479a8", "#c5050c")) + guides(colour = guide_legend(override.aes = list(size=4))) + 
+   scale_size_continuous(name="EPSPS copy number:", range=c(1,5), limits=c(1,50), breaks=c(1,10,20,30,40), labels=c("<3","3 to 10","11 to 20","21 to 30",">30")) + 
+    ggsave("Figure 1.pdf", units="in", width=10, height=10, dpi=600) 
+```
+
+
+
+```{r}
+Fom <- Data %>% 
+  filter(Herbicide =="Fomesafen" & Time !="Spring" & Time !="Fall") %>% 
+  group_by(Herbicide, Population) %>% 
+  mutate(PercF = sum((alive)/40)*100) %>% 
+  filter(Time == "Summer" )
+```
+
+
+```{r}
+nd_Fom <- Fom %>% 
+  select(Herbicide,Population) 
+
+nd_fom <- Fom %>% 
+  ungroup(Herbicide,Population) %>% 
+  select(PercF, PercMolec) %>% 
+  rename(x1 = PercF) %>% 
+  rename(x2 = PercMolec)
+```
+
+```{r}
+kclust_F <- kmeans(nd_fom, centers = 3)
+kclust_F
+
+summary(kclust_F)
+add_F <- augment(kclust_F, nd_Fom)
+tidy(kclust_F)
+glance(kclust_F)
+```
+
+```{r}
+kclusts_F <- 
+  tibble(k = 1:6) %>%
+  mutate(
+    kclust_F = map(k, ~kmeans(nd_fom, .x)),
+    tidied = map(kclust_F, tidy),
+    glanced = map(kclust_F, glance),
+    augmented = map(kclust_F, augment, nd_fom))
+
+kclust_F
+```
+
+```{r}
+clusters_F <- 
+  kclusts_F %>%
+  unnest(cols = c(tidied))
+
+assignments_F <- 
+  kclusts_F %>% 
+  unnest(cols = c(augmented))
+
+clusterings_F <- 
+  kclusts_F %>%
+  unnest(cols = c(glanced))
+```
+
+```{r}
+p1 <- 
+  ggplot(assignments_F, aes(x = x1, y = x2)) +
+  geom_point(aes(color = .cluster), alpha = 0.8) + 
+  facet_wrap(~ k)
+p1
+```
+
+```{r}
+p2 <- p1 + geom_point(data = clusters_F, size = 10, shape = "x")
+p2
+```
+
+
+```{r}
+ggplot(clusterings_F, aes(k, tot.withinss)) +
+  geom_line() +
+  geom_point()
+```
+
+
+```{r}
+new_Fom <- Fom %>% 
+ bind_cols(add_F) %>% 
+  mutate(.cluster = ifelse(.cluster == "1", "R",
+                           ifelse(.cluster == "2", "S",
+                                  ifelse(.cluster == "3", "M", NA))))
+
+new_Fom$.cluster <- factor(new_Fom$.cluster, levels = c("S", "M", "R"))
+```
+
+
+```{r fig.cap="", fig.height=10, fig.pos='h', fig.width=10, include=FALSE}
+pfom <- ggplot(new_Fom, aes(x=PercF, y=PercMolec, label=Population)) + geom_point(aes(size=AvegGAm, color=.cluster), alpha=0.5) + geom_smooth(method='lm',formula=y~x, se=F, color="#494949", size=2) +
+ labs(x="% of Palmer amaranth alive after fomesafen treatment (P)", y="% of PPO-resistant Palmer amaranth in genotypic assay (G)") + theme_bw() +
+  theme(axis.text=element_text(size=16, color="#282728"),  #legend.key.size = unit(3),
+        axis.title=element_text(size=18,face="bold"), legend.background = element_rect(linetype = "solid", color="#282728"), panel.border = element_rect(colour = "#282728", fill=NA),
+        panel.background = element_rect(fill="white", color = "#282728"), legend.position=c("bottom"), legend.title = element_text(face="bold", size=20), legend.key = element_blank(), legend.box = "vertical", legend.text = element_text(size=14),
+        panel.grid.major = element_line(color = "white"), plot.title = element_text(lineheight=.8, face="bold", hjust = 0.5),
+  panel.grid.minor = element_blank(), strip.background = element_rect(fill="grey95", color="white"), strip.text.y = element_text(size = 25, color="white"), strip.text.x = element_text(size = 17, color="#282728", face="bold")) + 
+  ylim(0,100) + xlim(0,100) +
+  geom_label_repel(aes(label = Population),
+                box.padding   = 0.35, 
+                  point.padding = 0.5,
+                  segment.color = 'grey50', size=4) + annotate("text", x = 92, y = 100, label = "Fomesafen", size=7) +
+  scale_colour_manual(name="k-means cluster:", values = c("green", "#0479a8", "#c5050c")) + guides(colour = guide_legend(override.aes = list(size=4))) + 
+   scale_size_continuous(name="EPSPS copy number:", range=c(1,5), limits=c(1,50), breaks=c(1,10,20,30,40), labels=c("<3","3 to 10","11 to 20","21 to 30",">30")) + 
+    ggsave("Figure 2.png", units="in", width=10, height=10, dpi=300) 
+```
+
+
+
+
+```{r}
+Lac <- Data %>% 
+  filter(Herbicide =="Lactofen") %>% 
+  group_by(Herbicide, Population) %>% 
+  mutate(PercL = sum((alive)/40)*100)  %>% 
+  filter(Time == "Fall" )
+```
+
+
+
+```{r}
+nd_Lac <- Lac %>% 
+  select(Herbicide,Population) 
+
+nd_lac <- Lac %>% 
+  ungroup(Herbicide,Population) %>% 
+  select(PercL, PercMolec) %>% 
+  rename(x1 = PercL) %>% 
+  rename(x2 = PercMolec)
+```
+
+
+
+
+```{r}
+kclust_L <- kmeans(nd_lac, centers = 3)
+kclust_L
+
+summary(kclust_L)
+add_L <- augment(kclust_L, nd_Lac)
+tidy(kclust_L)
+glance(kclust_L)
+```
+
+
+
+
+```{r}
+kclusts_L <- 
+  tibble(k = 1:6) %>%
+  mutate(
+    kclust_L = map(k, ~kmeans(nd_lac, .x)),
+    tidied_L = map(kclust_L, tidy),
+    glanced_L = map(kclust_L, glance),
+    augmented_L = map(kclust_L, augment, nd_lac))
+
+kclusts_L
+```
+
+```{r}
+clusters_L <- 
+  kclusts_L %>%
+  unnest(cols = c(tidied_L))
+
+assignments_L <- 
+  kclusts_L %>% 
+  unnest(cols = c(augmented_L))
+
+clusterings_L <- 
+  kclusts_L %>%
+  unnest(cols = c(glanced_L))
+```
+
+
+
+```{r}
+p1 <- 
+  ggplot(assignments_L, aes(x = x1, y = x2)) +
+  geom_point(aes(color = .cluster), alpha = 0.8) + 
+  facet_wrap(~ k)
+p1
+```
+
+
+
+```{r}
+p2 <- p1 + geom_point(data = clusters_L, size = 10, shape = "x")
+p2
+```
+
+
+```{r}
+ggplot(clusterings_L, aes(k, tot.withinss)) +
+  geom_line() +
+  geom_point()
+```
+
+
+```{r}
+new_Lac <- Lac %>% 
+  bind_cols(add_L) %>% 
+  mutate(.cluster = ifelse(.cluster == "1", "R",
+                           ifelse(.cluster == "2", "S",
+                                  ifelse(.cluster == "3", "M", NA))))
+
+new_Lac$.cluster <- factor(new_Lac$.cluster, levels = c("S", "M", "R"))
+```
+
+
+
+```{r fig.cap="", include=FALSE}
+plac <- ggplot(new_Lac, aes(x=PercL, y=PercMolec, label=Population)) + geom_point(aes(size=AvegGAm, color=.cluster), alpha=0.5) + geom_smooth(method='lm',formula=y~x, se=F, color="#494949", size=2) +
+ labs(x="% of Palmer amaranth alive after lactofen treatment (P)", y="% of PPO-resistant Palmer amaranth in genotypic assay (G)") + theme_bw() +
+  theme(axis.text=element_text(size=16, color="#282728"),  #legend.key.size = unit(3),
+        axis.title=element_text(size=18,face="bold"), legend.background = element_rect(linetype = "solid", color="#282728"), panel.border = element_rect(colour = "#282728", fill=NA),
+        panel.background = element_rect(fill="white", color = "#282728"), legend.position=c("bottom"), legend.title = element_text(face="bold", size=20), legend.key = element_blank(), legend.box = "vertical", legend.text = element_text(size=14),
+        panel.grid.major = element_line(color = "white"), plot.title = element_text(lineheight=.8, face="bold", hjust = 0.5),
+  panel.grid.minor = element_blank(), strip.background = element_rect(fill="grey95", color="white"), strip.text.y = element_text(size = 25, color="white"), strip.text.x = element_text(size = 17, color="#282728", face="bold")) + 
+  ylim(0,100) + xlim(0,100) +
+  geom_label_repel(aes(label = Population),
+                box.padding   = 0.35, 
+                  point.padding = 0.5,
+                  segment.color = 'grey50', size=4) + annotate("text", x = 92, y = 100, label = "Lactofen", size=7) +
+  scale_colour_manual(name="k-means cluster:", values = c("green", "#0479a8", "#c5050c")) + guides(colour = guide_legend(override.aes = list(size=4))) + 
+   scale_size_continuous(name="EPSPS copy number:", range=c(1,5), limits=c(1,50), breaks=c(1,10,20,30,40), labels=c("<3","3 to 10","11 to 20","21 to 30",">30")) + 
+    ggsave("Figure 3.png", units="in", width=10, height=10, dpi=300) 
+```
+
+
+```{r}
+library(gridExtra)
+library(cowplot)
+plot_grid(pfom, plac, nrow = 1, labels = c("A", "B")) +
+  ggsave("Figure 2.pdf", height=10, width=20, dpi=600)
+```
+
+
+
+

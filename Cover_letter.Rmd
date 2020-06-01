@@ -17,11 +17,11 @@ library(knitr)
 
 \hfill Maxwel Coura Oliveira, Ph.D.
 
-\hfill Assistant Professor Weed Scientist 
+\hfill Assistant Professor of Weed Science
 
-\hfill Western São Paulo University
+\hfill Universidade do Oeste Paulista
 
-April 5, 2020
+June 1, 2020
 
 \vspace{1cm}
 
@@ -29,9 +29,9 @@ Dear Dr. Jason Norsworthy,
 
 \vspace{1cm}
 
-Please find enclosed the manuscript entitled "Distribution and Correlation of Genotypic and Phenotypic EPSPS- and PPO-Inhibitor Resistance in Palmer amaranth (*Amaranthus palmeri*) from Southwestern Nebraska" by Dr. Maxwel Coura Oliveira, Dr. Darci A Giacomini, Nikola Arsenijevic, Dr. Patrick J Tranel, and Dr. Rodrigo Werle. 
+Please find enclosed the revised manuscript entitled "Distribution and Validation of Genotypic and Phenotypic Glyphosate and PPO-Inhibitor Resistance in Palmer amaranth (*Amaranthus palmeri*) from Southwest Nebraska" by Dr. Maxwel Coura Oliveira, Dr. Darci A Giacomini, Nikola Arsenijevic, Gustavo Vieira, Dr. Patrick J Tranel, and Dr. Rodrigo Werle. 
 
-This manuscript shows the distribution of 51 Palmer amaranth populations of southwestern Nebraska with EPSPS and PPO resistance. We assessed EPSPS and PPO resistance in Palmer amaranth with genotypic (molecular level) and results were correlated with phenotypic (herbicide application in greenhouse) method. Also, agronomic practices of each population were recorded, allowing the use of random forest to evaluate wich practices are contributing the most for EPSPS-resistance in 51 Palmer amaranth populations of Southwestern Nebraska. Results showed a strong correlation between genotypic and phenotypic methods for EPSPS-resistance in Palmer amaranth but not for PPO-resistance. In addition, county, currenty crop and previous crop was the most important factors influencing the EPSPS-resistant Palmer amaranth.
+We have accepted all changes from reviewers, please see the attached pdf document "response to reviews". The major change was the addition of cluster analysis in the manuscript. This manuscript shows the distribution of 51 Palmer amaranth populations of southwestern Nebraska with EPSPS and PPO resistance. We assessed EPSPS and PPO resistance in Palmer amaranth with genotypic (molecular level) and results were correlated with phenotypic (herbicide application in greenhouse) method. Also, agronomic practices of each population were recorded, allowing the use of random forest to evaluate wich practices are contributing the most for EPSPS-resistance in 51 Palmer amaranth populations of Southwestern Nebraska. Results showed a strong correlation between genotypic and phenotypic methods for EPSPS-resistance in Palmer amaranth but not for PPO-resistance. In addition, county, currenty crop and previous crop was the most important factors influencing the EPSPS-resistant Palmer amaranth.
 
 Our manuscript demonstrates that genotypic methods could expedite the confirmation of herbicide resistance in Palmer amaranth populations from Nebraska and other geographies. Moreover, less diverse cropping systems is an important driver for the presence of EPSPS-resistant Palmer amaranth in fields of Southwestern Nebraska. This manuscript is considered for publication only at Weed Technology Journal. 
 

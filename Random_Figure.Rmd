@@ -18,7 +18,7 @@ EPSPS <- read_csv("Crop_EPSPS.csv")
 
 
 ```{r}
-EPSPS$Herbicide <- factor(EPSPS$Herbicide, levels = c("EPSPS-S", "EPSPS-RS", "EPSPS-R", "PPO-S", "PPO-RS", "PPO-R"), labels = c("EPSPS-Susceptible", "EPSPS-Segregating", "EPSPS-Resistant", "PPO-Susceptible", "PPO-Segregating", "PPO-Resistant"))
+EPSPS$Herbicide <- factor(EPSPS$Herbicide, levels = c("EPSPS-S", "EPSPS-RS", "EPSPS-R", "PPO-S", "PPO-RS", "PPO-R"), labels = c("glyphosate-susceptible", "glyphosate-segregating", "glyphosate-resistant", "PPO-Susceptible", "PPO-Segregating", "PPO-Resistant"))
 ```
 
 
@@ -28,10 +28,11 @@ EP <- EPSPS %>%
   filter(Herb == "EPSPS")
 
 p1<-ggplot(EP, aes(x=Herbicide, y=Perc, fill=Crop)) + geom_col(position = "stack",
-     width = 0.5, color="black") + 
+     width = 0.5, color="#282728") + 
   facet_wrap(~Type, nrow = 1) + coord_flip() + theme_bw() +
-  scale_fill_brewer(palette="Paired") + labs(x="", y="% of diversty in crops") + theme(legend.title = element_text(size=12, face = "bold"), strip.text = element_text(size=13, face="bold"),  panel.grid = element_blank(),
-   axis.title = element_text(size=14, color="black"), axis.text = element_text(size=13, color="black"), legend.text = element_text(size=12), legend.position = "right") +
+  scale_fill_manual(values=c("#ffd125", "#0479a8", "#c5050c", "#dadfe1", "#bfd46d", "#13294b")) +
+ labs(x="", y="% of diversty in crops") + theme(legend.title = element_text(size=12, face = "bold"), strip.text = element_text(size=13, face="bold"),  panel.grid = element_blank(),
+   axis.title = element_text(size=14, color="#282728"), axis.text = element_text(size=13, color="#282728"), legend.text = element_text(size=12), legend.position = "right") +
   ggsave("EPSPScrop.png", height = 8 , width=6, dpi=300) 
 ```
 
@@ -40,10 +41,10 @@ PPO <- EPSPS %>%
   filter(Herb == "PPO")
 
 p2 <- ggplot(PPO, aes(x=Herbicide, y=Perc, fill=Crop)) + geom_col(position = "stack",
-     width = 0.5, color="black") + 
+     width = 0.5, color="#282728") + 
   facet_wrap(~Type, nrow = 1) + coord_flip() + theme_bw() +
   scale_fill_brewer(palette="Paired") + labs(x="", y="% of diversty in crops") + theme(legend.title = element_text(size=12, face = "bold"), strip.text = element_text(size=13, face="bold"),  panel.grid = element_blank(),
-   axis.title = element_text(size=14, color="black"), axis.text = element_text(size=13, color="black"), legend.text = element_text(size=12), legend.position = "right") +
+   axis.title = element_text(size=14, color="#282728"), axis.text = element_text(size=13, color="#282728"), legend.text = element_text(size=12), legend.position = "right") +
   ggsave("PPOcrop.png", height = 8 , width=6, dpi=300) 
 ```
 
@@ -67,7 +68,7 @@ plot_grid(random, p1, nrow = 2, labels = c("A", "B"))+
 
 ```{r}
 ((random | a ) / p1) + plot_annotation(tag_levels = c('A', 'B', 'C')) +
-  ggsave("Figure 3.tiff", height = 10, width=12, dpi=300)
+  ggsave("Figure 3.tiff", height = 10, width=12, dpi=600)
 ```
 
 ```{r}

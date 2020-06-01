@@ -15,21 +15,33 @@ library(tree)
 library(patchwork)
 ```
 
+
 ```{r}
-a <- data %>% 
+data <- read_csv("database.csv")
+```
+
+
+
+```{r}
+aa <- data %>% 
   group_by(county) %>% 
   count(glyresistant) %>% 
   add_tally(name='nn') %>% 
   mutate(perc=round((n/nn)*100)) %>% 
   rename(Resistance = glyresistant) %>% 
-  mutate(Herbicide = "EPSPS") %>% 
-ggplot(aes(x=county, y=perc, fill=Resistance)) + geom_col(position = "stack",
-     width = 0.8, color="black") + theme_bw() + labs(x="", y="% Resistance in genotypic assays") +
-    scale_fill_manual(values = c("lightgreen", "brown1")) +
+  mutate(Herbicide = "EPSPS") 
+
+aa$county <- factor(aa$county, levels = c("Keith", "Chase", "Red Willow", "Hitchcock", "Logan",  "Dundy", "Lincoln", "Frontier", "Perkins", "Hayes"),
+                    labels = c("Keith", "Chase", "Red Willow", "Hitchcock", "Logan",  "Dundy", "Lincoln", "Frontier", "Perkins", "Hayes"))
+
+
+a<-ggplot(aa, aes(x=county, y=perc, fill=Resistance)) + geom_col(position = "stack",
+     width = 0.8, color="#282728") + theme_bw() + labs(x="", y="% of resistance in genotypic assays") + 
+    scale_fill_manual(values = c("#bfd46d", "#c5050c")) +
   coord_flip() + theme(legend.title = element_text(size=12, face = "bold"), 
                          strip.text = element_text(size=13, face="bold"), 
                        panel.grid = element_blank(),
-   axis.title = element_text(size=14, color="black"), axis.text = element_text(size=13, color="black"), legend.text = element_text(size=12), legend.position = "right") +
+   axis.title = element_text(size=14, color="#282728"), axis.text = element_text(size=13, color="#282728"), legend.text = element_text(size=12), legend.position = "right") +
   ggsave("Figure 6.png", height = 5, width=10, dpi=600) 
 ```
 ```{r}
@@ -155,7 +167,7 @@ dd$Variables <- factor(dd$Variables, levels = c("PPO resistance", "Population di
 
 ```{r}
 random <- ggplot(dd, aes(x=Variables, y=round(Value, digits=2), fill=Variables)) + geom_point(size=3) + theme_bw() + coord_flip() + labs(y="Gini Index", x="") + scale_y_continuous(limits=c(0, 10), labels = scales::number_format(accuracy = 1)) +
-  theme(panel.grid.major.y = element_line(colour = "grey80"), panel.grid.major.x = element_blank(), panel.grid.minor.x = element_blank(), legend.position = "none", axis.title = element_text(size=15, color="black"), axis.text =element_text(size=13, color="black")) + ggsave("Figure 4.png", height = 6, width=8, dpi=800)
+  theme(panel.grid.major.y = element_line(colour = "#dadfe1"), panel.grid.major.x = element_blank(), panel.grid.minor.x = element_blank(), legend.position = "none", axis.title = element_text(size=15, color="#282728"), axis.text =element_text(size=13, color="black")) + ggsave("Figure 4.png", height = 6, width=8, dpi=800)
 ```
 
 
